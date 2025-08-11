@@ -3,7 +3,11 @@ import { registerRoot, Composition } from 'remotion';
 import { RemotionRoot } from '../Root';
 import { SyncedVideo } from './SyncedVideo';
 import { AnimatedSyncedVideo } from './AnimatedSyncedVideo';
-import { WordByWordVideo } from './WordByWordVideo';
+import { WordByWordVideo } from './WordByWordVideoWithStyles';
+import { WordByWordVideo as WordByWordVideoContext } from './WordByWordVideoContext';
+import { WordByWordVideo as WordByWordAccumulator } from './WordByWordAccumulator';
+import { WordByWordVideo as WordByWordAccumulator30 } from './WordByWordAccumulator30Styles';
+import { WordByWordVideo as WordByWordFinal } from './WordByWordFinalStyles';
 
 // Register both compositions
 export const RemotionVideo = () => {
@@ -52,6 +56,58 @@ export const RemotionVideo = () => {
         height={1920}
         defaultProps={{
           title: 'Word by Word Video',
+          segments: [],
+          totalDuration: 30,
+        }}
+      />
+      <Composition
+        id="WordByWordVideoContext"
+        component={WordByWordVideoContext}
+        durationInFrames={900}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          title: 'Word by Word Video with Context',
+          segments: [],
+          totalDuration: 30,
+        }}
+      />
+      <Composition
+        id="WordByWordAccumulator"
+        component={WordByWordAccumulator}
+        durationInFrames={900}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          title: 'Word Accumulator (6 words cycle)',
+          segments: [],
+          totalDuration: 30,
+        }}
+      />
+      <Composition
+        id="WordByWordAccumulator30"
+        component={WordByWordAccumulator30}
+        durationInFrames={900}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          title: 'Word Accumulator 30 Styles',
+          segments: [],
+          totalDuration: 30,
+        }}
+      />
+      <Composition
+        id="WordByWordFinal"
+        component={WordByWordFinal}
+        durationInFrames={900}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          title: 'Word Final 6 Styles',
           segments: [],
           totalDuration: 30,
         }}

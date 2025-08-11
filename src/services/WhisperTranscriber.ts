@@ -15,16 +15,26 @@ interface WhisperWord {
 
 interface WhisperSegment {
   text: string;
-  start: number;
-  end: number;
+  start?: number;
+  end?: number;
   words?: WhisperWord[];
+  offsets?: {
+    from: number;
+    to: number;
+  };
+  timestamps?: {
+    from: string;
+    to: string;
+  };
+  probability?: number;
 }
 
 interface WhisperOutput {
-  text: string;
-  segments: WhisperSegment[];
-  language: string;
-  duration: number;
+  text?: string;
+  segments?: WhisperSegment[];
+  transcription?: WhisperSegment[];  // whisper.cpp uses this field
+  language?: string;
+  duration?: number;
 }
 
 interface Caption {
@@ -40,9 +50,9 @@ export class WhisperTranscriber {
   private modelPath: string;
   
   constructor() {
-    // Path to whisper.cpp binary and model
-    this.whisperPath = path.join(process.cwd(), 'whisper.cpp', 'build', 'bin', 'whisper-cli');
-    this.modelPath = path.join(process.cwd(), 'whisper.cpp', 'models', 'ggml-base.bin');
+    // Path to whisper binary and model (optimized location)
+    this.whisperPath = path.join(process.cwd(), 'whisper-bin', 'whisper-cli');
+    this.modelPath = path.join(process.cwd(), 'whisper-bin', 'ggml-base.bin');
   }
   
   /**
@@ -81,8 +91,9 @@ export class WhisperTranscriber {
       // Convert to Caption format
       const captions = this.convertToCaptions(whisperOutput);
       
-      // Clean up JSON file
-      await fs.unlink(jsonPath).catch(() => {});
+      // DEBUG: Keep JSON file for debugging
+      // await fs.unlink(jsonPath).catch(() => {});
+      logger.info(`DEBUG: Keeping JSON file at ${jsonPath}`);
       
       logger.info(`✅ Transcription complete: ${captions.length} words detected`);
       return captions;
@@ -139,8 +150,51 @@ export class WhisperTranscriber {
   private convertToCaptions(whisperOutput: WhisperOutput): Caption[] {
     const captions: Caption[] = [];
     
-    for (const segment of whisperOutput.segments) {
-      if (segment.words && segment.words.length > 0) {
+    // Check if we have the expected structure
+    const segments = whisperOutput.segments || whisperOutput.transcription || [];
+    
+    if (!Array.isArray(segments) || segments.length === 0) {
+      // Fallback: if no segments, try to parse the text directly
+      if (whisperOutput.text) {
+        const words = whisperOutput.text.trim().split(/\s+/);
+        const duration = whisperOutput.duration || words.length * 0.3;
+        const timePerWord = duration / words.length;
+        
+        words.forEach((word, index) => {
+          const wordStart = index * timePerWord;
+          const wordEnd = wordStart + timePerWord;
+          
+          captions.push({
+            text: word,
+            startMs: Math.round(wordStart * 1000),
+            endMs: Math.round(wordEnd * 1000),
+            timestampMs: Math.round((wordStart + wordEnd) * 500),
+            confidence: null,
+          });
+        });
+        
+        return captions;
+      }
+      
+      logger.warn('No segments found in Whisper output');
+      return [];
+    }
+    
+    for (const segment of segments) {
+      // Check for different Whisper output formats
+      if (segment.offsets) {
+        // whisper.cpp format with offsets
+        const text = segment.text ? segment.text.trim() : '';
+        if (text) {
+          captions.push({
+            text: text,
+            startMs: segment.offsets.from || 0,
+            endMs: segment.offsets.to || 0,
+            timestampMs: Math.round(((segment.offsets.from || 0) + (segment.offsets.to || 0)) / 2),
+            confidence: segment.probability || null,
+          });
+        }
+      } else if (segment.words && segment.words.length > 0) {
         // If we have word-level timestamps
         for (const word of segment.words) {
           captions.push({
@@ -151,7 +205,7 @@ export class WhisperTranscriber {
             confidence: word.probability,
           });
         }
-      } else {
+      } else if (segment.start !== undefined && segment.end !== undefined) {
         // Fallback: split segment text into words and estimate timing
         const words = segment.text.trim().split(/\s+/);
         const segmentDuration = segment.end - segment.start;
@@ -203,25 +257,40 @@ export class WhisperTranscriber {
    * This is useful when we already know the text but need accurate timings
    */
   async getTimestampsForText(audioPath: string, expectedText: string): Promise<Caption[]> {
-    // Transcribe the audio
-    const captions = await this.transcribeWithTimestamps(audioPath);
-    
-    // Try to match with expected text
-    const expectedWords = expectedText.toLowerCase().split(/\s+/);
-    const transcribedWords = captions.map(c => c.text.toLowerCase());
-    
-    // Simple alignment - this could be improved with dynamic programming
-    if (expectedWords.length === transcribedWords.length) {
-      // If word counts match, use the transcribed timings with expected text
-      return captions.map((caption, index) => ({
-        ...caption,
-        text: expectedWords[index] || caption.text,
-      }));
+    try {
+      // Transcribe the audio
+      const captions = await this.transcribeWithTimestamps(audioPath);
+      
+      // If we got good timestamps from Whisper, use them
+      if (captions.length > 0 && captions[0].startMs !== null) {
+        logger.info(`Using Whisper timestamps for ${captions.length} words`);
+        
+        // Try to match with expected text
+        const expectedWords = expectedText.toLowerCase().split(/\s+/);
+        const transcribedWords = captions.map(c => c.text.toLowerCase());
+        
+        // Simple alignment - this could be improved with dynamic programming  
+        if (expectedWords.length === transcribedWords.length) {
+          // If word counts match, use the transcribed timings with expected text
+          return captions.map((caption, index) => ({
+            ...caption,
+            text: expectedWords[index] || caption.text,
+          }));
+        } else {
+          // Word count mismatch - but we still have valid timestamps
+          logger.warn(`Word count mismatch: expected ${expectedWords.length}, got ${transcribedWords.length}`);
+          // Return the actual transcribed captions with their timestamps
+          return captions;
+        }
+      }
+      
+      // If Whisper didn't return valid timestamps, throw error to trigger fallback
+      logger.warn('No valid timestamps from Whisper');
+      throw new Error('Whisper did not return valid timestamps');
+    } catch (error) {
+      // If transcription fails, throw the error to let the caller handle it
+      throw error;
     }
-    
-    // Otherwise return as-is
-    logger.warn('Word count mismatch between expected and transcribed text');
-    return captions;
   }
 }
 

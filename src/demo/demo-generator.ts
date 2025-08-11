@@ -74,10 +74,10 @@ export class DemoGenerator {
     // Adjust content based on target duration
     const getContentForDuration = (duration: number) => {
       if (duration <= 2) {
-        // Very short test video - single message
+        // Very short test video - ensure each segment has enough content for 1.5+ seconds of audio
         return {
-          hook: "Test",
-          content: ["Quick test video"],
+          hook: "Here is an amazing fact that will absolutely blow your mind today",
+          content: ["This incredible discovery completely changes everything we thought we knew about the world"],
           callToAction: ""
         };
       } else if (duration <= 15) {

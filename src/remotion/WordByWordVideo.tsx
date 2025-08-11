@@ -174,39 +174,29 @@ export const WordByWordVideo: React.FC<WordByWordVideoProps> = ({
     const wordStartFrame = Math.floor(currentWord.startTime * fps);
     const wordEndFrame = Math.floor(currentWord.endTime * fps);
     const frameSinceStart = frame - wordStartFrame;
+    const wordDurationFrames = wordEndFrame - wordStartFrame;
     
-    // Entry animation (first 4 frames - bounce in effect)
-    if (frameSinceStart < 4) {
-      const progress = frameSinceStart / 4;
+    // Simple fade in at start (2 frames)
+    if (frameSinceStart < 2) {
+      const progress = frameSinceStart / 2;
       return {
-        scale: interpolate(progress, [0, 1], [0.5, 1.15]), // Start bigger for bounce
+        scale: 1,
         opacity: interpolate(progress, [0, 1], [0, 1]),
       };
     }
     
-    // Settle animation (frames 4-7 - bounce settle)
-    if (frameSinceStart < 7) {
-      const progress = (frameSinceStart - 4) / 3;
+    // Stay visible for the entire word duration
+    if (frameSinceStart < wordDurationFrames) {
       return {
-        scale: interpolate(progress, [0, 1], [1.15, 1]), // Settle from 1.15 to 1
+        scale: 1,
         opacity: 1,
       };
     }
     
-    // Exit animation (last 2 frames before word ends - quick fade)
-    const framesUntilEnd = wordEndFrame - frame;
-    if (framesUntilEnd < 2 && framesUntilEnd >= 0) {
-      const progress = 1 - (framesUntilEnd / 2);
-      return {
-        scale: 1,
-        opacity: interpolate(progress, [0, 1], [1, 0]),
-      };
-    }
-    
-    // Normal state - word is fully visible
+    // Word has ended
     return {
-      scale: 1,
-      opacity: 1,
+      scale: 0,
+      opacity: 0,
     };
   }, [currentWord, frame, fps]);
 
@@ -289,70 +279,32 @@ export const WordByWordVideo: React.FC<WordByWordVideoProps> = ({
           textAlign: 'center',
         }}
       >
-        {/* Show multiple words with focus on current */}
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            gap: '25px',
-            alignItems: 'baseline',
-            justifyContent: 'center',
-            flexWrap: 'wrap',
-            maxWidth: '90%',
-            padding: '20px',
-          }}
-        >
-          {contextWords.map(({ word, position }) => {
-            // Different styles for each position
-            const isPrevious = position === 'previous';
-            const isCurrent = position === 'current';
-            const isNext = position === 'next';
-            
-            // Calculate individual animations for current word
-            let scale = 1;
-            let opacity = 1;
-            
-            if (isCurrent) {
-              scale = wordAnimation.scale;
-              opacity = wordAnimation.opacity;
-            } else if (isPrevious) {
-              opacity = 0.4; // Faded out
-              scale = 0.8;
-            } else if (isNext) {
-              opacity = 0.3; // Very faint
-              scale = 0.7;
-            }
-            
-            return (
-              <div
-                key={`${word.word}-${word.startTime}-${position}`}
-                style={{
-                  fontSize: isCurrent ? '100px' : (isPrevious ? '60px' : '50px'),
-                  fontWeight: isCurrent ? '900' : '700',
-                  color: isCurrent ? '#FFD700' : (isPrevious ? '#888888' : '#666666'),
-                  textTransform: 'uppercase',
-                  fontFamily: 'Impact, Arial Black, sans-serif',
-                  letterSpacing: '2px',
-                  transform: `scale(${scale})`,
-                  opacity: opacity,
-                  textShadow: isCurrent 
-                    ? `
-                      0 0 20px rgba(255, 215, 0, 0.8),
-                      2px 2px 0px #000,
-                      -2px -2px 0px #000,
-                      2px -2px 0px #000,
-                      -2px 2px 0px #000
-                    `
-                    : '1px 1px 2px rgba(0,0,0,0.5)',
-                  transition: 'all 0.2s ease-out',
-                  transformOrigin: 'center center',
-                }}
-              >
-                {word.word}
-              </div>
-            );
-          })}
-        </div>
+        {/* Show only the current word - no context to avoid flickering */}
+        {currentWord && (
+          <div
+            style={{
+              fontSize: '120px',
+              fontWeight: '900',
+              color: '#FFD700',
+              textTransform: 'uppercase',
+              fontFamily: 'Impact, Arial Black, sans-serif',
+              letterSpacing: '3px',
+              transform: `scale(${wordAnimation.scale})`,
+              opacity: wordAnimation.opacity,
+              textShadow: `
+                0 0 30px rgba(255, 215, 0, 0.8),
+                3px 3px 0px #000,
+                -3px -3px 0px #000,
+                3px -3px 0px #000,
+                -3px 3px 0px #000,
+                0 0 60px rgba(255, 215, 0, 0.4)
+              `,
+              transformOrigin: 'center center',
+            }}
+          >
+            {currentWord.word}
+          </div>
+        )}
         
         {/* Alternative style: Karaoke-style line
         <div

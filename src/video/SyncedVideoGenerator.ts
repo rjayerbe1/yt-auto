@@ -55,14 +55,16 @@ export class SyncedVideoGenerator extends EventEmitter {
   private totalSteps: number = 0;
   private currentStep: number = 0;
   private targetDuration: number;
+  private videoStyle: number;
 
-  constructor(duration: number = 30) {
+  constructor(duration: number = 30, style: number = 1) {
     super();
     this.outputDir = path.join(process.cwd(), 'output', 'videos');
     this.audioDir = path.join(process.cwd(), 'output', 'audio');
     this.demoGen = new DemoGenerator();
     this.hwAccel = new HardwareAcceleratedGenerator();
     this.targetDuration = duration; // Store target duration in seconds
+    this.videoStyle = style; // Store selected style (1-6)
     
     // Log hardware acceleration status
     const sysInfo = this.hwAccel.getSystemInfo();
@@ -361,21 +363,27 @@ export class SyncedVideoGenerator extends EventEmitter {
           );
           
           // Convert captions to word timings (adjust to segment start time)
-          captions = transcribedCaptions.map(cap => ({
-            ...cap,
-            startMs: cap.startMs + (currentTime * 1000),
-            endMs: cap.endMs + (currentTime * 1000),
-            timestampMs: cap.timestampMs + (currentTime * 1000)
-          }));
-          
-          // Convert to WordTiming format for backward compatibility
-          wordTimings = captions.map(cap => ({
-            word: cap.text,
-            startTime: cap.startMs / 1000,
-            endTime: cap.endMs / 1000,
-            startFrame: Math.floor((cap.startMs / 1000) * 30),
-            endFrame: Math.floor((cap.endMs / 1000) * 30)
-          }));
+          // Check if captions have valid timestamps
+          if (transcribedCaptions.length > 0 && transcribedCaptions[0].startMs !== null) {
+            captions = transcribedCaptions.map(cap => ({
+              ...cap,
+              startMs: cap.startMs + (currentTime * 1000),
+              endMs: cap.endMs + (currentTime * 1000),
+              timestampMs: cap.timestampMs + (currentTime * 1000)
+            }));
+            
+            // Convert to WordTiming format for backward compatibility
+            wordTimings = captions.map(cap => ({
+              word: cap.text,
+              startTime: cap.startMs / 1000,
+              endTime: cap.endMs / 1000,
+              startFrame: Math.floor((cap.startMs / 1000) * 30),
+              endFrame: Math.floor((cap.endMs / 1000) * 30)
+            }));
+          } else {
+            // If captions don't have valid timestamps, throw error to trigger fallback
+            throw new Error('Whisper returned captions without valid timestamps');
+          }
           
           logger.info(`✅ Got ${captions.length} word timestamps from Whisper`);
           
@@ -383,6 +391,22 @@ export class SyncedVideoGenerator extends EventEmitter {
           // Fallback to estimation if Whisper fails
           logger.warn('Whisper transcription failed, using estimation:', whisperError);
           wordTimings = this.calculateWordTimings(textSegment.text, currentTime, duration);
+          
+          // Debug: Log the calculated timings
+          logger.info(`Calculated ${wordTimings.length} word timings for "${textSegment.text}"`);
+          if (wordTimings.length > 0) {
+            logger.info(`First word timing: ${JSON.stringify(wordTimings[0])}`);
+          }
+          
+          // Also create captions from the calculated word timings
+          // Fix: ensure proper timestamp calculation
+          captions = wordTimings.map(wt => ({
+            text: wt.word,
+            startMs: Math.round(wt.startTime * 1000),
+            endMs: Math.round(wt.endTime * 1000),
+            timestampMs: Math.round(((wt.startTime + wt.endTime) / 2) * 1000), // Fix: divide by 2, not multiply by 500
+            confidence: null
+          }));
         }
         
         const segment: AudioSegment = {
@@ -458,10 +482,10 @@ export class SyncedVideoGenerator extends EventEmitter {
         filesToDelete.push(videoPath);
       }
       
-      // Add timing file
-      if (timingFile) {
-        filesToDelete.push(timingFile);
-      }
+      // Add timing file - COMENTADO PARA NO BORRAR EL ARCHIVO DE TIMING
+      // if (timingFile) {
+      //   filesToDelete.push(timingFile);
+      // }
       
       // Clean up the files (solo limpia video intermedio y timing file)
       if (filesToDelete.length > 0) {
@@ -589,7 +613,27 @@ export class SyncedVideoGenerator extends EventEmitter {
   }
 
   private async generateSyncedRemotionVideo(syncedScript: SyncedScript): Promise<string> {
-    logger.info('🎥 Generating video with synchronized subtitles...');
+    logger.info(`🎥 Generating video with synchronized subtitles (Style ${this.videoStyle})...`);
+    
+    // Update the selected style in the component
+    const styleComponentPath = path.join(process.cwd(), 'src', 'remotion', 'WordByWordFinalStyles.tsx');
+    let componentContent = await fs.readFile(styleComponentPath, 'utf-8');
+    componentContent = componentContent.replace(
+      /const SELECTED_STYLE = \d+;/,
+      `const SELECTED_STYLE = ${this.videoStyle};`
+    );
+    await fs.writeFile(styleComponentPath, componentContent);
+    
+    // Log the selected style name
+    const styleNames = [
+      'Clean Modern (Purple/Gold)',
+      'Minimal (White/Black)',
+      'Gradient Tropical (Coral/Teal)',
+      'Matrix Green (Terminal)',
+      'Gold Luxury (Dark/Gold)',
+      'Cherry Blossom (Peach/Red)'
+    ];
+    logger.info(`🎨 Using style: ${styleNames[this.videoStyle - 1] || 'Default'}`);
     
     // Save the synced script for Remotion to use
     const dataPath = path.join(process.cwd(), 'src', 'remotion', 'synced-data.json');
@@ -604,10 +648,10 @@ export class SyncedVideoGenerator extends EventEmitter {
         webpackOverride: (config) => config,
       });
 
-      // Get composition - use WordByWordVideo for synchronized word display
+      // Get composition - use WordByWordFinal for synchronized word display with styles
       const composition = await selectComposition({
         serveUrl: bundleLocation,
-        id: 'WordByWordVideo',
+        id: 'WordByWordFinal',
         inputProps: syncedScript,
       });
 

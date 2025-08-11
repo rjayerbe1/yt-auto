@@ -72,6 +72,8 @@ ENV/
 
 # Whisper.cpp (entire directory - it's a separate git repo)
 whisper.cpp/
+# Whisper binaries and models (large files)
+whisper-bin/
 
 # C/C++ build files
 *.o
