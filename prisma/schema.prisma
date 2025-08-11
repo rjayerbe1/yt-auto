@@ -1,0 +1,210 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String
+  role      Role     @default(EDITOR)
+  password  String?
+  
+  channels  YouTubeChannel[]
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model YouTubeChannel {
+  id           String   @id @default(cuid())
+  userId       String
+  channelId    String   @unique
+  channelName  String
+  accessToken  String   @db.Text
+  refreshToken String   @db.Text
+  expiresAt    DateTime
+  isActive     Boolean  @default(true)
+  
+  user         User     @relation(fields: [userId], references: [id])
+  videos       Video[]
+  
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Trend {
+  id             String   @id @default(cuid())
+  source         String
+  title          String
+  description    String?  @db.Text
+  url            String
+  score          Float
+  viralPotential Float
+  category       String
+  tags           String[]
+  metadata       Json
+  
+  ideas          ContentIdea[]
+  
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  
+  @@index([source, category])
+  @@index([viralPotential])
+}
+
+model ContentIdea {
+  id                   String   @id @default(cuid())
+  trendId              String?
+  title                String
+  description          String   @db.Text
+  category             String
+  targetAudience       String
+  tone                 String
+  keyPoints            String[]
+  estimatedViralScore  Float
+  status               IdeaStatus @default(PENDING)
+  
+  trend                Trend?   @relation(fields: [trendId], references: [id])
+  scripts              Script[]
+  
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+  
+  @@index([status])
+  @@index([category])
+}
+
+model Script {
+  id            String   @id @default(cuid())
+  ideaId        String
+  title         String
+  hook          String   @db.Text
+  content       Json     // ScriptSegment[]
+  callToAction  String
+  duration      Int      // in seconds
+  wordCount     Int
+  language      String   @default("en")
+  voiceSettings Json?
+  
+  idea          ContentIdea @relation(fields: [ideaId], references: [id])
+  videos        Video[]
+  
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Video {
+  id            String   @id @default(cuid())
+  scriptId      String
+  channelId     String?
+  title         String
+  description   String   @db.Text
+  filePath      String
+  thumbnailPath String?
+  duration      Int      // in seconds
+  resolution    String
+  fileSize      BigInt
+  status        VideoStatus @default(RENDERING)
+  metadata      Json
+  
+  youtubeVideoId String?  @unique
+  youtubeUrl     String?
+  publishedAt    DateTime?
+  
+  script        Script   @relation(fields: [scriptId], references: [id])
+  channel       YouTubeChannel? @relation(fields: [channelId], references: [id])
+  analytics     Analytics[]
+  
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  @@index([status])
+  @@index([channelId])
+}
+
+model Analytics {
+  id                    String   @id @default(cuid())
+  videoId               String
+  views                 Int      @default(0)
+  likes                 Int      @default(0)
+  dislikes              Int      @default(0)
+  comments              Int      @default(0)
+  shares                Int      @default(0)
+  watchTime             Int      @default(0) // in seconds
+  averageViewDuration   Float    @default(0)
+  averageViewPercentage Float    @default(0)
+  impressions           Int      @default(0)
+  clickThroughRate      Float    @default(0)
+  subscribersGained     Int      @default(0)
+  subscribersLost       Int      @default(0)
+  estimatedRevenue      Float?
+  
+  video                 Video    @relation(fields: [videoId], references: [id])
+  
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+  
+  @@index([videoId])
+}
+
+model Job {
+  id           String   @id @default(cuid())
+  type         JobType
+  status       JobStatus @default(PENDING)
+  priority     Int      @default(0)
+  data         Json
+  result       Json?
+  error        String?
+  attempts     Int      @default(0)
+  scheduledFor DateTime?
+  processedAt  DateTime?
+  
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  
+  @@index([type, status])
+  @@index([scheduledFor])
+}
+
+enum Role {
+  ADMIN
+  EDITOR
+  VIEWER
+}
+
+enum IdeaStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  IN_PRODUCTION
+  PUBLISHED
+}
+
+enum VideoStatus {
+  RENDERING
+  COMPLETED
+  FAILED
+  UPLOADED
+  PUBLISHED
+}
+
+enum JobType {
+  ANALYZE_TRENDS
+  GENERATE_SCRIPT
+  CREATE_VIDEO
+  UPLOAD_VIDEO
+  TRACK_ANALYTICS
+}
+
+enum JobStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+}

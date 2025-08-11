@@ -1,0 +1,55 @@
+{
+  "title": "The Microwave Trick Chefs Don't Want You to Know",
+  "segments": [
+    {
+      "text": "This microwave trick will change your life",
+      "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/hook.wav",
+      "duration": 2.08,
+      "startTime": 0,
+      "endTime": 2.08
+    },
+    {
+      "text": "Yesterday's pizza always gets soggy in the microwave",
+      "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/segment_0.wav",
+      "duration": 2.36,
+      "startTime": 2.08,
+      "endTime": 4.4399999999999995
+    },
+    {
+      "text": "BUT THERE'S A SOLUTION",
+      "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/segment_1.wav",
+      "duration": 1.32,
+      "startTime": 4.4399999999999995,
+      "endTime": 5.76
+    },
+    {
+      "text": "Put a glass of water next to your pizza",
+      "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/segment_2.wav",
+      "duration": 2.08,
+      "startTime": 5.76,
+      "endTime": 7.84
+    },
+    {
+      "text": "Heat for 30 seconds at medium power",
+      "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/segment_3.wav",
+      "duration": 2.4,
+      "startTime": 7.84,
+      "endTime": 10.24
+    },
+    {
+      "text": "The water absorbs excess microwaves and your pizza stays CRISPY!",
+      "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/segment_4.wav",
+      "duration": 3.68,
+      "startTime": 10.24,
+      "endTime": 13.92
+    },
+    {
+      "text": "Save this video and follow me!",
+      "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/cta.wav",
+      "duration": 2,
+      "startTime": 13.92,
+      "endTime": 15.92
+    }
+  ],
+  "totalDuration": 15.92
+}

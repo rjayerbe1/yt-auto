@@ -1,0 +1,147 @@
+{
+  "title": "15s - 5 iPhone Tricks 99% of People Don't Know",
+  "segments": [
+    {
+      "text": "Quick tip for you",
+      "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/hook.wav",
+      "duration": 1,
+      "startTime": 0,
+      "endTime": 1,
+      "wordTimings": [
+        {
+          "word": "Quick",
+          "startTime": 0,
+          "endTime": 0.30303030303030304,
+          "startFrame": 0,
+          "endFrame": 9
+        },
+        {
+          "word": "tip",
+          "startTime": 0.30303030303030304,
+          "endTime": 0.5454545454545455,
+          "startFrame": 9,
+          "endFrame": 16
+        },
+        {
+          "word": "for",
+          "startTime": 0.5454545454545455,
+          "endTime": 0.7272727272727273,
+          "startFrame": 16,
+          "endFrame": 21
+        },
+        {
+          "word": "you",
+          "startTime": 0.7272727272727273,
+          "endTime": 1,
+          "startFrame": 21,
+          "endFrame": 30
+        }
+      ]
+    },
+    {
+      "text": "Here's something amazing",
+      "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/segment_0.wav",
+      "duration": 1.48,
+      "startTime": 1,
+      "endTime": 2.48,
+      "wordTimings": [
+        {
+          "word": "Here's",
+          "startTime": 1,
+          "endTime": 1.4228571428571428,
+          "startFrame": 30,
+          "endFrame": 42
+        },
+        {
+          "word": "something",
+          "startTime": 1.4228571428571428,
+          "endTime": 1.9725714285714284,
+          "startFrame": 42,
+          "endFrame": 59
+        },
+        {
+          "word": "amazing",
+          "startTime": 1.9725714285714284,
+          "endTime": 2.48,
+          "startFrame": 59,
+          "endFrame": 74
+        }
+      ]
+    },
+    {
+      "text": "You didn't know about this",
+      "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/segment_1.wav",
+      "duration": 1.64,
+      "startTime": 2.48,
+      "endTime": 4.12,
+      "wordTimings": [
+        {
+          "word": "You",
+          "startTime": 2.48,
+          "endTime": 2.800869565217391,
+          "startFrame": 74,
+          "endFrame": 84
+        },
+        {
+          "word": "didn't",
+          "startTime": 2.800869565217391,
+          "endTime": 3.1217391304347823,
+          "startFrame": 84,
+          "endFrame": 93
+        },
+        {
+          "word": "know",
+          "startTime": 3.1217391304347823,
+          "endTime": 3.4247826086956517,
+          "startFrame": 93,
+          "endFrame": 102
+        },
+        {
+          "word": "about",
+          "startTime": 3.4247826086956517,
+          "endTime": 3.81695652173913,
+          "startFrame": 102,
+          "endFrame": 114
+        },
+        {
+          "word": "this",
+          "startTime": 3.81695652173913,
+          "endTime": 4.12,
+          "startFrame": 114,
+          "endFrame": 123
+        }
+      ]
+    },
+    {
+      "text": "Follow for more!",
+      "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/cta.wav",
+      "duration": 1.04,
+      "startTime": 4.12,
+      "endTime": 5.16,
+      "wordTimings": [
+        {
+          "word": "Follow",
+          "startTime": 4.12,
+          "endTime": 4.54,
+          "startFrame": 123,
+          "endFrame": 136
+        },
+        {
+          "word": "for",
+          "startTime": 4.54,
+          "endTime": 4.78,
+          "startFrame": 136,
+          "endFrame": 143
+        },
+        {
+          "word": "more!",
+          "startTime": 4.78,
+          "endTime": 5.16,
+          "startFrame": 143,
+          "endFrame": 154
+        }
+      ]
+    }
+  ],
+  "totalDuration": 5.16
+}

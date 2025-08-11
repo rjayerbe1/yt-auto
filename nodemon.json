@@ -1,0 +1,14 @@
+{
+  "watch": ["src"],
+  "ext": "ts,json",
+  "ignore": [
+    "src/**/*.spec.ts",
+    "output/**/*",
+    "logs/**/*",
+    "*.log",
+    "*.mp4",
+    "*.wav",
+    "*.json"
+  ],
+  "exec": "tsx"
+}
