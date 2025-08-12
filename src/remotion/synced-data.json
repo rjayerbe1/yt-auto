@@ -3,164 +3,164 @@
     {
       "text": "Why does your ex show up right when you're over them?",
       "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/hook.wav",
-      "duration": 2.48,
+      "duration": 2.84,
       "startTime": 0,
-      "endTime": 2.48,
+      "endTime": 2.84,
       "wordTimings": [
         {
           "word": "Why",
-          "startTime": 0.16,
-          "endTime": 0.2,
-          "startFrame": 4,
+          "startTime": 0.17,
+          "endTime": 0.22,
+          "startFrame": 5,
           "endFrame": 6
         },
         {
           "word": "does",
-          "startTime": 0.16,
-          "endTime": 0.47,
-          "startFrame": 4,
-          "endFrame": 14
+          "startTime": 0.17,
+          "endTime": 0.52,
+          "startFrame": 5,
+          "endFrame": 15
         },
         {
           "word": "your",
-          "startTime": 0.16,
-          "endTime": 0.79,
-          "startFrame": 4,
-          "endFrame": 23
-        },
-        {
-          "word": "ex",
-          "startTime": 0.79,
-          "endTime": 0.8,
-          "startFrame": 23,
+          "startTime": 0.17,
+          "endTime": 0.82,
+          "startFrame": 5,
           "endFrame": 24
         },
         {
+          "word": "ex",
+          "startTime": 0.82,
+          "endTime": 0.89,
+          "startFrame": 24,
+          "endFrame": 26
+        },
+        {
           "word": "show",
-          "startTime": 0.47,
-          "endTime": 1.07,
-          "startFrame": 14,
-          "endFrame": 32
+          "startTime": 0.52,
+          "endTime": 1.19,
+          "startFrame": 15,
+          "endFrame": 35
         },
         {
           "word": "up",
-          "startTime": 0.79,
-          "endTime": 1.54,
-          "startFrame": 23,
-          "endFrame": 46
+          "startTime": 0.82,
+          "endTime": 1.78,
+          "startFrame": 24,
+          "endFrame": 53
         },
         {
           "word": "right",
-          "startTime": 0.79,
-          "endTime": 1.54,
-          "startFrame": 23,
-          "endFrame": 46
+          "startTime": 0.82,
+          "endTime": 1.78,
+          "startFrame": 24,
+          "endFrame": 53
         },
         {
           "word": "when",
-          "startTime": 0.8,
-          "endTime": 1.81,
-          "startFrame": 24,
-          "endFrame": 54
+          "startTime": 0.89,
+          "endTime": 2.05,
+          "startFrame": 26,
+          "endFrame": 61
         },
         {
           "word": "you're",
-          "startTime": 1.54,
-          "endTime": 2.21,
-          "startFrame": 46,
-          "endFrame": 66
+          "startTime": 1.78,
+          "endTime": 2.45,
+          "startFrame": 53,
+          "endFrame": 73
         },
         {
           "word": "over",
-          "startTime": 1.81,
-          "endTime": 2.47,
-          "startFrame": 54,
-          "endFrame": 74
+          "startTime": 2.05,
+          "endTime": 2.83,
+          "startFrame": 61,
+          "endFrame": 84
         },
         {
           "word": "them?",
-          "startTime": 2.02,
-          "endTime": 3,
-          "startFrame": 60,
-          "endFrame": 90
+          "startTime": 2.24,
+          "endTime": 3.34,
+          "startFrame": 67,
+          "endFrame": 100
         }
       ],
       "captions": [
         {
           "text": "Why",
-          "startMs": 160,
-          "endMs": 200,
-          "timestampMs": 180,
+          "startMs": 170,
+          "endMs": 220,
+          "timestampMs": 195,
           "confidence": null
         },
         {
           "text": "does",
-          "startMs": 160,
-          "endMs": 470,
-          "timestampMs": 315,
+          "startMs": 170,
+          "endMs": 520,
+          "timestampMs": 345,
           "confidence": null
         },
         {
           "text": "your",
-          "startMs": 160,
-          "endMs": 790,
-          "timestampMs": 475,
+          "startMs": 170,
+          "endMs": 820,
+          "timestampMs": 495,
           "confidence": null
         },
         {
           "text": "ex",
-          "startMs": 790,
-          "endMs": 800,
-          "timestampMs": 795,
+          "startMs": 820,
+          "endMs": 890,
+          "timestampMs": 855,
           "confidence": null
         },
         {
           "text": "show",
-          "startMs": 470,
-          "endMs": 1070,
-          "timestampMs": 770,
+          "startMs": 520,
+          "endMs": 1190,
+          "timestampMs": 855,
           "confidence": null
         },
         {
           "text": "up",
-          "startMs": 790,
-          "endMs": 1540,
-          "timestampMs": 1165,
+          "startMs": 820,
+          "endMs": 1780,
+          "timestampMs": 1300,
           "confidence": null
         },
         {
           "text": "right",
-          "startMs": 790,
-          "endMs": 1540,
-          "timestampMs": 1165,
+          "startMs": 820,
+          "endMs": 1780,
+          "timestampMs": 1300,
           "confidence": null
         },
         {
           "text": "when",
-          "startMs": 800,
-          "endMs": 1810,
-          "timestampMs": 1305,
+          "startMs": 890,
+          "endMs": 2050,
+          "timestampMs": 1470,
           "confidence": null
         },
         {
           "text": "you're",
-          "startMs": 1540,
-          "endMs": 2210,
-          "timestampMs": 1875,
+          "startMs": 1780,
+          "endMs": 2450,
+          "timestampMs": 2115,
           "confidence": null
         },
         {
           "text": "over",
-          "startMs": 1810,
-          "endMs": 2470,
-          "timestampMs": 2140,
+          "startMs": 2050,
+          "endMs": 2830,
+          "timestampMs": 2440,
           "confidence": null
         },
         {
           "text": "them?",
-          "startMs": 2020,
-          "endMs": 3000,
-          "timestampMs": 2510,
+          "startMs": 2240,
+          "endMs": 3340,
+          "timestampMs": 2790,
           "confidence": null
         }
       ]
@@ -168,248 +168,234 @@
     {
       "text": "Psychology calls it 'unconscious emotional radar'. Your brain sends micro-signals when you stop needing external validation.",
       "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/segment_0.wav",
-      "duration": 6.92,
-      "startTime": 2.48,
-      "endTime": 9.4,
+      "duration": 5.4,
+      "startTime": 2.84,
+      "endTime": 8.24,
       "wordTimings": [
         {
           "word": "Psychology",
-          "startTime": 2.67,
-          "endTime": 3.15,
-          "startFrame": 80,
-          "endFrame": 94
+          "startTime": 2.92,
+          "endTime": 3.39,
+          "startFrame": 87,
+          "endFrame": 101
         },
         {
           "word": "calls",
-          "startTime": 2.67,
-          "endTime": 3.48,
-          "startFrame": 80,
-          "endFrame": 104
+          "startTime": 2.92,
+          "endTime": 3.72,
+          "startFrame": 87,
+          "endFrame": 111
         },
         {
           "word": "it",
-          "startTime": 2.67,
-          "endTime": 3.68,
-          "startFrame": 80,
-          "endFrame": 110
+          "startTime": 2.92,
+          "endTime": 3.72,
+          "startFrame": 87,
+          "endFrame": 111
         },
         {
           "word": "'unconscious",
-          "startTime": 3.68,
-          "endTime": 4.35,
-          "startFrame": 110,
-          "endFrame": 130
+          "startTime": 3.72,
+          "endTime": 4.29,
+          "startFrame": 111,
+          "endFrame": 128
         },
         {
           "word": "emotional",
-          "startTime": 3.48,
-          "endTime": 4.95,
-          "startFrame": 104,
-          "endFrame": 148
+          "startTime": 3.72,
+          "endTime": 4.75,
+          "startFrame": 111,
+          "endFrame": 142
         },
         {
           "word": "radar'.",
-          "startTime": 4.95,
-          "endTime": 5.77,
-          "startFrame": 148,
-          "endFrame": 173
+          "startTime": 4.75,
+          "endTime": 5.2,
+          "startFrame": 142,
+          "endFrame": 156
         },
         {
           "word": "Your",
-          "startTime": 4.35,
-          "endTime": 5.79,
-          "startFrame": 130,
-          "endFrame": 173
+          "startTime": 4.29,
+          "endTime": 5.42,
+          "startFrame": 128,
+          "endFrame": 162
         },
         {
           "word": "brain",
-          "startTime": 4.95,
-          "endTime": 6.13,
-          "startFrame": 148,
-          "endFrame": 183
+          "startTime": 4.75,
+          "endTime": 5.65,
+          "startFrame": 142,
+          "endFrame": 169
         },
         {
           "word": "sends",
-          "startTime": 5.77,
-          "endTime": 6.48,
-          "startFrame": 173,
-          "endFrame": 194
+          "startTime": 5.2,
+          "endTime": 5.9,
+          "startFrame": 156,
+          "endFrame": 177
         },
         {
           "word": "micro",
-          "startTime": 5.79,
-          "endTime": 6.88,
-          "startFrame": 173,
-          "endFrame": 206
+          "startTime": 5.42,
+          "endTime": 6.15,
+          "startFrame": 162,
+          "endFrame": 184
         },
         {
           "word": "signals",
-          "startTime": 6.13,
-          "endTime": 7.2,
-          "startFrame": 183,
-          "endFrame": 216
+          "startTime": 5.65,
+          "endTime": 6.52,
+          "startFrame": 169,
+          "endFrame": 195
         },
         {
           "word": "when",
-          "startTime": 6.48,
-          "endTime": 7.36,
-          "startFrame": 194,
-          "endFrame": 220
+          "startTime": 5.9,
+          "endTime": 6.74,
+          "startFrame": 177,
+          "endFrame": 202
         },
         {
           "word": "you",
-          "startTime": 6.88,
-          "endTime": 7.44,
-          "startFrame": 206,
-          "endFrame": 223
-        },
-        {
-          "word": "stop",
-          "startTime": 7.2,
-          "endTime": 7.76,
-          "startFrame": 216,
-          "endFrame": 232
+          "startTime": 6.15,
+          "endTime": 6.83,
+          "startFrame": 184,
+          "endFrame": 204
         },
         {
           "word": "needing",
-          "startTime": 7.36,
-          "endTime": 8.18,
-          "startFrame": 220,
-          "endFrame": 245
+          "startTime": 6.74,
+          "endTime": 7.4,
+          "startFrame": 202,
+          "endFrame": 222
         },
         {
           "word": "external",
-          "startTime": 7.44,
-          "endTime": 8.66,
-          "startFrame": 223,
-          "endFrame": 259
+          "startTime": 6.83,
+          "endTime": 7.76,
+          "startFrame": 204,
+          "endFrame": 232
         },
         {
           "word": "validation.",
-          "startTime": 7.76,
-          "endTime": 10.08,
-          "startFrame": 232,
-          "endFrame": 302
+          "startTime": 7.07,
+          "endTime": 8.38,
+          "startFrame": 212,
+          "endFrame": 251
         }
       ],
       "captions": [
         {
           "text": "Psychology",
-          "startMs": 2670,
-          "endMs": 3150,
-          "timestampMs": 2910,
+          "startMs": 2920,
+          "endMs": 3390,
+          "timestampMs": 3155,
           "confidence": null
         },
         {
           "text": "calls",
-          "startMs": 2670,
-          "endMs": 3480,
-          "timestampMs": 3075,
+          "startMs": 2920,
+          "endMs": 3720,
+          "timestampMs": 3320,
           "confidence": null
         },
         {
           "text": "it",
-          "startMs": 2670,
-          "endMs": 3680,
-          "timestampMs": 3175,
+          "startMs": 2920,
+          "endMs": 3720,
+          "timestampMs": 3320,
           "confidence": null
         },
         {
           "text": "'unconscious",
-          "startMs": 3680,
-          "endMs": 4350,
-          "timestampMs": 4015,
+          "startMs": 3720,
+          "endMs": 4290,
+          "timestampMs": 4005,
           "confidence": null
         },
         {
           "text": "emotional",
-          "startMs": 3480,
-          "endMs": 4950,
-          "timestampMs": 4215,
+          "startMs": 3720,
+          "endMs": 4750,
+          "timestampMs": 4235,
           "confidence": null
         },
         {
           "text": "radar'.",
-          "startMs": 4950,
-          "endMs": 5770,
-          "timestampMs": 5360,
+          "startMs": 4750,
+          "endMs": 5200,
+          "timestampMs": 4975,
           "confidence": null
         },
         {
           "text": "Your",
-          "startMs": 4350,
-          "endMs": 5790,
-          "timestampMs": 5070,
+          "startMs": 4290,
+          "endMs": 5420,
+          "timestampMs": 4855,
           "confidence": null
         },
         {
           "text": "brain",
-          "startMs": 4950,
-          "endMs": 6130,
-          "timestampMs": 5540,
+          "startMs": 4750,
+          "endMs": 5650,
+          "timestampMs": 5200,
           "confidence": null
         },
         {
           "text": "sends",
-          "startMs": 5770,
-          "endMs": 6480,
-          "timestampMs": 6125,
+          "startMs": 5200,
+          "endMs": 5900,
+          "timestampMs": 5550,
           "confidence": null
         },
         {
           "text": "micro",
-          "startMs": 5790,
-          "endMs": 6880,
-          "timestampMs": 6335,
+          "startMs": 5420,
+          "endMs": 6150,
+          "timestampMs": 5785,
           "confidence": null
         },
         {
           "text": "signals",
-          "startMs": 6130,
-          "endMs": 7200,
-          "timestampMs": 6665,
+          "startMs": 5650,
+          "endMs": 6520,
+          "timestampMs": 6085,
           "confidence": null
         },
         {
           "text": "when",
-          "startMs": 6480,
-          "endMs": 7360,
-          "timestampMs": 6920,
+          "startMs": 5900,
+          "endMs": 6740,
+          "timestampMs": 6320,
           "confidence": null
         },
         {
           "text": "you",
-          "startMs": 6880,
-          "endMs": 7440,
-          "timestampMs": 7160,
-          "confidence": null
-        },
-        {
-          "text": "stop",
-          "startMs": 7200,
-          "endMs": 7760,
-          "timestampMs": 7480,
+          "startMs": 6150,
+          "endMs": 6830,
+          "timestampMs": 6490,
           "confidence": null
         },
         {
           "text": "needing",
-          "startMs": 7360,
-          "endMs": 8180,
-          "timestampMs": 7770,
+          "startMs": 6740,
+          "endMs": 7400,
+          "timestampMs": 7070,
           "confidence": null
         },
         {
           "text": "external",
-          "startMs": 7440,
-          "endMs": 8660,
-          "timestampMs": 8050,
+          "startMs": 6830,
+          "endMs": 7760,
+          "timestampMs": 7295,
           "confidence": null
         },
         {
           "text": "validation.",
-          "startMs": 7760,
-          "endMs": 10080,
-          "timestampMs": 8920,
+          "startMs": 7070,
+          "endMs": 8380,
+          "timestampMs": 7725,
           "confidence": null
         }
       ]
@@ -417,318 +403,332 @@
     {
       "text": "Your posture changes, your voice becomes firmer, you post less on social media. These signals activate the loss system in your ex's brain.",
       "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/segment_1.wav",
-      "duration": 7.12,
-      "startTime": 9.4,
-      "endTime": 16.52,
+      "duration": 6.68,
+      "startTime": 8.24,
+      "endTime": 14.92,
       "wordTimings": [
         {
           "word": "Your",
-          "startTime": 9.52,
-          "endTime": 9.55,
-          "startFrame": 285,
-          "endFrame": 286
+          "startTime": 8.36,
+          "endTime": 8.51,
+          "startFrame": 250,
+          "endFrame": 255
         },
         {
           "word": "posture",
-          "startTime": 9.7,
-          "endTime": 9.9,
-          "startFrame": 291,
-          "endFrame": 297
+          "startTime": 8.36,
+          "endTime": 8.85,
+          "startFrame": 250,
+          "endFrame": 265
         },
         {
           "word": "changes,",
-          "startTime": 9.7,
-          "endTime": 10.68,
-          "startFrame": 291,
-          "endFrame": 320
+          "startTime": 8.36,
+          "endTime": 9.36,
+          "startFrame": 250,
+          "endFrame": 280
         },
         {
           "word": "your",
-          "startTime": 9.7,
-          "endTime": 10.1,
-          "startFrame": 291,
-          "endFrame": 303
+          "startTime": 8.36,
+          "endTime": 8.51,
+          "startFrame": 250,
+          "endFrame": 255
         },
         {
           "word": "voice",
-          "startTime": 10.1,
-          "endTime": 11.12,
-          "startFrame": 303,
-          "endFrame": 333
+          "startTime": 8.85,
+          "endTime": 9.88,
+          "startFrame": 265,
+          "endFrame": 296
         },
         {
           "word": "becomes",
-          "startTime": 10.68,
-          "endTime": 11.46,
-          "startFrame": 320,
-          "endFrame": 343
+          "startTime": 9.36,
+          "endTime": 10.2,
+          "startFrame": 280,
+          "endFrame": 306
         },
         {
           "word": "firmer,",
-          "startTime": 10.81,
-          "endTime": 11.93,
-          "startFrame": 324,
-          "endFrame": 357
+          "startTime": 9.57,
+          "endTime": 10.68,
+          "startFrame": 287,
+          "endFrame": 320
         },
         {
           "word": "you",
-          "startTime": 11.12,
-          "endTime": 12.1,
-          "startFrame": 333,
-          "endFrame": 363
+          "startTime": 9.88,
+          "endTime": 10.75,
+          "startFrame": 296,
+          "endFrame": 322
         },
         {
           "word": "post",
-          "startTime": 11.46,
-          "endTime": 12.34,
-          "startFrame": 343,
-          "endFrame": 370
+          "startTime": 10.2,
+          "endTime": 11,
+          "startFrame": 306,
+          "endFrame": 330
         },
         {
           "word": "less",
-          "startTime": 11.93,
-          "endTime": 12.58,
-          "startFrame": 357,
-          "endFrame": 377
+          "startTime": 10.68,
+          "endTime": 11.25,
+          "startFrame": 320,
+          "endFrame": 337
         },
         {
           "word": "on",
-          "startTime": 12.1,
-          "endTime": 12.7,
-          "startFrame": 363,
-          "endFrame": 381
+          "startTime": 10.75,
+          "endTime": 11.37,
+          "startFrame": 322,
+          "endFrame": 341
         },
         {
           "word": "social",
-          "startTime": 12.34,
-          "endTime": 13.06,
-          "startFrame": 370,
-          "endFrame": 391
+          "startTime": 11,
+          "endTime": 11.74,
+          "startFrame": 330,
+          "endFrame": 352
         },
         {
           "word": "media.",
-          "startTime": 12.58,
-          "endTime": 13.48,
-          "startFrame": 377,
-          "endFrame": 404
+          "startTime": 11.25,
+          "endTime": 12.14,
+          "startFrame": 337,
+          "endFrame": 364
         },
         {
           "word": "These",
-          "startTime": 12.7,
-          "endTime": 13.79,
-          "startFrame": 381,
-          "endFrame": 413
+          "startTime": 11.37,
+          "endTime": 12.41,
+          "startFrame": 341,
+          "endFrame": 372
         },
         {
           "word": "signals",
-          "startTime": 13.06,
-          "endTime": 14.23,
-          "startFrame": 391,
-          "endFrame": 426
+          "startTime": 11.74,
+          "endTime": 12.77,
+          "startFrame": 352,
+          "endFrame": 383
         },
         {
           "word": "activate",
-          "startTime": 13.48,
-          "endTime": 14.76,
-          "startFrame": 404,
-          "endFrame": 442
+          "startTime": 12.14,
+          "endTime": 13.26,
+          "startFrame": 364,
+          "endFrame": 397
         },
         {
           "word": "the",
-          "startTime": 13.48,
-          "endTime": 13.79,
-          "startFrame": 404,
-          "endFrame": 413
+          "startTime": 12.14,
+          "endTime": 12.41,
+          "startFrame": 364,
+          "endFrame": 372
+        },
+        {
+          "word": "loss",
+          "startTime": 12.77,
+          "endTime": 13.55,
+          "startFrame": 383,
+          "endFrame": 406
         },
         {
           "word": "system",
-          "startTime": 14.76,
-          "endTime": 15.46,
-          "startFrame": 442,
-          "endFrame": 463
+          "startTime": 13.26,
+          "endTime": 13.86,
+          "startFrame": 397,
+          "endFrame": 415
         },
         {
           "word": "in",
-          "startTime": 14.91,
-          "endTime": 15.58,
-          "startFrame": 447,
-          "endFrame": 467
+          "startTime": 13.34,
+          "endTime": 14.02,
+          "startFrame": 400,
+          "endFrame": 420
         },
         {
           "word": "your",
-          "startTime": 15.09,
-          "endTime": 15.83,
-          "startFrame": 452,
-          "endFrame": 474
+          "startTime": 13.55,
+          "endTime": 14.16,
+          "startFrame": 406,
+          "endFrame": 424
         },
         {
           "word": "ex's",
-          "startTime": 15.58,
-          "endTime": 16.07,
-          "startFrame": 467,
-          "endFrame": 482
+          "startTime": 13.86,
+          "endTime": 14.4,
+          "startFrame": 415,
+          "endFrame": 432
         },
         {
           "word": "brain.",
-          "startTime": 15.83,
-          "endTime": 16.68,
-          "startFrame": 474,
-          "endFrame": 500
+          "startTime": 13.86,
+          "endTime": 14.02,
+          "startFrame": 415,
+          "endFrame": 420
         }
       ],
       "captions": [
         {
           "text": "Your",
-          "startMs": 9520,
-          "endMs": 9550,
-          "timestampMs": 9535,
+          "startMs": 8360,
+          "endMs": 8510,
+          "timestampMs": 8435,
           "confidence": null
         },
         {
           "text": "posture",
-          "startMs": 9700,
-          "endMs": 9900,
-          "timestampMs": 9800,
+          "startMs": 8360,
+          "endMs": 8850,
+          "timestampMs": 8605,
           "confidence": null
         },
         {
           "text": "changes,",
-          "startMs": 9700,
-          "endMs": 10680,
-          "timestampMs": 10190,
+          "startMs": 8360,
+          "endMs": 9360,
+          "timestampMs": 8860,
           "confidence": null
         },
         {
           "text": "your",
-          "startMs": 9700,
-          "endMs": 10100,
-          "timestampMs": 9900,
+          "startMs": 8360,
+          "endMs": 8510,
+          "timestampMs": 8435,
           "confidence": null
         },
         {
           "text": "voice",
-          "startMs": 10100,
-          "endMs": 11120,
-          "timestampMs": 10610,
+          "startMs": 8850,
+          "endMs": 9880,
+          "timestampMs": 9365,
           "confidence": null
         },
         {
           "text": "becomes",
-          "startMs": 10680,
-          "endMs": 11460,
-          "timestampMs": 11070,
+          "startMs": 9360,
+          "endMs": 10200,
+          "timestampMs": 9780,
           "confidence": null
         },
         {
           "text": "firmer,",
-          "startMs": 10810,
-          "endMs": 11930,
-          "timestampMs": 11370,
+          "startMs": 9570,
+          "endMs": 10680,
+          "timestampMs": 10125,
           "confidence": null
         },
         {
           "text": "you",
-          "startMs": 11120,
-          "endMs": 12100,
-          "timestampMs": 11610,
+          "startMs": 9880,
+          "endMs": 10750,
+          "timestampMs": 10315,
           "confidence": null
         },
         {
           "text": "post",
-          "startMs": 11460,
-          "endMs": 12340,
-          "timestampMs": 11900,
+          "startMs": 10200,
+          "endMs": 11000,
+          "timestampMs": 10600,
           "confidence": 1
         },
         {
           "text": "less",
-          "startMs": 11930,
-          "endMs": 12580,
-          "timestampMs": 12255,
+          "startMs": 10680,
+          "endMs": 11250,
+          "timestampMs": 10965,
           "confidence": null
         },
         {
           "text": "on",
-          "startMs": 12100,
-          "endMs": 12700,
-          "timestampMs": 12400,
+          "startMs": 10750,
+          "endMs": 11370,
+          "timestampMs": 11060,
           "confidence": null
         },
         {
           "text": "social",
-          "startMs": 12340,
-          "endMs": 13060,
-          "timestampMs": 12700,
+          "startMs": 11000,
+          "endMs": 11740,
+          "timestampMs": 11370,
           "confidence": null
         },
         {
           "text": "media.",
-          "startMs": 12580,
-          "endMs": 13480,
-          "timestampMs": 13030,
+          "startMs": 11250,
+          "endMs": 12140,
+          "timestampMs": 11695,
           "confidence": null
         },
         {
           "text": "These",
-          "startMs": 12700,
-          "endMs": 13790,
-          "timestampMs": 13245,
+          "startMs": 11370,
+          "endMs": 12410,
+          "timestampMs": 11890,
           "confidence": null
         },
         {
           "text": "signals",
-          "startMs": 13060,
-          "endMs": 14230,
-          "timestampMs": 13645,
+          "startMs": 11740,
+          "endMs": 12770,
+          "timestampMs": 12255,
           "confidence": null
         },
         {
           "text": "activate",
-          "startMs": 13480,
-          "endMs": 14760,
-          "timestampMs": 14120,
+          "startMs": 12140,
+          "endMs": 13260,
+          "timestampMs": 12700,
           "confidence": null
         },
         {
           "text": "the",
-          "startMs": 13480,
-          "endMs": 13790,
-          "timestampMs": 13635,
+          "startMs": 12140,
+          "endMs": 12410,
+          "timestampMs": 12275,
+          "confidence": null
+        },
+        {
+          "text": "loss",
+          "startMs": 12770,
+          "endMs": 13550,
+          "timestampMs": 13160,
           "confidence": null
         },
         {
           "text": "system",
-          "startMs": 14760,
-          "endMs": 15460,
-          "timestampMs": 15110,
+          "startMs": 13260,
+          "endMs": 13860,
+          "timestampMs": 13560,
           "confidence": null
         },
         {
           "text": "in",
-          "startMs": 14910,
-          "endMs": 15580,
-          "timestampMs": 15245,
+          "startMs": 13340,
+          "endMs": 14020,
+          "timestampMs": 13680,
           "confidence": null
         },
         {
           "text": "your",
-          "startMs": 15090,
-          "endMs": 15830,
-          "timestampMs": 15460,
+          "startMs": 13550,
+          "endMs": 14160,
+          "timestampMs": 13855,
           "confidence": null
         },
         {
           "text": "ex's",
-          "startMs": 15580,
-          "endMs": 16070,
-          "timestampMs": 15825,
+          "startMs": 13860,
+          "endMs": 14400,
+          "timestampMs": 14130,
           "confidence": null
         },
         {
           "text": "brain.",
-          "startMs": 15830,
-          "endMs": 16680,
-          "timestampMs": 16255,
+          "startMs": 13860,
+          "endMs": 14020,
+          "timestampMs": 13940,
           "confidence": null
         }
       ]
@@ -736,248 +736,248 @@
     {
       "text": "The same one that ignores what's available and chases what's unattainable. It's not magic, it's pure neuroscience.",
       "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/segment_2.wav",
-      "duration": 5.36,
-      "startTime": 16.52,
-      "endTime": 21.88,
+      "duration": 5.8,
+      "startTime": 14.92,
+      "endTime": 20.72,
       "wordTimings": [
         {
           "word": "The",
-          "startTime": 16.66,
-          "endTime": 16.73,
-          "startFrame": 499,
-          "endFrame": 501
+          "startTime": 14.96,
+          "endTime": 15.18,
+          "startFrame": 448,
+          "endFrame": 455
         },
         {
           "word": "same",
-          "startTime": 16.66,
-          "endTime": 16.88,
-          "startFrame": 499,
-          "endFrame": 506
+          "startTime": 14.96,
+          "endTime": 15.32,
+          "startFrame": 448,
+          "endFrame": 459
         },
         {
           "word": "one",
-          "startTime": 16.66,
-          "endTime": 16.99,
-          "startFrame": 499,
-          "endFrame": 509
+          "startTime": 14.96,
+          "endTime": 15.39,
+          "startFrame": 448,
+          "endFrame": 461
         },
         {
           "word": "that",
-          "startTime": 16.73,
-          "endTime": 17.18,
-          "startFrame": 501,
-          "endFrame": 515
+          "startTime": 15.18,
+          "endTime": 15.58,
+          "startFrame": 455,
+          "endFrame": 467
         },
         {
           "word": "ignores",
-          "startTime": 16.88,
-          "endTime": 17.51,
-          "startFrame": 506,
-          "endFrame": 525
+          "startTime": 15.32,
+          "endTime": 15.91,
+          "startFrame": 459,
+          "endFrame": 477
         },
         {
           "word": "what's",
-          "startTime": 17.18,
-          "endTime": 17.8,
-          "startFrame": 515,
-          "endFrame": 534
+          "startTime": 15.58,
+          "endTime": 16.19,
+          "startFrame": 467,
+          "endFrame": 485
         },
         {
           "word": "available",
-          "startTime": 17.51,
-          "endTime": 18.28,
-          "startFrame": 525,
-          "endFrame": 548
+          "startTime": 15.91,
+          "endTime": 16.68,
+          "startFrame": 477,
+          "endFrame": 500
         },
         {
           "word": "and",
-          "startTime": 17.71,
-          "endTime": 18.52,
-          "startFrame": 531,
-          "endFrame": 555
+          "startTime": 16.1,
+          "endTime": 16.93,
+          "startFrame": 483,
+          "endFrame": 507
         },
         {
           "word": "chases",
-          "startTime": 17.8,
-          "endTime": 18.73,
-          "startFrame": 534,
-          "endFrame": 561
+          "startTime": 16.19,
+          "endTime": 17.19,
+          "startFrame": 485,
+          "endFrame": 515
         },
         {
           "word": "what's",
-          "startTime": 18.52,
-          "endTime": 18.94,
-          "startFrame": 555,
-          "endFrame": 568
+          "startTime": 16.93,
+          "endTime": 17.47,
+          "startFrame": 507,
+          "endFrame": 524
         },
         {
           "word": "unattainable.",
-          "startTime": 18.87,
-          "endTime": 19.52,
-          "startFrame": 566,
-          "endFrame": 585
+          "startTime": 17.37,
+          "endTime": 18.12,
+          "startFrame": 521,
+          "endFrame": 543
         },
         {
           "word": "It's",
-          "startTime": 18.87,
-          "endTime": 18.94,
-          "startFrame": 566,
-          "endFrame": 568
+          "startTime": 17.37,
+          "endTime": 17.47,
+          "startFrame": 521,
+          "endFrame": 524
         },
         {
           "word": "not",
-          "startTime": 19.52,
-          "endTime": 19.91,
-          "startFrame": 585,
-          "endFrame": 597
+          "startTime": 18.12,
+          "endTime": 18.65,
+          "startFrame": 543,
+          "endFrame": 559
         },
         {
           "word": "magic,",
-          "startTime": 19.72,
-          "endTime": 20.31,
-          "startFrame": 591,
-          "endFrame": 609
+          "startTime": 18.38,
+          "endTime": 19.2,
+          "startFrame": 551,
+          "endFrame": 576
         },
         {
           "word": "it's",
-          "startTime": 19.72,
-          "endTime": 19.74,
-          "startFrame": 591,
-          "endFrame": 592
+          "startTime": 18.38,
+          "endTime": 18.42,
+          "startFrame": 551,
+          "endFrame": 552
         },
         {
           "word": "pure",
-          "startTime": 20.31,
-          "endTime": 20.8,
-          "startFrame": 609,
-          "endFrame": 624
+          "startTime": 19.2,
+          "endTime": 19.75,
+          "startFrame": 576,
+          "endFrame": 592
         },
         {
           "word": "neuroscience.",
-          "startTime": 20.43,
-          "endTime": 21.52,
-          "startFrame": 612,
-          "endFrame": 645
+          "startTime": 19.35,
+          "endTime": 20.8,
+          "startFrame": 580,
+          "endFrame": 624
         }
       ],
       "captions": [
         {
           "text": "The",
-          "startMs": 16660,
-          "endMs": 16730,
-          "timestampMs": 16695,
+          "startMs": 14960,
+          "endMs": 15180,
+          "timestampMs": 15070,
           "confidence": null
         },
         {
           "text": "same",
-          "startMs": 16660,
-          "endMs": 16880,
-          "timestampMs": 16770,
+          "startMs": 14960,
+          "endMs": 15320,
+          "timestampMs": 15140,
           "confidence": null
         },
         {
           "text": "one",
-          "startMs": 16660,
-          "endMs": 16990,
-          "timestampMs": 16825,
+          "startMs": 14960,
+          "endMs": 15390,
+          "timestampMs": 15175,
           "confidence": null
         },
         {
           "text": "that",
-          "startMs": 16730,
-          "endMs": 17180,
-          "timestampMs": 16955,
+          "startMs": 15180,
+          "endMs": 15580,
+          "timestampMs": 15380,
           "confidence": null
         },
         {
           "text": "ignores",
-          "startMs": 16880,
-          "endMs": 17510,
-          "timestampMs": 17195,
+          "startMs": 15320,
+          "endMs": 15910,
+          "timestampMs": 15615,
           "confidence": null
         },
         {
           "text": "what's",
-          "startMs": 17180,
-          "endMs": 17800,
-          "timestampMs": 17490,
+          "startMs": 15580,
+          "endMs": 16190,
+          "timestampMs": 15885,
           "confidence": 1
         },
         {
           "text": "available",
-          "startMs": 17510,
-          "endMs": 18280,
-          "timestampMs": 17895,
+          "startMs": 15910,
+          "endMs": 16680,
+          "timestampMs": 16295,
           "confidence": null
         },
         {
           "text": "and",
-          "startMs": 17710,
-          "endMs": 18520,
-          "timestampMs": 18115,
+          "startMs": 16100,
+          "endMs": 16930,
+          "timestampMs": 16515,
           "confidence": null
         },
         {
           "text": "chases",
-          "startMs": 17800,
-          "endMs": 18730,
-          "timestampMs": 18265,
+          "startMs": 16190,
+          "endMs": 17190,
+          "timestampMs": 16690,
           "confidence": null
         },
         {
           "text": "what's",
-          "startMs": 18520,
-          "endMs": 18940,
-          "timestampMs": 18730,
+          "startMs": 16930,
+          "endMs": 17470,
+          "timestampMs": 17200,
           "confidence": 1
         },
         {
           "text": "unattainable.",
-          "startMs": 18870,
-          "endMs": 19520,
-          "timestampMs": 19195,
+          "startMs": 17370,
+          "endMs": 18120,
+          "timestampMs": 17745,
           "confidence": null
         },
         {
           "text": "It's",
-          "startMs": 18870,
-          "endMs": 18940,
-          "timestampMs": 18905,
+          "startMs": 17370,
+          "endMs": 17470,
+          "timestampMs": 17420,
           "confidence": null
         },
         {
           "text": "not",
-          "startMs": 19520,
-          "endMs": 19910,
-          "timestampMs": 19715,
+          "startMs": 18120,
+          "endMs": 18650,
+          "timestampMs": 18385,
           "confidence": null
         },
         {
           "text": "magic,",
-          "startMs": 19720,
-          "endMs": 20310,
-          "timestampMs": 20015,
+          "startMs": 18380,
+          "endMs": 19200,
+          "timestampMs": 18790,
           "confidence": null
         },
         {
           "text": "it's",
-          "startMs": 19720,
-          "endMs": 19740,
-          "timestampMs": 19730,
+          "startMs": 18380,
+          "endMs": 18420,
+          "timestampMs": 18400,
           "confidence": null
         },
         {
           "text": "pure",
-          "startMs": 20310,
-          "endMs": 20800,
-          "timestampMs": 20555,
+          "startMs": 19200,
+          "endMs": 19750,
+          "timestampMs": 19475,
           "confidence": null
         },
         {
           "text": "neuroscience.",
-          "startMs": 20430,
-          "endMs": 21520,
-          "timestampMs": 20975,
+          "startMs": 19350,
+          "endMs": 20800,
+          "timestampMs": 20075,
           "confidence": null
         }
       ]
@@ -985,178 +985,178 @@
     {
       "text": "Your real indifference activates their prefrontal cortex. Has this happened to you?",
       "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/segment_3.wav",
-      "duration": 4.04,
-      "startTime": 21.88,
-      "endTime": 25.919999999999998,
+      "duration": 4.4,
+      "startTime": 20.72,
+      "endTime": 25.119999999999997,
       "wordTimings": [
         {
           "word": "Your",
-          "startTime": 21.97,
-          "endTime": 22.1,
-          "startFrame": 659,
-          "endFrame": 663
+          "startTime": 20.87,
+          "endTime": 20.95,
+          "startFrame": 626,
+          "endFrame": 628
         },
         {
           "word": "real",
-          "startTime": 21.97,
-          "endTime": 22.32,
-          "startFrame": 659,
-          "endFrame": 669
+          "startTime": 20.87,
+          "endTime": 21.18,
+          "startFrame": 626,
+          "endFrame": 635
         },
         {
           "word": "indifference",
-          "startTime": 22.1,
-          "endTime": 22.99,
-          "startFrame": 663,
-          "endFrame": 689
+          "startTime": 20.95,
+          "endTime": 21.92,
+          "startFrame": 628,
+          "endFrame": 657
         },
         {
           "word": "activates",
-          "startTime": 22.32,
-          "endTime": 23.5,
-          "startFrame": 669,
-          "endFrame": 705
+          "startTime": 21.18,
+          "endTime": 22.44,
+          "startFrame": 635,
+          "endFrame": 673
         },
         {
           "word": "their",
-          "startTime": 22.6,
-          "endTime": 23.79,
-          "startFrame": 678,
-          "endFrame": 713
+          "startTime": 21.46,
+          "endTime": 22.69,
+          "startFrame": 643,
+          "endFrame": 680
         },
         {
           "word": "prefrontal",
-          "startTime": 22.99,
-          "endTime": 24.23,
-          "startFrame": 689,
-          "endFrame": 726
+          "startTime": 21.92,
+          "endTime": 23.15,
+          "startFrame": 657,
+          "endFrame": 694
         },
         {
           "word": "cortex.",
-          "startTime": 23.79,
-          "endTime": 24.76,
-          "startFrame": 713,
-          "endFrame": 742
+          "startTime": 22.69,
+          "endTime": 23.86,
+          "startFrame": 680,
+          "endFrame": 715
         },
         {
           "word": "Has",
-          "startTime": 24.23,
-          "endTime": 24.92,
-          "startFrame": 726,
-          "endFrame": 747
+          "startTime": 23.15,
+          "endTime": 24.04,
+          "startFrame": 694,
+          "endFrame": 721
         },
         {
           "word": "this",
-          "startTime": 24.34,
-          "endTime": 25.13,
-          "startFrame": 730,
-          "endFrame": 753
+          "startTime": 23.25,
+          "endTime": 24.28,
+          "startFrame": 697,
+          "endFrame": 728
         },
         {
           "word": "happened",
-          "startTime": 24.76,
-          "endTime": 25.61,
-          "startFrame": 742,
-          "endFrame": 768
+          "startTime": 23.86,
+          "endTime": 24.76,
+          "startFrame": 715,
+          "endFrame": 742
         },
         {
           "word": "to",
-          "startTime": 24.92,
-          "endTime": 25.66,
-          "startFrame": 747,
-          "endFrame": 769
+          "startTime": 24.04,
+          "endTime": 24.88,
+          "startFrame": 721,
+          "endFrame": 746
         },
         {
           "word": "you?",
-          "startTime": 25.13,
-          "endTime": 26.02,
-          "startFrame": 753,
-          "endFrame": 780
+          "startTime": 24.28,
+          "endTime": 25.26,
+          "startFrame": 728,
+          "endFrame": 757
         }
       ],
       "captions": [
         {
           "text": "Your",
-          "startMs": 21970,
-          "endMs": 22100,
-          "timestampMs": 22035,
+          "startMs": 20870,
+          "endMs": 20950,
+          "timestampMs": 20910,
           "confidence": null
         },
         {
           "text": "real",
-          "startMs": 21970,
-          "endMs": 22320,
-          "timestampMs": 22145,
+          "startMs": 20870,
+          "endMs": 21180,
+          "timestampMs": 21025,
           "confidence": null
         },
         {
           "text": "indifference",
-          "startMs": 22100,
-          "endMs": 22990,
-          "timestampMs": 22545,
+          "startMs": 20950,
+          "endMs": 21920,
+          "timestampMs": 21435,
           "confidence": null
         },
         {
           "text": "activates",
-          "startMs": 22320,
-          "endMs": 23500,
-          "timestampMs": 22910,
+          "startMs": 21180,
+          "endMs": 22440,
+          "timestampMs": 21810,
           "confidence": 1
         },
         {
           "text": "their",
-          "startMs": 22600,
-          "endMs": 23790,
-          "timestampMs": 23195,
+          "startMs": 21460,
+          "endMs": 22690,
+          "timestampMs": 22075,
           "confidence": null
         },
         {
           "text": "prefrontal",
-          "startMs": 22990,
-          "endMs": 24230,
-          "timestampMs": 23610,
+          "startMs": 21920,
+          "endMs": 23150,
+          "timestampMs": 22535,
           "confidence": null
         },
         {
           "text": "cortex.",
-          "startMs": 23790,
-          "endMs": 24760,
-          "timestampMs": 24275,
+          "startMs": 22690,
+          "endMs": 23860,
+          "timestampMs": 23275,
           "confidence": 1
         },
         {
           "text": "Has",
-          "startMs": 24230,
-          "endMs": 24920,
-          "timestampMs": 24575,
+          "startMs": 23150,
+          "endMs": 24040,
+          "timestampMs": 23595,
           "confidence": null
         },
         {
           "text": "this",
-          "startMs": 24340,
-          "endMs": 25130,
-          "timestampMs": 24735,
+          "startMs": 23250,
+          "endMs": 24280,
+          "timestampMs": 23765,
           "confidence": null
         },
         {
           "text": "happened",
-          "startMs": 24760,
-          "endMs": 25610,
-          "timestampMs": 25185,
+          "startMs": 23860,
+          "endMs": 24760,
+          "timestampMs": 24310,
           "confidence": null
         },
         {
           "text": "to",
-          "startMs": 24920,
-          "endMs": 25660,
-          "timestampMs": 25290,
+          "startMs": 24040,
+          "endMs": 24880,
+          "timestampMs": 24460,
           "confidence": null
         },
         {
           "text": "you?",
-          "startMs": 25130,
-          "endMs": 26020,
-          "timestampMs": 25575,
+          "startMs": 24280,
+          "endMs": 25260,
+          "timestampMs": 24770,
           "confidence": null
         }
       ]
@@ -1164,38 +1164,38 @@
     {
       "text": "Comment below.",
       "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/segment_4.wav",
-      "duration": 1,
-      "startTime": 25.919999999999998,
-      "endTime": 26.919999999999998,
+      "duration": 0.92,
+      "startTime": 25.119999999999997,
+      "endTime": 26.04,
       "wordTimings": [
         {
           "word": "Comment",
-          "startTime": 26.059999999999995,
-          "endTime": 26.399999999999995,
-          "startFrame": 781,
-          "endFrame": 791
+          "startTime": 25.249999999999996,
+          "endTime": 26.029999999999998,
+          "startFrame": 757,
+          "endFrame": 780
         },
         {
           "word": "below.",
-          "startTime": 26.059999999999995,
-          "endTime": 26.919999999999995,
-          "startFrame": 781,
-          "endFrame": 807
+          "startTime": 25.249999999999996,
+          "endTime": 27.119999999999997,
+          "startFrame": 757,
+          "endFrame": 813
         }
       ],
       "captions": [
         {
           "text": "Comment",
-          "startMs": 26059.999999999996,
-          "endMs": 26399.999999999996,
-          "timestampMs": 26229.999999999996,
+          "startMs": 25249.999999999996,
+          "endMs": 26029.999999999996,
+          "timestampMs": 25639.999999999996,
           "confidence": null
         },
         {
           "text": "below.",
-          "startMs": 26059.999999999996,
-          "endMs": 26919.999999999996,
-          "timestampMs": 26489.999999999996,
+          "startMs": 25249.999999999996,
+          "endMs": 27119.999999999996,
+          "timestampMs": 26184.999999999996,
           "confidence": null
         }
       ]
@@ -1203,98 +1203,98 @@
     {
       "text": "Follow for more psychology insights",
       "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/cta.wav",
-      "duration": 2.04,
-      "startTime": 26.919999999999998,
-      "endTime": 28.959999999999997,
+      "duration": 2.16,
+      "startTime": 26.04,
+      "endTime": 28.2,
       "wordTimings": [
         {
           "word": "Follow",
-          "startTime": 27.019999999999996,
-          "endTime": 27.269999999999996,
-          "startFrame": 810,
-          "endFrame": 818
+          "startTime": 26.14,
+          "endTime": 26.42,
+          "startFrame": 784,
+          "endFrame": 792
         },
         {
           "word": "for",
-          "startTime": 27.019999999999996,
-          "endTime": 27.439999999999998,
-          "startFrame": 810,
-          "endFrame": 823
+          "startTime": 26.14,
+          "endTime": 26.61,
+          "startFrame": 784,
+          "endFrame": 798
         },
         {
           "word": "more",
-          "startTime": 27.019999999999996,
-          "endTime": 27.669999999999995,
-          "startFrame": 810,
-          "endFrame": 830
+          "startTime": 26.14,
+          "endTime": 26.92,
+          "startFrame": 784,
+          "endFrame": 807
         },
         {
           "word": "psychology",
-          "startTime": 27.269999999999996,
-          "endTime": 28.259999999999998,
-          "startFrame": 818,
-          "endFrame": 847
+          "startTime": 26.42,
+          "endTime": 27.5,
+          "startFrame": 792,
+          "endFrame": 825
         },
         {
           "word": "insights",
-          "startTime": 27.439999999999998,
-          "endTime": 28.759999999999998,
-          "startFrame": 823,
-          "endFrame": 862
+          "startTime": 26.61,
+          "endTime": 28.04,
+          "startFrame": 798,
+          "endFrame": 841
         }
       ],
       "captions": [
         {
           "text": "Follow",
-          "startMs": 27019.999999999996,
-          "endMs": 27269.999999999996,
-          "timestampMs": 27144.999999999996,
+          "startMs": 26140,
+          "endMs": 26420,
+          "timestampMs": 26280,
           "confidence": null
         },
         {
           "text": "for",
-          "startMs": 27019.999999999996,
-          "endMs": 27439.999999999996,
-          "timestampMs": 27229.999999999996,
+          "startMs": 26140,
+          "endMs": 26610,
+          "timestampMs": 26375,
           "confidence": null
         },
         {
           "text": "more",
-          "startMs": 27019.999999999996,
-          "endMs": 27669.999999999996,
-          "timestampMs": 27344.999999999996,
+          "startMs": 26140,
+          "endMs": 26920,
+          "timestampMs": 26530,
           "confidence": null
         },
         {
           "text": "psychology",
-          "startMs": 27269.999999999996,
-          "endMs": 28259.999999999996,
-          "timestampMs": 27764.999999999996,
+          "startMs": 26420,
+          "endMs": 27500,
+          "timestampMs": 26960,
           "confidence": null
         },
         {
           "text": "insights",
-          "startMs": 27439.999999999996,
-          "endMs": 28759.999999999996,
-          "timestampMs": 28099.999999999996,
+          "startMs": 26610,
+          "endMs": 28040,
+          "timestampMs": 27325,
           "confidence": null
         }
       ]
     }
   ],
-  "totalDuration": 28.959999999999997,
+  "totalDuration": 28.2,
   "videoStyle": 1,
   "brollVideos": [
-    "broll/scientific_1754982685216_0_0_vertical.mp4",
-    "broll/scientific_1754982685238_0_1_vertical.mp4",
-    "broll/scientific_1754982685236_1_0_vertical.mp4",
-    "broll/scientific_1754982685199_1_1_vertical.mp4",
-    "broll/scientific_1754982685194_2_0_vertical.mp4",
-    "broll/scientific_1754982685295_2_1_vertical.mp4",
-    "broll/scientific_1754982685231_3_0_vertical.mp4",
-    "broll/scientific_1754982685188_3_1_vertical.mp4",
-    "broll/scientific_1754982685205_4_0_vertical.mp4",
-    "broll/scientific_1754982685233_4_1_vertical.mp4",
-    "broll/scientific_1754982685189_5_0_vertical.mp4"
+    "broll/scientific_1754983871404_0_0_vertical.mp4",
+    "broll/scientific_1754983871403_0_1_vertical.mp4",
+    "broll/scientific_1754983871407_1_0_vertical.mp4",
+    "broll/scientific_1754983871423_1_1_vertical.mp4",
+    "broll/scientific_1754983871404_2_0_vertical.mp4",
+    "broll/scientific_1754983871443_2_1_vertical.mp4",
+    "broll/scientific_1754983871408_3_0_vertical.mp4",
+    "broll/scientific_1754983871409_3_1_vertical.mp4",
+    "broll/scientific_1754983871466_4_0_vertical.mp4",
+    "broll/scientific_1754983871400_4_1_vertical.mp4",
+    "broll/scientific_1754983871403_5_0_vertical.mp4"
   ]
 }

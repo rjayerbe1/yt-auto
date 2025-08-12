@@ -124,32 +124,74 @@ export const WordByWordVideo: React.FC<WordByWordVideoProps> = ({
     return words;
   }, [segments]);
 
-  // Get current visible words (accumulator with 6-word cycles)
+  // Get current visible words (respecting segment boundaries)
   const getVisibleWords = () => {
     if (allWords.length === 0) return [];
     
-    // Find the index of the last word that should be visible at current time
-    let lastVisibleIndex = -1;
-    for (let i = 0; i < allWords.length; i++) {
-      if (currentTime >= allWords[i].startTime) {
-        lastVisibleIndex = i;
-      } else {
+    // Find current segment based on time
+    let currentSegmentIndex = -1;
+    let segmentStartWordIndex = 0;
+    let wordCounter = 0;
+    
+    for (let segIdx = 0; segIdx < segments.length; segIdx++) {
+      const segment = segments[segIdx];
+      const segmentWords = segment.wordTimings || [];
+      
+      // Check if we're in this segment's time range
+      if (currentTime >= segment.startTime && currentTime < segment.endTime) {
+        currentSegmentIndex = segIdx;
         break;
+      }
+      
+      // Track where this segment's words start in the global array
+      if (currentTime >= segment.endTime) {
+        segmentStartWordIndex = wordCounter + segmentWords.length;
+      }
+      wordCounter += segmentWords.length;
+    }
+    
+    // If not in any segment, return empty
+    if (currentSegmentIndex === -1) {
+      // Check if we're past all segments
+      if (segments.length > 0 && currentTime >= segments[segments.length - 1].endTime) {
+        currentSegmentIndex = segments.length - 1;
+      } else {
+        return [];
       }
     }
     
-    if (lastVisibleIndex === -1) return [];
+    // Get words only from current segment
+    const currentSegment = segments[currentSegmentIndex];
+    const segmentWords = currentSegment.wordTimings || [];
     
-    // Calculate which cycle we're in (0-based)
-    const cycleNumber = Math.floor(lastVisibleIndex / 6);
-    const cycleStart = cycleNumber * 6;
-    const positionInCycle = lastVisibleIndex - cycleStart;
+    // Debug: Log segment transition
+    if (typeof window !== 'undefined' && (window as any).DEBUG_WORDS) {
+      console.log(`Segment ${currentSegmentIndex}: "${currentSegment.text?.substring(0, 30)}..."`);
+    }
+    
+    // Find words in this segment that have already started
+    const activeWordsInSegment = [];
+    for (let i = 0; i < segmentWords.length; i++) {
+      const globalIndex = segmentStartWordIndex + i;
+      if (globalIndex < allWords.length && currentTime >= allWords[globalIndex].startTime) {
+        activeWordsInSegment.push(globalIndex);
+      }
+    }
+    
+    if (activeWordsInSegment.length === 0) return [];
+    
+    // Use sliding window within segment: show only the last 6 words that have been spoken
+    const windowSize = 6;
+    const startIndex = Math.max(0, activeWordsInSegment.length - windowSize);
+    const endIndex = activeWordsInSegment.length - 1;
     
     // Track if we're inside quotes (for special terms)
     let insideQuotes = false;
     
-    // Check if any word before cycleStart has an opening quote
-    for (let i = 0; i < cycleStart && i < allWords.length; i++) {
+    // Check if any word in this segment before our window has an opening quote
+    const firstVisibleIndex = activeWordsInSegment[startIndex];
+    // Only check within current segment boundaries
+    for (let i = segmentStartWordIndex; i < firstVisibleIndex && i < allWords.length; i++) {
       const word = allWords[i].word;
       // Only consider it a quote start if it's at the beginning and longer than 2 chars
       // This avoids contractions like "it's" but catches "'unconscious"
@@ -164,10 +206,11 @@ export const WordByWordVideo: React.FC<WordByWordVideoProps> = ({
       }
     }
     
-    // Get words for current cycle (only up to current word)
+    // Get visible words in the sliding window (only from current segment)
     const visibleWords = [];
-    for (let i = cycleStart; i <= cycleStart + positionInCycle && i < allWords.length; i++) {
-      const word = allWords[i].word;
+    for (let i = startIndex; i <= endIndex; i++) {
+      const wordIndex = activeWordsInSegment[i];
+      const word = allWords[wordIndex].word;
       
       // Check if this word starts quotes (but not contractions)
       if ((word.startsWith("'") && word.length > 2 && !word.includes("'t") && !word.includes("'s") && 
@@ -177,9 +220,9 @@ export const WordByWordVideo: React.FC<WordByWordVideoProps> = ({
       }
       
       visibleWords.push({
-        word: allWords[i].word,
-        isActive: i === lastVisibleIndex,
-        index: i - cycleStart, // Position within the cycle (0-5)
+        word: allWords[wordIndex].word,
+        isActive: currentTime >= allWords[wordIndex].startTime && currentTime < allWords[wordIndex].endTime,
+        index: i - startIndex, // Position within the window (0-5)
         isSpecialTerm: insideQuotes, // Mark if inside quotes
       });
       
