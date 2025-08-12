@@ -615,15 +615,6 @@ export class SyncedVideoGenerator extends EventEmitter {
   private async generateSyncedRemotionVideo(syncedScript: SyncedScript): Promise<string> {
     logger.info(`🎥 Generating video with synchronized subtitles (Style ${this.videoStyle})...`);
     
-    // Update the selected style in the component
-    const styleComponentPath = path.join(process.cwd(), 'src', 'remotion', 'WordByWordFinalStyles.tsx');
-    let componentContent = await fs.readFile(styleComponentPath, 'utf-8');
-    componentContent = componentContent.replace(
-      /const SELECTED_STYLE = \d+;/,
-      `const SELECTED_STYLE = ${this.videoStyle};`
-    );
-    await fs.writeFile(styleComponentPath, componentContent);
-    
     // Log the selected style name
     const styleNames = [
       'Clean Modern (Purple/Gold)',
@@ -635,9 +626,15 @@ export class SyncedVideoGenerator extends EventEmitter {
     ];
     logger.info(`🎨 Using style: ${styleNames[this.videoStyle - 1] || 'Default'}`);
     
+    // Add videoStyle to the synced script
+    const syncedScriptWithStyle = {
+      ...syncedScript,
+      videoStyle: this.videoStyle
+    };
+    
     // Save the synced script for Remotion to use
     const dataPath = path.join(process.cwd(), 'src', 'remotion', 'synced-data.json');
-    await fs.writeFile(dataPath, JSON.stringify(syncedScript, null, 2));
+    await fs.writeFile(dataPath, JSON.stringify(syncedScriptWithStyle, null, 2));
     
     const outputPath = path.join(this.outputDir, `synced_${Date.now()}.mp4`);
     
@@ -652,7 +649,7 @@ export class SyncedVideoGenerator extends EventEmitter {
       const composition = await selectComposition({
         serveUrl: bundleLocation,
         id: 'WordByWordFinal',
-        inputProps: syncedScript,
+        inputProps: syncedScriptWithStyle,
       });
 
       // Calculate total frames
@@ -669,7 +666,7 @@ export class SyncedVideoGenerator extends EventEmitter {
         serveUrl: bundleLocation,
         codec: 'h264',
         outputLocation: outputPath,
-        inputProps: syncedScript,
+        inputProps: syncedScriptWithStyle,
         audioCodec: null, // No renderizar audio, lo agregaremos después
         // Enable GPU acceleration for Remotion
         concurrency: 4, // Use multiple cores
@@ -711,8 +708,21 @@ export class SyncedVideoGenerator extends EventEmitter {
     
     // Create a simple video with text overlay
     const duration = Math.ceil(syncedScript.totalDuration);
+    
+    // Escape special characters for ffmpeg drawtext filter
+    // Need to escape: : ' \ and other special characters
+    const escapedTitle = syncedScript.title
+      .replace(/\\/g, '\\\\\\\\')  // Escape backslashes first
+      .replace(/:/g, '\\:')         // Escape colons
+      .replace(/'/g, "\\'")         // Escape single quotes
+      .replace(/"/g, '\\"')         // Escape double quotes
+      .replace(/\[/g, '\\[')        // Escape brackets
+      .replace(/\]/g, '\\]')        // Escape brackets
+      .replace(/,/g, '\\,')         // Escape commas
+      .replace(/;/g, '\\;');        // Escape semicolons
+    
     const command = `ffmpeg -f lavfi -i color=c=black:s=1080x1920:d=${duration} \
-      -vf "drawtext=text='${syncedScript.title}':fontcolor=white:fontsize=60:x=(w-text_w)/2:y=(h-text_h)/2" \
+      -vf "drawtext=text='${escapedTitle}':fontcolor=white:fontsize=60:x=(w-text_w)/2:y=(h-text_h)/2" \
       -c:v libx264 -pix_fmt yuv420p "${outputPath}" -y`;
     
     await execAsync(command);

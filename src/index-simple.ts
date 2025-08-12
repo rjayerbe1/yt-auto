@@ -48,6 +48,7 @@ app.get('/api/demo/idea', async (req, res) => {
     const idea = await demoGen.generateDemoIdea();
     res.json(idea);
   } catch (error) {
+    logger.error('Error generando idea:', error);
     res.status(500).json({ error: 'Error generando idea' });
   }
 });
@@ -58,6 +59,7 @@ app.post('/api/demo/script', async (req, res) => {
     const script = await demoGen.generateDemoScript(idea);
     res.json(script);
   } catch (error) {
+    logger.error('Error generando script:', error);
     res.status(500).json({ error: 'Error generando script' });
   }
 });
@@ -73,6 +75,7 @@ app.post('/api/demo/video', async (req, res) => {
       message: 'Datos de video generados. Ejecuta: npm run remotion:preview' 
     });
   } catch (error) {
+    logger.error('Error generando video:', error);
     res.status(500).json({ error: 'Error generando video' });
   }
 });
@@ -85,6 +88,7 @@ app.get('/api/demo/run', async (req, res) => {
       message: 'Demo completado! Revisa los logs para más detalles.' 
     });
   } catch (error) {
+    logger.error('Error ejecutando demo:', error);
     res.status(500).json({ error: 'Error ejecutando demo' });
   }
 });
@@ -106,6 +110,7 @@ app.post('/api/video/generate-simple', async (req, res) => {
       message: 'Video generado con FFmpeg!' 
     });
   } catch (error) {
+    logger.error('Error generando video simple:', error);
     res.status(500).json({ error: 'Error generando video simple' });
   }
 });
@@ -126,6 +131,7 @@ app.post('/api/video/generate-from-script', async (req, res) => {
       message: 'Video generado desde script!' 
     });
   } catch (error) {
+    logger.error('Error generando video desde script:', error);
     res.status(500).json({ error: 'Error generando video desde script' });
   }
 });
@@ -328,17 +334,19 @@ app.post('/api/video/generate-complete', async (req, res) => {
     logger.error('Error generando video completo:', error);
     res.status(500).json({ 
       error: 'Error generando video completo con audio',
-      details: error.message 
+      details: (error as Error).message 
     });
   }
 });
 
 // Generate SYNCHRONIZED video with perfect audio-text sync (with SSE progress)
-app.get('/api/video/generate-synced', async (req, res) => {
+app.get('/api/video/generate-synced', async (_req, res) => {
   // Get duration from query parameter (default to 30 seconds)
-  const duration = parseInt(req.query.duration as string) || 30;
+  const duration = parseInt(_req.query.duration as string) || 30;
+  // Get style from query parameter (default to 1, range 1-6)
+  const style = Math.min(6, Math.max(1, parseInt(_req.query.style as string) || 1));
   
-  logger.info(`🎯 Starting SYNCHRONIZED video generation with progress (${duration} seconds)`);
+  logger.info(`🎯 Starting SYNCHRONIZED video generation with progress (${duration} seconds, Style ${style})`);
   
   // Set up SSE
   res.writeHead(200, {
@@ -349,17 +357,17 @@ app.get('/api/video/generate-synced', async (req, res) => {
   });
   
   // Disable timeout
-  req.setTimeout(0);
+  _req.setTimeout(0);
   res.setTimeout(0);
   
   // Send initial message
   res.write(`data: ${JSON.stringify({ 
     type: 'start', 
-    message: `🎯 Starting ${duration}-second synchronized video generation...` 
+    message: `🎯 Starting ${duration}-second synchronized video generation (Style ${style})...` 
   })}\n\n`);
   
-  // Create new instance with duration
-  const syncGen = new SyncedVideoGenerator(duration);
+  // Create new instance with duration and style
+  const syncGen = new SyncedVideoGenerator(duration, style);
   
   // Listen for progress updates
   syncGen.on('progress', (data) => {
@@ -382,7 +390,7 @@ app.get('/api/video/generate-synced', async (req, res) => {
     logger.error('Error in synced video generation:', error);
     res.write(`data: ${JSON.stringify({ 
       type: 'error', 
-      error: error.message 
+      error: (error as Error).message 
     })}\n\n`);
   } finally {
     res.end();
@@ -408,7 +416,7 @@ app.post('/api/video/generate-synced', async (req, res) => {
     logger.error('Error generating synced video:', error);
     res.status(500).json({ 
       error: 'Error generating synchronized video',
-      details: error.message 
+      details: (error as Error).message 
     });
   }
 });
@@ -416,7 +424,7 @@ app.post('/api/video/generate-synced', async (req, res) => {
 // Endpoint para video animado eliminado - ahora solo usamos video sincronizado palabra por palabra
 
 // Generate video with progress updates (Server-Sent Events)
-app.get('/api/video/generate-with-progress', async (req, res) => {
+app.get('/api/video/generate-with-progress', async (_req, res) => {
   logger.info('🚀 Starting video generation with progress tracking');
   
   // Set up SSE
@@ -428,7 +436,7 @@ app.get('/api/video/generate-with-progress', async (req, res) => {
   });
   
   // Disable timeout
-  req.setTimeout(0);
+  _req.setTimeout(0);
   res.setTimeout(0);
   
   // Send initial message
@@ -456,7 +464,7 @@ app.get('/api/video/generate-with-progress', async (req, res) => {
     logger.error('Error in video generation:', error);
     res.write(`data: ${JSON.stringify({ 
       type: 'error', 
-      error: error.message 
+      error: (error as Error).message 
     })}\n\n`);
   } finally {
     res.end();

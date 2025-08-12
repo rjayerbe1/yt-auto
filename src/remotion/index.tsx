@@ -8,6 +8,7 @@ import { WordByWordVideo as WordByWordVideoContext } from './WordByWordVideoCont
 import { WordByWordVideo as WordByWordAccumulator } from './WordByWordAccumulator';
 import { WordByWordVideo as WordByWordAccumulator30 } from './WordByWordAccumulator30Styles';
 import { WordByWordVideo as WordByWordFinal } from './WordByWordFinalStyles';
+import { DebugSubtitles } from './DebugSubtitles';
 
 // Register both compositions
 export const RemotionVideo = () => {
@@ -108,6 +109,19 @@ export const RemotionVideo = () => {
         height={1920}
         defaultProps={{
           title: 'Word Final 6 Styles',
+          segments: [],
+          totalDuration: 30,
+        }}
+      />
+      <Composition
+        id="DebugSubtitles"
+        component={DebugSubtitles}
+        durationInFrames={900}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          title: 'Debug Subtitles',
           segments: [],
           totalDuration: 30,
         }}

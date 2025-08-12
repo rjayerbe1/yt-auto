@@ -1,8 +1,7 @@
 import winston from 'winston';
 import path from 'path';
-import { config } from '@config/index';
 
-const logDir = config.LOG_DIR;
+const logDir = process.env.LOG_DIR || './logs';
 
 const logFormat = winston.format.combine(
   winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
@@ -54,7 +53,7 @@ const consoleFormat = winston.format.combine(
 );
 
 export const logger = winston.createLogger({
-  level: config.LOG_LEVEL,
+  level: process.env.LOG_LEVEL || 'info',
   format: logFormat,
   defaultMeta: { service: 'yt-auto' },
   transports: [

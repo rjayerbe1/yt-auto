@@ -1,9 +1,6 @@
 import React, { useMemo } from 'react';
 import { useCurrentFrame, useVideoConfig, interpolate } from 'remotion';
 
-// Define which style to use (1-6 for the selected styles)
-const SELECTED_STYLE = 6; // Change this to test different styles!
-
 interface WordTiming {
   word: string;
   startTime: number;
@@ -34,12 +31,14 @@ interface WordByWordVideoProps {
   title: string;
   segments: Segment[];
   totalDuration: number;
+  videoStyle?: number; // Style selection (1-6)
 }
 
 export const WordByWordVideo: React.FC<WordByWordVideoProps> = ({
   title,
   segments,
   totalDuration,
+  videoStyle = 1, // Default to style 1
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -131,7 +130,7 @@ export const WordByWordVideo: React.FC<WordByWordVideoProps> = ({
 
   // 6 Selected styles that user liked
   const getStyleConfig = () => {
-    switch(SELECTED_STYLE) {
+    switch(videoStyle) {
       case 1: // Clean Modern (was style 1)
         return {
           background: 'linear-gradient(135deg, #667eea, #764ba2)',

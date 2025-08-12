@@ -1,420 +1,345 @@
 {
-  "title": "2s - 5 iPhone Tricks 99% of People Don't Know",
+  "title": "15s - The Microwave Trick Chefs Don't Want You to Know",
   "segments": [
     {
-      "text": "Here is an amazing fact that will absolutely blow your mind today",
+      "text": "Quick tip for you",
       "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/hook.wav",
-      "duration": 3.68,
+      "duration": 1.04,
       "startTime": 0,
-      "endTime": 3.68,
+      "endTime": 1.04,
       "wordTimings": [
         {
-          "word": "Here",
-          "startTime": 0.16,
-          "endTime": 0.31,
-          "startFrame": 4,
-          "endFrame": 9
+          "word": "Quick",
+          "startTime": 0.11,
+          "endTime": 0.35,
+          "startFrame": 3,
+          "endFrame": 10
         },
         {
-          "word": "is",
-          "startTime": 0.31,
-          "endTime": 0.49,
-          "startFrame": 9,
-          "endFrame": 14
+          "word": "tip",
+          "startTime": 0.35,
+          "endTime": 0.57,
+          "startFrame": 10,
+          "endFrame": 17
         },
         {
-          "word": "an",
-          "startTime": 0.49,
-          "endTime": 0.63,
-          "startFrame": 14,
-          "endFrame": 18
+          "word": "for",
+          "startTime": 0.57,
+          "endTime": 0.77,
+          "startFrame": 17,
+          "endFrame": 23
         },
         {
-          "word": "amazing",
-          "startTime": 0.63,
-          "endTime": 1.17,
-          "startFrame": 18,
-          "endFrame": 35
-        },
-        {
-          "word": "fact",
-          "startTime": 1.17,
-          "endTime": 1.55,
-          "startFrame": 35,
-          "endFrame": 46
-        },
-        {
-          "word": "that",
-          "startTime": 1.55,
-          "endTime": 1.63,
-          "startFrame": 46,
-          "endFrame": 48
-        },
-        {
-          "word": "we",
-          "startTime": 1.63,
-          "endTime": 1.68,
-          "startFrame": 48,
-          "endFrame": 50
-        },
-        {
-          "word": "'ll",
-          "startTime": 1.68,
-          "endTime": 1.78,
-          "startFrame": 50,
-          "endFrame": 53
-        },
-        {
-          "word": "absolutely",
-          "startTime": 1.78,
-          "endTime": 2.48,
-          "startFrame": 53,
-          "endFrame": 74
-        },
-        {
-          "word": "blow",
-          "startTime": 2.48,
-          "endTime": 2.67,
-          "startFrame": 74,
-          "endFrame": 80
-        },
-        {
-          "word": "your",
-          "startTime": 2.67,
-          "endTime": 2.91,
-          "startFrame": 80,
-          "endFrame": 87
-        },
-        {
-          "word": "mind",
-          "startTime": 2.91,
-          "endTime": 3.16,
-          "startFrame": 87,
-          "endFrame": 94
-        },
-        {
-          "word": "today",
-          "startTime": 3.16,
-          "endTime": 3.52,
-          "startFrame": 94,
-          "endFrame": 105
+          "word": "you",
+          "startTime": 0.77,
+          "endTime": 1,
+          "startFrame": 23,
+          "endFrame": 30
         },
         {
           "word": ".",
-          "startTime": 3.52,
-          "endTime": 3.76,
-          "startFrame": 105,
-          "endFrame": 112
+          "startTime": 1,
+          "endTime": 1,
+          "startFrame": 30,
+          "endFrame": 30
         }
       ],
       "captions": [
         {
-          "text": "Here",
-          "startMs": 160,
-          "endMs": 310,
-          "timestampMs": 235,
+          "text": "Quick",
+          "startMs": 110,
+          "endMs": 350,
+          "timestampMs": 230,
           "confidence": null
         },
         {
-          "text": "is",
-          "startMs": 310,
-          "endMs": 490,
-          "timestampMs": 400,
+          "text": "tip",
+          "startMs": 350,
+          "endMs": 570,
+          "timestampMs": 460,
           "confidence": null
         },
         {
-          "text": "an",
-          "startMs": 490,
-          "endMs": 630,
-          "timestampMs": 560,
+          "text": "for",
+          "startMs": 570,
+          "endMs": 770,
+          "timestampMs": 670,
           "confidence": null
         },
         {
-          "text": "amazing",
-          "startMs": 630,
-          "endMs": 1170,
-          "timestampMs": 900,
-          "confidence": null
-        },
-        {
-          "text": "fact",
-          "startMs": 1170,
-          "endMs": 1550,
-          "timestampMs": 1360,
-          "confidence": null
-        },
-        {
-          "text": "that",
-          "startMs": 1550,
-          "endMs": 1630,
-          "timestampMs": 1590,
-          "confidence": null
-        },
-        {
-          "text": "we",
-          "startMs": 1630,
-          "endMs": 1680,
-          "timestampMs": 1655,
-          "confidence": null
-        },
-        {
-          "text": "'ll",
-          "startMs": 1680,
-          "endMs": 1780,
-          "timestampMs": 1730,
-          "confidence": null
-        },
-        {
-          "text": "absolutely",
-          "startMs": 1780,
-          "endMs": 2480,
-          "timestampMs": 2130,
-          "confidence": null
-        },
-        {
-          "text": "blow",
-          "startMs": 2480,
-          "endMs": 2670,
-          "timestampMs": 2575,
-          "confidence": null
-        },
-        {
-          "text": "your",
-          "startMs": 2670,
-          "endMs": 2910,
-          "timestampMs": 2790,
-          "confidence": null
-        },
-        {
-          "text": "mind",
-          "startMs": 2910,
-          "endMs": 3160,
-          "timestampMs": 3035,
-          "confidence": null
-        },
-        {
-          "text": "today",
-          "startMs": 3160,
-          "endMs": 3520,
-          "timestampMs": 3340,
+          "text": "you",
+          "startMs": 770,
+          "endMs": 1000,
+          "timestampMs": 885,
           "confidence": null
         },
         {
           "text": ".",
-          "startMs": 3520,
-          "endMs": 3760,
-          "timestampMs": 3640,
+          "startMs": 1000,
+          "endMs": 1000,
+          "timestampMs": 1000,
           "confidence": null
         }
       ]
     },
     {
-      "text": "This incredible discovery completely changes everything we thought we knew about the world",
+      "text": "Here's something amazing",
       "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/segment_0.wav",
-      "duration": 4.12,
-      "startTime": 3.68,
-      "endTime": 7.800000000000001,
+      "duration": 1.32,
+      "startTime": 1.04,
+      "endTime": 2.3600000000000003,
       "wordTimings": [
         {
-          "word": "This",
-          "startTime": 3.8,
-          "endTime": 3.88,
-          "startFrame": 114,
-          "endFrame": 116
+          "word": "Here",
+          "startTime": 1.21,
+          "endTime": 1.27,
+          "startFrame": 36,
+          "endFrame": 38
         },
         {
-          "word": "incredible",
-          "startTime": 3.88,
-          "endTime": 4.39,
-          "startFrame": 116,
-          "endFrame": 131
+          "word": "'s",
+          "startTime": 1.27,
+          "endTime": 1.42,
+          "startFrame": 38,
+          "endFrame": 42
         },
         {
-          "word": "discovery",
-          "startTime": 4.39,
-          "endTime": 4.86,
-          "startFrame": 131,
-          "endFrame": 145
+          "word": "something",
+          "startTime": 1.42,
+          "endTime": 1.9,
+          "startFrame": 42,
+          "endFrame": 57
         },
         {
-          "word": "completely",
-          "startTime": 4.86,
-          "endTime": 5.36,
-          "startFrame": 145,
-          "endFrame": 160
-        },
-        {
-          "word": "changes",
-          "startTime": 5.36,
-          "endTime": 5.71,
-          "startFrame": 160,
-          "endFrame": 171
-        },
-        {
-          "word": "everything",
-          "startTime": 5.71,
-          "endTime": 6.24,
-          "startFrame": 171,
-          "endFrame": 187
-        },
-        {
-          "word": "we",
-          "startTime": 6.24,
-          "endTime": 6.32,
-          "startFrame": 187,
-          "endFrame": 189
-        },
-        {
-          "word": "thought",
-          "startTime": 6.32,
-          "endTime": 6.7,
-          "startFrame": 189,
-          "endFrame": 201
-        },
-        {
-          "word": "we",
-          "startTime": 6.7,
-          "endTime": 6.77,
-          "startFrame": 201,
-          "endFrame": 203
-        },
-        {
-          "word": "knew",
-          "startTime": 6.77,
-          "endTime": 6.97,
-          "startFrame": 203,
-          "endFrame": 209
-        },
-        {
-          "word": "about",
-          "startTime": 6.97,
-          "endTime": 7.22,
-          "startFrame": 209,
-          "endFrame": 216
-        },
-        {
-          "word": "the",
-          "startTime": 7.22,
-          "endTime": 7.37,
-          "startFrame": 216,
-          "endFrame": 221
-        },
-        {
-          "word": "world",
-          "startTime": 7.37,
-          "endTime": 7.65,
-          "startFrame": 221,
-          "endFrame": 229
+          "word": "amazing",
+          "startTime": 1.9,
+          "endTime": 2.35,
+          "startFrame": 57,
+          "endFrame": 70
         },
         {
           "word": ".",
-          "startTime": 7.65,
-          "endTime": 8.16,
-          "startFrame": 229,
-          "endFrame": 244
+          "startTime": 2.35,
+          "endTime": 2.5,
+          "startFrame": 70,
+          "endFrame": 75
         }
       ],
       "captions": [
         {
-          "text": "This",
-          "startMs": 3800,
-          "endMs": 3880,
-          "timestampMs": 3840,
+          "text": "Here",
+          "startMs": 1210,
+          "endMs": 1270,
+          "timestampMs": 1240,
           "confidence": null
         },
         {
-          "text": "incredible",
-          "startMs": 3880,
-          "endMs": 4390,
-          "timestampMs": 4135,
+          "text": "'s",
+          "startMs": 1270,
+          "endMs": 1420,
+          "timestampMs": 1345,
           "confidence": null
         },
         {
-          "text": "discovery",
-          "startMs": 4390,
-          "endMs": 4860,
-          "timestampMs": 4625,
+          "text": "something",
+          "startMs": 1420,
+          "endMs": 1900,
+          "timestampMs": 1660,
           "confidence": null
         },
         {
-          "text": "completely",
-          "startMs": 4860,
-          "endMs": 5360,
-          "timestampMs": 5110,
-          "confidence": null
-        },
-        {
-          "text": "changes",
-          "startMs": 5360,
-          "endMs": 5710,
-          "timestampMs": 5535,
-          "confidence": null
-        },
-        {
-          "text": "everything",
-          "startMs": 5710,
-          "endMs": 6240,
-          "timestampMs": 5975,
-          "confidence": null
-        },
-        {
-          "text": "we",
-          "startMs": 6240,
-          "endMs": 6320,
-          "timestampMs": 6280,
-          "confidence": null
-        },
-        {
-          "text": "thought",
-          "startMs": 6320,
-          "endMs": 6700,
-          "timestampMs": 6510,
-          "confidence": null
-        },
-        {
-          "text": "we",
-          "startMs": 6700,
-          "endMs": 6770,
-          "timestampMs": 6735,
-          "confidence": null
-        },
-        {
-          "text": "knew",
-          "startMs": 6770,
-          "endMs": 6970,
-          "timestampMs": 6870,
-          "confidence": null
-        },
-        {
-          "text": "about",
-          "startMs": 6970,
-          "endMs": 7220,
-          "timestampMs": 7095,
-          "confidence": null
-        },
-        {
-          "text": "the",
-          "startMs": 7220,
-          "endMs": 7370,
-          "timestampMs": 7295,
-          "confidence": null
-        },
-        {
-          "text": "world",
-          "startMs": 7370,
-          "endMs": 7650,
-          "timestampMs": 7510,
+          "text": "amazing",
+          "startMs": 1900,
+          "endMs": 2350,
+          "timestampMs": 2125,
           "confidence": null
         },
         {
           "text": ".",
-          "startMs": 7650,
-          "endMs": 8160,
-          "timestampMs": 7905,
+          "startMs": 2350,
+          "endMs": 2500,
+          "timestampMs": 2425,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "text": "You didn't know about this",
+      "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/segment_1.wav",
+      "duration": 1.4,
+      "startTime": 2.3600000000000003,
+      "endTime": 3.7600000000000002,
+      "wordTimings": [
+        {
+          "word": "You",
+          "startTime": 2.4800000000000004,
+          "endTime": 2.5000000000000004,
+          "startFrame": 74,
+          "endFrame": 75
+        },
+        {
+          "word": "didn",
+          "startTime": 2.5000000000000004,
+          "endTime": 2.6900000000000004,
+          "startFrame": 75,
+          "endFrame": 80
+        },
+        {
+          "word": "'t",
+          "startTime": 2.6900000000000004,
+          "endTime": 2.7800000000000002,
+          "startFrame": 80,
+          "endFrame": 83
+        },
+        {
+          "word": "know",
+          "startTime": 2.7800000000000002,
+          "endTime": 2.9700000000000006,
+          "startFrame": 83,
+          "endFrame": 89
+        },
+        {
+          "word": "about",
+          "startTime": 2.9700000000000006,
+          "endTime": 3.3000000000000003,
+          "startFrame": 89,
+          "endFrame": 99
+        },
+        {
+          "word": "this",
+          "startTime": 3.3000000000000003,
+          "endTime": 3.4000000000000004,
+          "startFrame": 99,
+          "endFrame": 102
+        },
+        {
+          "word": ".",
+          "startTime": 3.4000000000000004,
+          "endTime": 3.5600000000000005,
+          "startFrame": 102,
+          "endFrame": 106
+        }
+      ],
+      "captions": [
+        {
+          "text": "You",
+          "startMs": 2480.0000000000005,
+          "endMs": 2500.0000000000005,
+          "timestampMs": 2490.0000000000005,
+          "confidence": null
+        },
+        {
+          "text": "didn",
+          "startMs": 2500.0000000000005,
+          "endMs": 2690.0000000000005,
+          "timestampMs": 2595.0000000000005,
+          "confidence": null
+        },
+        {
+          "text": "'t",
+          "startMs": 2690.0000000000005,
+          "endMs": 2780.0000000000005,
+          "timestampMs": 2735.0000000000005,
+          "confidence": null
+        },
+        {
+          "text": "know",
+          "startMs": 2780.0000000000005,
+          "endMs": 2970.0000000000005,
+          "timestampMs": 2875.0000000000005,
+          "confidence": null
+        },
+        {
+          "text": "about",
+          "startMs": 2970.0000000000005,
+          "endMs": 3300.0000000000005,
+          "timestampMs": 3135.0000000000005,
+          "confidence": null
+        },
+        {
+          "text": "this",
+          "startMs": 3300.0000000000005,
+          "endMs": 3400.0000000000005,
+          "timestampMs": 3350.0000000000005,
+          "confidence": null
+        },
+        {
+          "text": ".",
+          "startMs": 3400.0000000000005,
+          "endMs": 3560.0000000000005,
+          "timestampMs": 3480.0000000000005,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "text": "Follow for more!",
+      "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/cta.wav",
+      "duration": 0.96,
+      "startTime": 3.7600000000000002,
+      "endTime": 4.720000000000001,
+      "wordTimings": [
+        {
+          "word": "Follow",
+          "startTime": 3.8700000000000006,
+          "endTime": 4.08,
+          "startFrame": 116,
+          "endFrame": 122
+        },
+        {
+          "word": "for",
+          "startTime": 4.08,
+          "endTime": 4.24,
+          "startFrame": 122,
+          "endFrame": 127
+        },
+        {
+          "word": "more",
+          "startTime": 4.24,
+          "endTime": 4.46,
+          "startFrame": 127,
+          "endFrame": 133
+        },
+        {
+          "word": ".",
+          "startTime": 4.46,
+          "endTime": 4.64,
+          "startFrame": 133,
+          "endFrame": 139
+        }
+      ],
+      "captions": [
+        {
+          "text": "Follow",
+          "startMs": 3870.0000000000005,
+          "endMs": 4080.0000000000005,
+          "timestampMs": 3975.0000000000005,
+          "confidence": null
+        },
+        {
+          "text": "for",
+          "startMs": 4080.0000000000005,
+          "endMs": 4240,
+          "timestampMs": 4160,
+          "confidence": null
+        },
+        {
+          "text": "more",
+          "startMs": 4240,
+          "endMs": 4460,
+          "timestampMs": 4350,
+          "confidence": null
+        },
+        {
+          "text": ".",
+          "startMs": 4460,
+          "endMs": 4640,
+          "timestampMs": 4550,
           "confidence": null
         }
       ]
     }
   ],
-  "totalDuration": 7.800000000000001
+  "totalDuration": 4.720000000000001,
+  "videoStyle": 1
 }

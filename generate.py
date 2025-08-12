@@ -180,9 +180,20 @@ def animated_progress_bar(current, total, message="", width=50):
     sys.stdout.write(f"{color}[{bar}] {Colors.WHITE}{percent:3d}% {frame} {pulse_indicator} {Colors.YELLOW}{message}{Colors.END}")
     sys.stdout.flush()
 
-def generate_synced_with_duration(duration_seconds):
-    """Generate synchronized video with specified duration"""
+def generate_synced_with_duration(duration_seconds, style=1):
+    """Generate synchronized video with specified duration and style"""
+    # Style names for display
+    style_names = [
+        'Clean Modern (Purple/Gold)',
+        'Minimal (White/Black)',
+        'Gradient Tropical (Coral/Teal)',
+        'Matrix Green (Terminal)',
+        'Gold Luxury (Dark/Gold)',
+        'Cherry Blossom (Peach/Red)'
+    ]
+    
     print(f"{Colors.BOLD}{Colors.GREEN}🎯 Generating {duration_seconds}-second SYNCHRONIZED video...{Colors.END}")
+    print(f"{Colors.CYAN}🎨 Style: {style_names[style-1] if 1 <= style <= 6 else 'Default'}{Colors.END}")
     print(f"{Colors.YELLOW}Audio and text will be perfectly synced!{Colors.END}")
     
     # Show GPU status
@@ -229,9 +240,9 @@ def generate_synced_with_duration(duration_seconds):
         anim_thread.daemon = True
         anim_thread.start()
         
-        # Connect to SSE endpoint with duration parameter
+        # Connect to SSE endpoint with duration and style parameters
         response = requests.get(
-            f'http://localhost:3000/api/video/generate-synced?duration={duration_seconds}',
+            f'http://localhost:3000/api/video/generate-synced?duration={duration_seconds}&style={style}',
             stream=True,
             timeout=1200  # 20 minutes timeout for slow TTS generation
         )
@@ -669,6 +680,7 @@ def main():
     
     video_path = None
     duration = None
+    style = 1  # Default style
     
     if choice == '1':
         duration = 2
@@ -700,9 +712,32 @@ def main():
         print(f"{Colors.RED}Invalid choice{Colors.END}")
         sys.exit(1)
     
-    # Generate synchronized video with selected duration
+    # Ask for style selection
     if duration:
-        video_path = generate_synced_with_duration(duration)
+        print(f"\n{Colors.CYAN}{'─' * 50}{Colors.END}")
+        print(f"{Colors.WHITE}Select subtitle style:{Colors.END}\n")
+        print(f"  {Colors.YELLOW}1){Colors.END} 🎨 Clean Modern - Purple gradient with gold text")
+        print(f"  {Colors.WHITE}2){Colors.END} ⚪ Minimal - White background, black text")
+        print(f"  {Colors.WHITE}3){Colors.END} 🌴 Gradient Tropical - Coral to teal gradient")
+        print(f"  {Colors.WHITE}4){Colors.END} 💻 Matrix Green - Terminal style")
+        print(f"  {Colors.WHITE}5){Colors.END} 👑 Gold Luxury - Dark gradient with gold")
+        print(f"  {Colors.WHITE}6){Colors.END} 🌸 Cherry Blossom - Soft peach with red text\n")
+        
+        style_choice = input("Enter style [1-6, default=1]: ")
+        if style_choice.strip():
+            try:
+                style = int(style_choice)
+                if style < 1 or style > 6:
+                    print(f"{Colors.YELLOW}Using default style (Clean Modern){Colors.END}")
+                    style = 1
+            except ValueError:
+                print(f"{Colors.YELLOW}Using default style (Clean Modern){Colors.END}")
+                style = 1
+        else:
+            style = 1
+        
+        print()
+        video_path = generate_synced_with_duration(duration, style)
     
     # Offer to open video
     if video_path:
