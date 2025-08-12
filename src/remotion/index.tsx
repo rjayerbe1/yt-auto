@@ -8,6 +8,7 @@ import { WordByWordVideo as WordByWordVideoContext } from './WordByWordVideoCont
 import { WordByWordVideo as WordByWordAccumulator } from './WordByWordAccumulator';
 import { WordByWordVideo as WordByWordAccumulator30 } from './WordByWordAccumulator30Styles';
 import { WordByWordVideo as WordByWordFinal } from './WordByWordFinalStyles';
+import { WordByWordVideo as WordByWordWithBroll } from './WordByWordWithBroll';
 import { DebugSubtitles } from './DebugSubtitles';
 
 // Register both compositions
@@ -124,6 +125,20 @@ export const RemotionVideo = () => {
           title: 'Debug Subtitles',
           segments: [],
           totalDuration: 30,
+        }}
+      />
+      <Composition
+        id="WordByWordWithBroll"
+        component={WordByWordWithBroll}
+        durationInFrames={900}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          title: 'Word by Word with B-roll',
+          segments: [],
+          totalDuration: 30,
+          brollVideos: [],
         }}
       />
     </>

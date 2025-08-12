@@ -1,5 +1,11 @@
 import React, { useMemo } from 'react';
-import { useCurrentFrame, useVideoConfig, interpolate } from 'remotion';
+import { 
+  useCurrentFrame, 
+  useVideoConfig,
+  OffthreadVideo,
+  AbsoluteFill,
+  staticFile 
+} from 'remotion';
 
 interface WordTiming {
   word: string;
@@ -32,6 +38,7 @@ interface WordByWordVideoProps {
   segments: Segment[];
   totalDuration: number;
   videoStyle?: number; // Style selection (1-6)
+  brollVideos?: string[]; // Array of B-roll video paths
 }
 
 export const WordByWordVideo: React.FC<WordByWordVideoProps> = ({
@@ -39,12 +46,13 @@ export const WordByWordVideo: React.FC<WordByWordVideoProps> = ({
   segments,
   totalDuration,
   videoStyle = 1, // Default to style 1
+  brollVideos = [], // B-roll videos array
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const currentTime = frame / fps;
 
-  // Get all words in order with their timing, merging punctuation
+  // Get all words in order with their timing, merging punctuation and contractions
   const allWords = useMemo(() => {
     const words: WordTiming[] = [];
     segments.forEach(segment => {
@@ -54,6 +62,7 @@ export const WordByWordVideo: React.FC<WordByWordVideoProps> = ({
         
         for (let i = 0; i < segmentWords.length; i++) {
           const word = segmentWords[i];
+          
           // Check if this is just punctuation
           if (/^[.,!?;:—\-"'`]$/.test(word.word.trim())) {
             // If it's punctuation and we have a previous word, merge it
@@ -66,16 +75,43 @@ export const WordByWordVideo: React.FC<WordByWordVideoProps> = ({
               // If no previous word, keep it as is
               mergedWords.push(word);
             }
-          } else {
-            // Check if next word is punctuation and merge it
-            if (i < segmentWords.length - 1 && /^[.,!?;:—\-"'`]$/.test(segmentWords[i + 1].word.trim())) {
-              mergedWords.push({
-                ...word,
-                word: word.word + segmentWords[i + 1].word,
-                endTime: segmentWords[i + 1].endTime,
-                endFrame: segmentWords[i + 1].endFrame,
-              });
-              i++; // Skip the next word since we merged it
+          } 
+          // Check if this word starts with apostrophe (like 've, 's, 'll, 't, etc.)
+          else if (/^'/.test(word.word) && mergedWords.length > 0) {
+            // Merge with previous word (contractions like you've, don't, it's)
+            const lastWord = mergedWords[mergedWords.length - 1];
+            lastWord.word += word.word;
+            lastWord.endTime = word.endTime;
+            lastWord.endFrame = word.endFrame;
+          }
+          else {
+            // Check if next word is punctuation or a contraction and merge it
+            if (i < segmentWords.length - 1) {
+              const nextWord = segmentWords[i + 1].word.trim();
+              const currentWordTrimmed = word.word.trim();
+              
+              // Check for punctuation, contractions, or currency/units
+              // Merge if:
+              // - Next word is punctuation
+              // - Next word is a contraction (starts with ')
+              // - Current is $ and next is a number ($100)
+              // - Current is number and next is % or unit (100%, 50km)
+              // - Current ends with $ and next is number (USD$50)
+              if (/^[.,!?;:—\-"'`]$/.test(nextWord) || 
+                  /^'/.test(nextWord) ||
+                  (currentWordTrimmed === '$' && /^\d/.test(nextWord)) ||
+                  (/\$$/.test(currentWordTrimmed) && /^\d/.test(nextWord)) ||
+                  (/\d$/.test(currentWordTrimmed) && /^(%|km|kg|m|cm|mm|ft|in|mph|kph)/.test(nextWord))) {
+                mergedWords.push({
+                  ...word,
+                  word: word.word + segmentWords[i + 1].word,
+                  endTime: segmentWords[i + 1].endTime,
+                  endFrame: segmentWords[i + 1].endFrame,
+                });
+                i++; // Skip the next word since we merged it
+              } else {
+                mergedWords.push(word);
+              }
             } else {
               mergedWords.push(word);
             }
@@ -200,22 +236,117 @@ export const WordByWordVideo: React.FC<WordByWordVideoProps> = ({
 
   const style = getStyleConfig();
 
+  // Dynamic B-roll selection based on content rhythm
+  const getCurrentBrollVideoAndTiming = () => {
+    if (!brollVideos || brollVideos.length === 0) {
+      return { video: null, startFrom: 0, shouldLoop: true };
+    }
+    
+    // DYNAMIC CHANGE INTERVALS
+    // Change B-roll every 2-5 seconds for maximum engagement
+    const minChangeInterval = 2; // seconds
+    const maxChangeInterval = 5; // seconds
+    
+    // Calculate which "scene" we're in based on time intervals
+    // This creates dynamic cuts that aren't tied to segments
+    const sceneNumber = Math.floor(currentTime / 3.5); // Change roughly every 3.5 seconds
+    
+    // Add some variation to the interval
+    // Use a pseudo-random pattern based on scene number
+    const variationPattern = [2.5, 4, 3, 4.5, 2, 3.5, 5, 2.5, 3, 4];
+    const changeInterval = variationPattern[sceneNumber % variationPattern.length];
+    
+    // Calculate actual scene based on varied intervals
+    let accumulatedTime = 0;
+    let actualScene = 0;
+    for (let i = 0; i < 100; i++) { // Safety limit
+      const interval = variationPattern[i % variationPattern.length];
+      if (accumulatedTime + interval > currentTime) {
+        actualScene = i;
+        break;
+      }
+      accumulatedTime += interval;
+    }
+    
+    // Select video based on scene with variety
+    // Use different selection patterns to avoid repetition
+    let videoIndex;
+    if (brollVideos.length >= 10) {
+      // Lots of videos - use them all with a shuffle pattern
+      const shufflePattern = [0, 5, 2, 7, 1, 9, 4, 6, 3, 8];
+      const patternIndex = actualScene % shufflePattern.length;
+      videoIndex = shufflePattern[patternIndex] % brollVideos.length;
+    } else if (brollVideos.length >= 5) {
+      // Good variety - alternate with some jumps
+      const pattern = [0, 2, 4, 1, 3];
+      videoIndex = pattern[actualScene % pattern.length] % brollVideos.length;
+    } else {
+      // Few videos - cycle through them
+      videoIndex = actualScene % brollVideos.length;
+    }
+    
+    // Calculate random start point in the video for variety
+    // Each scene starts at a different point in the B-roll
+    const videoStartOptions = [0, 2, 5, 1, 3, 4, 6, 1.5, 3.5, 2.5];
+    const startOffset = videoStartOptions[actualScene % videoStartOptions.length];
+    
+    // Calculate how far into current scene we are
+    const sceneStartTime = accumulatedTime;
+    const timeIntoScene = currentTime - sceneStartTime;
+    
+    return {
+      video: brollVideos[videoIndex],
+      startFrom: startOffset + timeIntoScene, // Start from varied point + scene progress
+      shouldLoop: false // Don't loop, we'll switch to next video soon
+    };
+  };
+
+  const { video: currentBrollVideo, startFrom: brollStartTime, shouldLoop } = getCurrentBrollVideoAndTiming();
+
   return (
-    <div
-      style={{
-        flex: 1,
-        background: style.background,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '100%',
-        height: '100%',
-        position: 'relative',
-        overflow: 'hidden',
-        fontFamily: style.fontFamily || 'system-ui, -apple-system, sans-serif',
-      }}
-    >
+    <AbsoluteFill>
+      {/* Background Layer - Either B-roll video or colored background */}
+      {currentBrollVideo ? (
+        <>
+          <AbsoluteFill>
+            <OffthreadVideo
+              src={staticFile(currentBrollVideo)}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+              }}
+              muted
+              loop={shouldLoop}
+              playbackRate={1}
+              startFrom={Math.floor(brollStartTime * 30)} // Convert seconds to frames (30 fps)
+            />
+          </AbsoluteFill>
+          {/* Dark overlay for better text visibility with slight vignette effect */}
+          <AbsoluteFill
+            style={{
+              background: 'radial-gradient(circle, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%)',
+            }}
+          />
+        </>
+      ) : (
+        <AbsoluteFill
+          style={{
+            background: style.background,
+          }}
+        />
+      )}
+
+      {/* Text Content Layer */}
+      <AbsoluteFill
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontFamily: style.fontFamily || 'system-ui, -apple-system, sans-serif',
+        }}
+      >
       {/* Words Container - REDUCED GAP FROM 40px to 20px */}
       <div
         style={{
@@ -244,9 +375,12 @@ export const WordByWordVideo: React.FC<WordByWordVideoProps> = ({
                 color: word.isActive ? style.activeColor : style.inactiveColor,
                 opacity: 1,
                 transition: 'color 0.2s ease',
-                textShadow: word.isActive 
-                  ? '2px 2px 4px rgba(0,0,0,0.5)'
-                  : 'none',
+                textShadow: currentBrollVideo 
+                  ? '2px 2px 8px rgba(0,0,0,0.9)' // Stronger shadow when video background
+                  : word.isActive 
+                    ? '2px 2px 4px rgba(0,0,0,0.5)'
+                    : 'none',
+                WebkitTextStroke: currentBrollVideo ? '1px rgba(0,0,0,0.5)' : 'none',
               }}
             >
               {word.word}
@@ -272,9 +406,12 @@ export const WordByWordVideo: React.FC<WordByWordVideoProps> = ({
                 color: word.isActive ? style.activeColor : style.inactiveColor,
                 opacity: 1,
                 transition: 'color 0.2s ease',
-                textShadow: word.isActive 
-                  ? '2px 2px 4px rgba(0,0,0,0.5)'
-                  : 'none',
+                textShadow: currentBrollVideo 
+                  ? '2px 2px 8px rgba(0,0,0,0.9)' // Stronger shadow when video background
+                  : word.isActive 
+                    ? '2px 2px 4px rgba(0,0,0,0.5)'
+                    : 'none',
+                WebkitTextStroke: currentBrollVideo ? '1px rgba(0,0,0,0.5)' : 'none',
               }}
             >
               {word.word}
@@ -323,6 +460,7 @@ export const WordByWordVideo: React.FC<WordByWordVideoProps> = ({
       >
         {style.name}
       </div>
-    </div>
+      </AbsoluteFill>
+    </AbsoluteFill>
   );
 };

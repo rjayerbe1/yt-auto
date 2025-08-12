@@ -23,7 +23,11 @@
     "remotion:preview": "remotion preview src/remotion/index.tsx --port 3001",
     "remotion:render": "remotion render src/remotion/index.tsx MyVideo output/demo-video.mp4",
     "remotion:studio": "remotion studio src/remotion/index.tsx --port 3001",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:viral": "tsx scripts/test-viral-scripts.ts",
+    "generate:viral": "tsx scripts/generate-viral-content.ts",
+    "generate:psych": "tsx scripts/generate-viral-content.ts psychology 2",
+    "generate:horror": "tsx scripts/generate-viral-content.ts horror 2"
   },
   "keywords": [],
   "author": "",

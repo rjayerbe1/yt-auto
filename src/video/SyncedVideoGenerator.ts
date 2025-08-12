@@ -11,7 +11,10 @@ import { HardwareAcceleratedGenerator } from './HardwareAcceleratedGenerator';
 import { FileCleanup } from '../utils/cleanup';
 import { ttsClient } from '../services/TTSClient';
 import { whisperTranscriber } from '../services/WhisperTranscriber';
-import { createTikTokStyleCaptions } from '@remotion/captions';
+// import { createTikTokStyleCaptions } from '@remotion/captions';
+import { BrollDownloader } from '../services/BrollDownloader';
+import { ImprovedBrollFinder } from '../services/ImprovedBrollFinder';
+import { ViralBrollFinder } from '../services/ViralBrollFinder';
 
 const execAsync = promisify(exec);
 
@@ -126,12 +129,29 @@ export class SyncedVideoGenerator extends EventEmitter {
 
   private calculateWordTimings(text: string, segmentStartTime: number, segmentDuration: number): WordTiming[] {
     // Split text into words
-    const words = text.split(/\s+/).filter(word => word.length > 0);
+    let words = text.split(/\s+/).filter(word => word.length > 0);
+    
+    // Merge currency symbols with following numbers
+    const mergedWords: string[] = [];
+    for (let i = 0; i < words.length; i++) {
+      if (words[i] === '$' && i + 1 < words.length && /^\d/.test(words[i + 1])) {
+        // Merge $ with the following number
+        mergedWords.push(words[i] + words[i + 1]);
+        i++; // Skip the next word
+      } else if (/\$$/.test(words[i]) && i + 1 < words.length && /^\d/.test(words[i + 1])) {
+        // Merge words ending with $ with following number
+        mergedWords.push(words[i] + words[i + 1]);
+        i++;
+      } else {
+        mergedWords.push(words[i]);
+      }
+    }
+    words = mergedWords;
     
     if (words.length === 0) return [];
     
     // Calculate base time per word
-    const baseTimePerWord = segmentDuration / words.length;
+    // const baseTimePerWord = segmentDuration / words.length;
     
     // Calculate weight for each word based on:
     // - Length (longer words take more time to say)
@@ -212,7 +232,7 @@ export class SyncedVideoGenerator extends EventEmitter {
       const script = await this.demoGen.generateDemoScript(idea, this.targetDuration);
 
       // currentStep is now 1 after script generation
-      const totalSegments = (script.hook ? 1 : 0) + script.content.length + (script.callToAction ? 1 : 0);
+      // const totalSegments = (script.hook ? 1 : 0) + script.content.length + (script.callToAction ? 1 : 0);
 
       // 2. Create directories
       await fs.mkdir(this.audioDir, { recursive: true });
@@ -530,37 +550,44 @@ export class SyncedVideoGenerator extends EventEmitter {
     
     logger.info(`🎤 Generating audio: ${filename}`);
     
-    try {
-      // Try to generate with Chatterbox (with timeout)
-      await execAsync(command, {
-        maxBuffer: 1024 * 1024 * 10,
-        timeout: 60000 // 1 minute timeout per segment
-      });
-      
-      // Get duration
-      const duration = await this.getAudioDuration(outputPath);
-      logger.info(`✅ Audio generated: ${filename} (${duration.toFixed(2)}s)`);
-      
-      return { file: outputPath, duration };
-      
-    } catch (error) {
-      // Fallback: create audio with espeak or say command
-      logger.warn(`Chatterbox failed for ${filename}, using system TTS`);
-      
-      // Try macOS 'say' command
-      const sayCommand = `say -o "${outputPath}" --data-format=LEF32@22050 "${text}"`;
-      
+    // Try multiple times with Chatterbox before failing
+    const maxRetries = 3;
+    let lastError: any;
+    
+    for (let attempt = 1; attempt <= maxRetries; attempt++) {
       try {
-        await execAsync(sayCommand);
-      } catch {
-        // Fallback to silent audio with estimated duration
-        const estimatedDuration = this.estimateTextDuration(text);
-        await this.createSilentAudio(estimatedDuration, outputPath);
+        logger.info(`🔄 Attempt ${attempt}/${maxRetries} with Chatterbox...`);
+        
+        // Try to generate with Chatterbox (with timeout)
+        await execAsync(command, {
+          maxBuffer: 1024 * 1024 * 10,
+          timeout: 1800000 // 30 minutes timeout per segment (GPU processing is slower)
+        });
+        
+        // Get duration
+        const duration = await this.getAudioDuration(outputPath);
+        logger.info(`✅ Audio generated: ${filename} (${duration.toFixed(2)}s) on attempt ${attempt}`);
+        
+        return { file: outputPath, duration };
+        
+      } catch (error) {
+        lastError = error;
+        logger.warn(`❌ Chatterbox attempt ${attempt} failed for ${filename}:`, error);
+        
+        if (attempt < maxRetries) {
+          // Wait a bit before retrying (exponential backoff)
+          const waitTime = attempt * 2000; // 2s, 4s, 6s
+          logger.info(`⏳ Waiting ${waitTime/1000}s before retry...`);
+          await new Promise(resolve => setTimeout(resolve, waitTime));
+        }
       }
-      
-      const duration = await this.getAudioDuration(outputPath);
-      return { file: outputPath, duration };
     }
+    
+    // All retries failed, throw error
+    logger.error(`❌ All ${maxRetries} Chatterbox attempts failed for ${filename}`);
+    logger.error('Last error:', lastError);
+    
+    throw new Error(`Failed to generate audio with Chatterbox after ${maxRetries} attempts. Please try again or check your Chatterbox API configuration.`);
   }
 
   private async getAudioDuration(audioPath: string): Promise<number> {
@@ -626,10 +653,125 @@ export class SyncedVideoGenerator extends EventEmitter {
     ];
     logger.info(`🎨 Using style: ${styleNames[this.videoStyle - 1] || 'Default'}`);
     
-    // Add videoStyle to the synced script
+    // Download B-roll videos based on script content
+    logger.info('🎬 Finding relevant B-roll videos...');
+    
+    let brollVideos: string[] = [];
+    const allText = syncedScript.segments.map(s => s.text).join(' ');
+    
+    // First check if we have custom B-roll search terms from viral scripts
+    try {
+      const viralScriptsPath = path.join(process.cwd(), 'data', 'viral-scripts.json');
+      const viralScripts = JSON.parse(await fs.readFile(viralScriptsPath, 'utf-8'));
+      
+      // Try to find if current script matches a viral script with brollSearchTerms
+      let customSearchTerms: string[] | undefined;
+      
+      // Check both channels for matching scripts
+      const allScripts = [...viralScripts.channel1_psychology, ...viralScripts.channel2_horror];
+      for (const script of allScripts) {
+        // Check if the title or text matches
+        if (syncedScript.title && script.title && 
+            (syncedScript.title.includes(script.title) || script.title.includes(syncedScript.title))) {
+          if (script.brollSearchTerms && script.brollSearchTerms.length > 0) {
+            customSearchTerms = script.brollSearchTerms;
+            logger.info(`🎯 Found matching viral script with ${customSearchTerms.length} custom B-roll terms`);
+            break;
+          }
+        }
+        // Also check if the text content matches
+        if (allText.includes(script.hook) || allText.includes(script.script.substring(0, 50))) {
+          if (script.brollSearchTerms && script.brollSearchTerms.length > 0) {
+            customSearchTerms = script.brollSearchTerms;
+            logger.info(`🎯 Found matching viral script by content with ${customSearchTerms.length} custom B-roll terms`);
+            break;
+          }
+        }
+      }
+      
+      // If we found custom search terms, use ViralBrollFinder
+      if (customSearchTerms && customSearchTerms.length > 0) {
+        logger.info(`🔍 Using ViralBrollFinder with ${customSearchTerms.length} custom search terms`);
+        const viralFinder = new ViralBrollFinder();
+        
+        // Extract tags from title or use default
+        const tags = syncedScript.title ? 
+          syncedScript.title.toLowerCase().includes('psych') ? ['psychology'] : 
+          syncedScript.title.toLowerCase().includes('horror') ? ['horror'] : 
+          ['general'] : ['general'];
+        
+        brollVideos = await viralFinder.findViralBroll(
+          allText,
+          syncedScript.totalDuration,
+          tags,
+          customSearchTerms
+        );
+        
+        logger.info(`✅ Found ${brollVideos.length} B-roll videos using custom search terms`);
+      }
+    } catch (error) {
+      logger.debug('No viral scripts or custom terms found, using default finder');
+    }
+    
+    // If no custom terms were found or used, fall back to normal finders
+    if (brollVideos.length === 0) {
+      const useImprovedFinder = process.env.USE_IMPROVED_BROLL !== 'false';
+      
+      if (useImprovedFinder) {
+        logger.info('🧠 Using AI-enhanced B-roll finder...');
+        const improvedFinder = new ImprovedBrollFinder();
+        brollVideos = await improvedFinder.findBrollForScript(allText, syncedScript.totalDuration);
+      } else {
+        logger.info('📦 Using basic B-roll finder...');
+        const brollDownloader = new BrollDownloader();
+        brollVideos = await brollDownloader.downloadBrollForScript(allText, syncedScript.totalDuration);
+      }
+    }
+    
+    // Copy B-roll videos to public folder for Remotion to access
+    const publicBrollDir = path.join(process.cwd(), 'public', 'broll');
+    await fs.mkdir(publicBrollDir, { recursive: true });
+    
+    // Clean up old B-roll files (older than 1 hour)
+    try {
+      const existingFiles = await fs.readdir(publicBrollDir);
+      const oneHourAgo = Date.now() - (60 * 60 * 1000);
+      
+      for (const file of existingFiles) {
+        const filePath = path.join(publicBrollDir, file);
+        const stats = await fs.stat(filePath);
+        if (stats.mtimeMs < oneHourAgo) {
+          await fs.unlink(filePath);
+          logger.info(`🧹 Cleaned up old B-roll: ${file}`);
+        }
+      }
+    } catch (error) {
+      // Ignore cleanup errors
+      logger.debug('B-roll cleanup error (non-critical):', error);
+    }
+    
+    const brollRelativePaths = await Promise.all(brollVideos.map(async (videoPath) => {
+      const filename = path.basename(videoPath);
+      const publicPath = path.join(publicBrollDir, filename);
+      
+      // Copy the file to public/broll
+      try {
+        await fs.copyFile(videoPath, publicPath);
+        logger.info(`📁 Copied B-roll to public: ${filename}`);
+      } catch (error) {
+        logger.error(`Failed to copy B-roll file: ${filename}`, error);
+      }
+      
+      return `broll/${filename}`;
+    }));
+    
+    logger.info(`✅ Downloaded and copied ${brollRelativePaths.length} B-roll videos to public folder`);
+    
+    // Add videoStyle and brollVideos to the synced script
     const syncedScriptWithStyle = {
       ...syncedScript,
-      videoStyle: this.videoStyle
+      videoStyle: this.videoStyle,
+      brollVideos: brollRelativePaths
     };
     
     // Save the synced script for Remotion to use
@@ -645,7 +787,8 @@ export class SyncedVideoGenerator extends EventEmitter {
         webpackOverride: (config) => config,
       });
 
-      // Get composition - use WordByWordFinal for synchronized word display with styles
+      // Get composition - use WordByWordFinal for synchronized word display
+      // We'll update it to support B-roll videos
       const composition = await selectComposition({
         serveUrl: bundleLocation,
         id: 'WordByWordFinal',
@@ -711,7 +854,8 @@ export class SyncedVideoGenerator extends EventEmitter {
     
     // Escape special characters for ffmpeg drawtext filter
     // Need to escape: : ' \ and other special characters
-    const escapedTitle = syncedScript.title
+    const title = syncedScript.title || 'Synced Video';
+    const escapedTitle = title
       .replace(/\\/g, '\\\\\\\\')  // Escape backslashes first
       .replace(/:/g, '\\:')         // Escape colons
       .replace(/'/g, "\\'")         // Escape single quotes
@@ -756,7 +900,7 @@ export class SyncedVideoGenerator extends EventEmitter {
     logger.info('Running merge command:', command);
     
     try {
-      const { stdout, stderr } = await execAsync(command);
+      await execAsync(command);
       logger.info('Merge complete:', outputPath);
       
       // Verificar que el archivo de salida existe y tiene audio

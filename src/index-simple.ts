@@ -5,6 +5,9 @@ import morgan from 'morgan';
 import { PrismaClient } from '@prisma/client';
 import { config } from './config';
 import { logger } from './utils/logger';
+import viralVideosRouter from './api/viral-videos';
+import viralDebugRouter from './api/viral-debug';
+import viralQuickRouter from './api/viral-quick';
 
 const app = express();
 const prisma = new PrismaClient();
@@ -38,6 +41,11 @@ app.get('/api/v1/status', (req, res) => {
     },
   });
 });
+
+// Viral videos API routes
+app.use('/api/viral', viralVideosRouter);
+app.use('/api/viral-debug', viralDebugRouter);
+app.use('/api/viral-quick', viralQuickRouter);
 
 // Demo endpoints
 import { DemoGenerator } from './demo/demo-generator';

@@ -2,6 +2,7 @@ import { Script, ContentIdea } from '../types';
 import path from 'path';
 import fs from 'fs/promises';
 import { createLogger } from '../utils/logger';
+import { getViralContent, calculateWordCount } from './viral-content';
 
 const logger = createLogger('DemoGenerator');
 
@@ -64,15 +65,27 @@ export class DemoGenerator {
     
     return {
       ...randomIdea,
-      trendId: null,
+      trendId: undefined,
       createdAt: new Date(),
       updatedAt: new Date(),
     };
   }
 
   async generateDemoScript(idea: ContentIdea, targetDuration: number = 30): Promise<Script> {
-    // Adjust content based on target duration
+    // Get viral content appropriate for the target duration
+    const viralContent = getViralContent(targetDuration);
+    
+    // Log word count for debugging
+    const wordCount = calculateWordCount(viralContent);
+    const expectedWords = targetDuration * 3; // 3 words per second
+    logger.info(`📝 Generated ${wordCount} words for ${targetDuration}s video (expected: ~${expectedWords} words)`);
+    
+    // Old function removed - using viral content instead
+    /*
     const getContentForDuration = (duration: number) => {
+      const wordsPerSecond = 2.5;
+      const totalWordsNeeded = Math.floor(duration * wordsPerSecond);
+      
       if (duration <= 2) {
         // Very short test video - ensure each segment has enough content for 1.5+ seconds of audio
         return {
@@ -103,22 +116,65 @@ export class DemoGenerator {
           ],
           callToAction: "Like and follow for daily tips!"
         };
-      } else {
-        // Long video - 8+ segments
+      } else if (duration <= 60) {
+        // 60 second video - need more content segments
         return {
-          hook: "The complete guide you've been waiting for",
+          hook: "The complete guide to mastering this amazing technique that will transform your daily life",
           content: [
-            "Let's start with the basics you need to understand",
-            "Now here's where things get really interesting",
-            "Most people don't know about this crucial detail",
-            "This next part is absolutely essential to know",
-            "Here's a pro tip that experts use every day",
-            "Let me show you an advanced technique",
-            "This is the secret that changes everything",
-            "And here's how to put it all together",
-            "One more thing that's incredibly important"
+            "Let's start with the fundamental basics that everyone needs to understand before diving deeper into this topic",
+            "Now here's where things get really interesting and you'll discover something truly revolutionary",
+            "Most people don't know about this crucial detail that makes all the difference in the world",
+            "This next part is absolutely essential to know if you want to succeed with this method",
+            "Here's a professional tip that experts use every single day to get incredible results",
+            "Let me show you an advanced technique that will take your skills to the next level",
+            "Pay close attention to this next part because it's the most important thing you'll learn today",
+            "Here's another amazing secret that only the top professionals know about and use regularly",
+            "This specific detail is what separates the beginners from the true masters of this craft",
+            "Now I'm going to reveal something that took me years to discover through trial and error",
+            "This is the game-changing secret that will completely transform how you approach this",
+            "And here's exactly how to put it all together step by step for maximum effectiveness",
+            "One more incredibly important thing that you absolutely must remember going forward",
+            "Before we finish, let me share this final golden nugget of wisdom with you"
           ],
-          callToAction: "Subscribe and hit the bell for more tutorials!"
+          callToAction: "Subscribe and hit the bell for more amazing tutorials and daily tips!"
+        };
+      } else {
+        // 90+ second video - generate enough segments
+        const segmentCount = Math.ceil(duration / 4); // Roughly 4 seconds per segment
+        const segments = [];
+        
+        // Generate varied content segments
+        const segmentTemplates = [
+          "Here's an incredible fact that most people have never heard about before",
+          "This next technique will completely change how you think about this topic",
+          "Let me explain why this is so important for your success and growth",
+          "Pay attention to this crucial detail that makes all the difference",
+          "Scientists have recently discovered something amazing about this subject",
+          "This professional secret has been closely guarded for years until now",
+          "Here's what the experts don't want you to know about this method",
+          "This simple trick can save you hours of time and frustration",
+          "Let me show you the most effective way to approach this challenge",
+          "This is the number one mistake that beginners always make",
+          "Here's a little-known shortcut that professionals use daily",
+          "This breakthrough discovery is changing everything we thought we knew",
+          "Let me reveal the truth behind this common misconception",
+          "This advanced technique requires practice but yields incredible results",
+          "Here's the scientific explanation for why this works so well",
+          "This historical perspective gives us valuable insights into the topic",
+          "Let me share a personal story that illustrates this perfectly",
+          "This comparative analysis reveals some surprising conclusions",
+          "Here's what happens when you apply this principle consistently",
+          "This final piece of advice could be the most valuable of all"
+        ];
+        
+        for (let i = 0; i < segmentCount; i++) {
+          segments.push(segmentTemplates[i % segmentTemplates.length]);
+        }
+        
+        return {
+          hook: "The ultimate comprehensive guide that covers everything you need to know about this fascinating topic",
+          content: segments,
+          callToAction: "Don't forget to subscribe, like this video, and ring the notification bell for more incredible content!"
         };
       }
     };
@@ -271,9 +327,10 @@ export class DemoGenerator {
         callToAction: "Did you like it? Follow me for more fun facts!",
       }
     };
+    */
 
-    // Use duration-based content for simplified version
-    const dynamicContent = getContentForDuration(targetDuration);
+    // Use the viral content we selected instead of old content
+    const dynamicContent = viralContent;
     
     // Convert string content to proper format
     const formattedContent = dynamicContent.content.map((text, index) => ({
@@ -288,15 +345,15 @@ export class DemoGenerator {
     return {
       id: `demo-script-${Date.now()}`,
       ideaId: idea.id,
-      title: `${targetDuration}s - ${idea.title}`,
+      title: `${targetDuration}s - ${viralContent.topic || idea.title}`,
       hook: dynamicContent.hook,
       content: formattedContent,
-      callToAction: dynamicContent.callToAction,
+      callToAction: dynamicContent.cta || "",
       duration: targetDuration,
       wordCount: dynamicContent.content.join(' ').split(' ').length + 10,
       language: 'en',
       voiceSettings: {
-        provider: 'chatterbox',
+        provider: 'elevenlabs' as const,
         voiceId: 'alex',
         speed: 1.0,
         pitch: 1.0,
@@ -343,7 +400,8 @@ export class DemoGenerator {
       lifehacks: 'lifehacks',
     };
 
-    return categoryTemplate[script.idea?.category || 'technology'] || 'trending';
+    // Return a default template since we don't have idea property
+    return 'trending';
   }
 
   async runFullDemo(): Promise<void> {

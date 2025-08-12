@@ -77,14 +77,20 @@ Output format must be valid JSON with this structure:
       "startTime": 0,
       "endTime": 5,
       "visualDescription": "What should appear on screen",
-      "audioDescription": "Sound effects or music cues"
+      "audioDescription": "Sound effects or music cues",
+      "brollSearchTerms": ["search term 1", "search term 2", "search term 3"]
     }
   ],
   "callToAction": "Final message to viewers",
   "duration": 45,
   "wordCount": 120,
   "tags": ["tag1", "tag2"],
-  "emotions": ["curiosity", "surprise", "excitement"]
+  "emotions": ["curiosity", "surprise", "excitement"],
+  "brollSuggestions": {
+    "hook": ["specific search terms for hook scene"],
+    "main": ["search terms for main content"],
+    "closing": ["search terms for closing scene"]
+  }
 }`;
   }
 
