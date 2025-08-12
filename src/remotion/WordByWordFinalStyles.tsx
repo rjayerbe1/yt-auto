@@ -167,14 +167,14 @@ export const WordByWordVideo: React.FC<WordByWordVideoProps> = ({
   // 6 Selected styles that user liked
   const getStyleConfig = () => {
     switch(videoStyle) {
-      case 1: // Clean Modern (was style 1)
+      case 1: // Clean Modern - Purple gradient with gold text (BEST FOR B-ROLL)
         return {
-          background: 'linear-gradient(135deg, #667eea, #764ba2)',
+          background: 'linear-gradient(135deg, rgba(102, 126, 234, 0.95), rgba(118, 75, 162, 0.95))',
           activeColor: '#FFD700',
           inactiveColor: '#FFFFFF',
           fontSize: '72px',
           fontWeight: 'bold',
-          name: 'Clean Modern',
+          name: 'Clean Modern - Purple/Gold',
         };
       case 2: // Minimal (was style 4)
         return {
@@ -366,26 +366,37 @@ export const WordByWordVideo: React.FC<WordByWordVideoProps> = ({
             alignItems: 'center',
           }}
         >
-          {firstLine.map((word, idx) => (
-            <div
-              key={`${word.word}-${word.index}`}
-              style={{
-                fontSize: style.fontSize,
-                fontWeight: style.fontWeight,
-                color: word.isActive ? style.activeColor : style.inactiveColor,
-                opacity: 1,
-                transition: 'color 0.2s ease',
-                textShadow: currentBrollVideo 
-                  ? '2px 2px 8px rgba(0,0,0,0.9)' // Stronger shadow when video background
-                  : word.isActive 
-                    ? '2px 2px 4px rgba(0,0,0,0.5)'
-                    : 'none',
-                WebkitTextStroke: currentBrollVideo ? '1px rgba(0,0,0,0.5)' : 'none',
-              }}
-            >
-              {word.word}
-            </div>
-          ))}
+          {firstLine.map((word, idx) => {
+            // Adjust font size for long words
+            const baseSize = parseInt(style.fontSize);
+            const wordLength = word.word.length;
+            let adjustedSize = baseSize;
+            
+            if (wordLength > 15) adjustedSize = baseSize * 0.6;
+            else if (wordLength > 12) adjustedSize = baseSize * 0.7;
+            else if (wordLength > 10) adjustedSize = baseSize * 0.85;
+            
+            return (
+              <div
+                key={`${word.word}-${word.index}`}
+                style={{
+                  fontSize: `${adjustedSize}px`,
+                  fontWeight: style.fontWeight,
+                  color: word.isActive ? style.activeColor : style.inactiveColor,
+                  opacity: 1,
+                  transition: 'color 0.2s ease',
+                  textShadow: currentBrollVideo 
+                    ? '2px 2px 8px rgba(0,0,0,0.9)' // Stronger shadow when video background
+                    : word.isActive 
+                      ? '2px 2px 4px rgba(0,0,0,0.5)'
+                      : 'none',
+                  WebkitTextStroke: currentBrollVideo ? '1px rgba(0,0,0,0.5)' : 'none',
+                }}
+              >
+                {word.word}
+              </div>
+            );
+          })}
         </div>
 
         {/* Second Line (words 3-5) */}
@@ -397,26 +408,37 @@ export const WordByWordVideo: React.FC<WordByWordVideoProps> = ({
             alignItems: 'center',
           }}
         >
-          {secondLine.map((word, idx) => (
-            <div
-              key={`${word.word}-${word.index}`}
-              style={{
-                fontSize: style.fontSize,
-                fontWeight: style.fontWeight,
-                color: word.isActive ? style.activeColor : style.inactiveColor,
-                opacity: 1,
-                transition: 'color 0.2s ease',
-                textShadow: currentBrollVideo 
-                  ? '2px 2px 8px rgba(0,0,0,0.9)' // Stronger shadow when video background
-                  : word.isActive 
-                    ? '2px 2px 4px rgba(0,0,0,0.5)'
-                    : 'none',
-                WebkitTextStroke: currentBrollVideo ? '1px rgba(0,0,0,0.5)' : 'none',
-              }}
-            >
-              {word.word}
-            </div>
-          ))}
+          {secondLine.map((word, idx) => {
+            // Adjust font size for long words
+            const baseSize = parseInt(style.fontSize);
+            const wordLength = word.word.length;
+            let adjustedSize = baseSize;
+            
+            if (wordLength > 15) adjustedSize = baseSize * 0.6;
+            else if (wordLength > 12) adjustedSize = baseSize * 0.7;
+            else if (wordLength > 10) adjustedSize = baseSize * 0.85;
+            
+            return (
+              <div
+                key={`${word.word}-${word.index}`}
+                style={{
+                  fontSize: `${adjustedSize}px`,
+                  fontWeight: style.fontWeight,
+                  color: word.isActive ? style.activeColor : style.inactiveColor,
+                  opacity: 1,
+                  transition: 'color 0.2s ease',
+                  textShadow: currentBrollVideo 
+                    ? '2px 2px 8px rgba(0,0,0,0.9)' // Stronger shadow when video background
+                    : word.isActive 
+                      ? '2px 2px 4px rgba(0,0,0,0.5)'
+                      : 'none',
+                  WebkitTextStroke: currentBrollVideo ? '1px rgba(0,0,0,0.5)' : 'none',
+                }}
+              >
+                {word.word}
+              </div>
+            );
+          })}
         </div>
       </div>
 

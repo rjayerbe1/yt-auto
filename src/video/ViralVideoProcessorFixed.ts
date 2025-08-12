@@ -37,17 +37,17 @@ export class ViralVideoProcessorFixed extends EventEmitter {
       
       // Map style names to numbers
       const styleMap: Record<string, number> = {
-        'modern_gradient': 2,
-        'minimalist': 4,
-        'neon_cyberpunk': 3,
-        'dynamic': 6,
-        'dark_horror': 3,
-        'glitch_tech': 6,
-        'hospital_horror': 3,
-        'professional': 4
+        'modern_gradient': 1,
+        'minimalist': 1,
+        'neon_cyberpunk': 1,
+        'dynamic': 1,
+        'dark_horror': 1,
+        'glitch_tech': 1,
+        'hospital_horror': 1,
+        'professional': 1
       };
       
-      const videoStyle = styleMap[viralScript.style] || 3;
+      const videoStyle = styleMap[viralScript.style] || 1; // Always use style 1 for best contrast
       
       // Create a new SyncedVideoGenerator with the correct duration and style
       this.syncedGenerator = new SyncedVideoGenerator(viralScript.duration, videoStyle);

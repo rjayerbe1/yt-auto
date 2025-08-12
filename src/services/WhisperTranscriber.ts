@@ -3,6 +3,8 @@ import { promisify } from 'util';
 import path from 'path';
 import fs from 'fs/promises';
 import { logger } from '../utils/logger';
+import { WhisperWordMerger } from './WhisperWordMerger';
+import { WordAligner } from './WordAligner';
 
 const execAsync = promisify(exec);
 
@@ -37,7 +39,7 @@ interface WhisperOutput {
   duration?: number;
 }
 
-interface Caption {
+export interface Caption {
   text: string;
   startMs: number;
   endMs: number;
@@ -48,11 +50,15 @@ interface Caption {
 export class WhisperTranscriber {
   private whisperPath: string;
   private modelPath: string;
+  private wordMerger: WhisperWordMerger;
+  private wordAligner: WordAligner;
   
   constructor() {
     // Path to whisper binary and model (optimized location)
     this.whisperPath = path.join(process.cwd(), 'whisper-bin', 'whisper-cli');
     this.modelPath = path.join(process.cwd(), 'whisper-bin', 'ggml-base.bin');
+    this.wordMerger = new WhisperWordMerger();
+    this.wordAligner = new WordAligner();
   }
   
   /**
@@ -89,13 +95,16 @@ export class WhisperTranscriber {
       const whisperOutput = JSON.parse(jsonContent) as WhisperOutput;
       
       // Convert to Caption format
-      const captions = this.convertToCaptions(whisperOutput);
+      let captions = this.convertToCaptions(whisperOutput);
+      
+      // Apply word merging to fix split words
+      captions = this.wordMerger.postProcess(captions);
       
       // DEBUG: Keep JSON file for debugging
       // await fs.unlink(jsonPath).catch(() => {});
       logger.info(`DEBUG: Keeping JSON file at ${jsonPath}`);
       
-      logger.info(`✅ Transcription complete: ${captions.length} words detected`);
+      logger.info(`✅ Transcription complete: ${captions.length} words detected (after merging)`);
       return captions;
       
     } catch (error) {
@@ -135,8 +144,8 @@ export class WhisperTranscriber {
       // Clean up
       await fs.unlink(jsonPath).catch(() => {});
       
-      logger.info(`✅ Transcription complete: ${whisperOutput.segments.length} segments`);
-      return whisperOutput.segments;
+      logger.info(`✅ Transcription complete: ${whisperOutput.segments?.length || 0} segments`);
+      return whisperOutput.segments || [];
       
     } catch (error) {
       logger.error('Whisper segment transcription error:', error);
@@ -212,7 +221,7 @@ export class WhisperTranscriber {
         const timePerWord = segmentDuration / words.length;
         
         words.forEach((word, index) => {
-          const wordStart = segment.start + (index * timePerWord);
+          const wordStart = (segment.start || 0) + (index * timePerWord);
           const wordEnd = wordStart + timePerWord;
           
           captions.push({
@@ -249,6 +258,30 @@ export class WhisperTranscriber {
       await fs.access(audioPath);
     } catch {
       throw new Error(`Audio file not found: ${audioPath}`);
+    }
+  }
+  
+  /**
+   * Transcribe audio and align with original script text
+   * This combines Whisper's accurate timestamps with the original word boundaries
+   */
+  async transcribeWithOriginalText(audioPath: string, originalText: string): Promise<Caption[]> {
+    try {
+      logger.info(`🎯 Transcribing with original text alignment...`);
+      
+      // Get timestamps from Whisper
+      const whisperCaptions = await this.transcribeWithTimestamps(audioPath);
+      
+      // Align original text with Whisper timestamps
+      const alignedCaptions = this.wordAligner.alignWordsWithTimestamps(originalText, whisperCaptions);
+      
+      logger.info(`✅ Aligned ${alignedCaptions.length} words from original script`);
+      return alignedCaptions;
+      
+    } catch (error) {
+      logger.error('Error in transcribeWithOriginalText:', error);
+      // Fallback to regular transcription
+      return this.transcribeWithTimestamps(audioPath);
     }
   }
   

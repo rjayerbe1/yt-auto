@@ -1,1994 +1,1300 @@
 {
   "segments": [
     {
-      "text": "My dog won't stop staring at the empty corner",
+      "text": "Why does your ex show up right when you're over them?",
       "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/hook.wav",
-      "duration": 2,
+      "duration": 2.48,
       "startTime": 0,
-      "endTime": 2,
+      "endTime": 2.48,
       "wordTimings": [
         {
-          "word": "My",
-          "startTime": 0.09,
-          "endTime": 0.1,
-          "startFrame": 2,
-          "endFrame": 3
+          "word": "Why",
+          "startTime": 0.16,
+          "endTime": 0.2,
+          "startFrame": 4,
+          "endFrame": 6
         },
         {
-          "word": "dog",
-          "startTime": 0.1,
-          "endTime": 0.26,
-          "startFrame": 3,
-          "endFrame": 7
+          "word": "does",
+          "startTime": 0.16,
+          "endTime": 0.47,
+          "startFrame": 4,
+          "endFrame": 14
         },
         {
-          "word": "won",
-          "startTime": 0.26,
-          "endTime": 0.42,
-          "startFrame": 7,
-          "endFrame": 12
+          "word": "your",
+          "startTime": 0.16,
+          "endTime": 0.79,
+          "startFrame": 4,
+          "endFrame": 23
         },
         {
-          "word": "'t",
-          "startTime": 0.42,
-          "endTime": 0.51,
-          "startFrame": 12,
-          "endFrame": 15
+          "word": "ex",
+          "startTime": 0.79,
+          "endTime": 0.8,
+          "startFrame": 23,
+          "endFrame": 24
         },
         {
-          "word": "stop",
-          "startTime": 0.51,
-          "endTime": 0.76,
-          "startFrame": 15,
-          "endFrame": 22
+          "word": "show",
+          "startTime": 0.47,
+          "endTime": 1.07,
+          "startFrame": 14,
+          "endFrame": 32
         },
         {
-          "word": "staring",
-          "startTime": 0.76,
-          "endTime": 1.1,
-          "startFrame": 22,
-          "endFrame": 33
+          "word": "up",
+          "startTime": 0.79,
+          "endTime": 1.54,
+          "startFrame": 23,
+          "endFrame": 46
         },
         {
-          "word": "at",
-          "startTime": 1.1,
-          "endTime": 1.24,
-          "startFrame": 33,
-          "endFrame": 37
+          "word": "right",
+          "startTime": 0.79,
+          "endTime": 1.54,
+          "startFrame": 23,
+          "endFrame": 46
         },
         {
-          "word": "the",
-          "startTime": 1.24,
-          "endTime": 1.36,
-          "startFrame": 37,
-          "endFrame": 40
+          "word": "when",
+          "startTime": 0.8,
+          "endTime": 1.81,
+          "startFrame": 24,
+          "endFrame": 54
         },
         {
-          "word": "empty",
-          "startTime": 1.36,
-          "endTime": 1.63,
-          "startFrame": 40,
-          "endFrame": 48
+          "word": "you're",
+          "startTime": 1.54,
+          "endTime": 2.21,
+          "startFrame": 46,
+          "endFrame": 66
         },
         {
-          "word": "corner",
-          "startTime": 1.63,
-          "endTime": 1.99,
-          "startFrame": 48,
-          "endFrame": 59
+          "word": "over",
+          "startTime": 1.81,
+          "endTime": 2.47,
+          "startFrame": 54,
+          "endFrame": 74
         },
         {
-          "word": ".",
-          "startTime": 1.99,
-          "endTime": 2,
-          "startFrame": 59,
-          "endFrame": 60
+          "word": "them?",
+          "startTime": 2.02,
+          "endTime": 3,
+          "startFrame": 60,
+          "endFrame": 90
         }
       ],
       "captions": [
         {
-          "text": "My",
-          "startMs": 90,
-          "endMs": 100,
-          "timestampMs": 95,
-          "confidence": null
-        },
-        {
-          "text": "dog",
-          "startMs": 100,
-          "endMs": 260,
+          "text": "Why",
+          "startMs": 160,
+          "endMs": 200,
           "timestampMs": 180,
           "confidence": null
         },
         {
-          "text": "won",
-          "startMs": 260,
-          "endMs": 420,
-          "timestampMs": 340,
+          "text": "does",
+          "startMs": 160,
+          "endMs": 470,
+          "timestampMs": 315,
           "confidence": null
         },
         {
-          "text": "'t",
-          "startMs": 420,
-          "endMs": 510,
-          "timestampMs": 465,
+          "text": "your",
+          "startMs": 160,
+          "endMs": 790,
+          "timestampMs": 475,
+          "confidence": null
+        },
+        {
+          "text": "ex",
+          "startMs": 790,
+          "endMs": 800,
+          "timestampMs": 795,
+          "confidence": null
+        },
+        {
+          "text": "show",
+          "startMs": 470,
+          "endMs": 1070,
+          "timestampMs": 770,
+          "confidence": null
+        },
+        {
+          "text": "up",
+          "startMs": 790,
+          "endMs": 1540,
+          "timestampMs": 1165,
+          "confidence": null
+        },
+        {
+          "text": "right",
+          "startMs": 790,
+          "endMs": 1540,
+          "timestampMs": 1165,
+          "confidence": null
+        },
+        {
+          "text": "when",
+          "startMs": 800,
+          "endMs": 1810,
+          "timestampMs": 1305,
+          "confidence": null
+        },
+        {
+          "text": "you're",
+          "startMs": 1540,
+          "endMs": 2210,
+          "timestampMs": 1875,
+          "confidence": null
+        },
+        {
+          "text": "over",
+          "startMs": 1810,
+          "endMs": 2470,
+          "timestampMs": 2140,
+          "confidence": null
+        },
+        {
+          "text": "them?",
+          "startMs": 2020,
+          "endMs": 3000,
+          "timestampMs": 2510,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "text": "Psychology calls it 'unconscious emotional radar'. Your brain sends micro-signals when you stop needing external validation.",
+      "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/segment_0.wav",
+      "duration": 6.92,
+      "startTime": 2.48,
+      "endTime": 9.4,
+      "wordTimings": [
+        {
+          "word": "Psychology",
+          "startTime": 2.67,
+          "endTime": 3.15,
+          "startFrame": 80,
+          "endFrame": 94
+        },
+        {
+          "word": "calls",
+          "startTime": 2.67,
+          "endTime": 3.48,
+          "startFrame": 80,
+          "endFrame": 104
+        },
+        {
+          "word": "it",
+          "startTime": 2.67,
+          "endTime": 3.68,
+          "startFrame": 80,
+          "endFrame": 110
+        },
+        {
+          "word": "'unconscious",
+          "startTime": 3.68,
+          "endTime": 4.35,
+          "startFrame": 110,
+          "endFrame": 130
+        },
+        {
+          "word": "emotional",
+          "startTime": 3.48,
+          "endTime": 4.95,
+          "startFrame": 104,
+          "endFrame": 148
+        },
+        {
+          "word": "radar'.",
+          "startTime": 4.95,
+          "endTime": 5.77,
+          "startFrame": 148,
+          "endFrame": 173
+        },
+        {
+          "word": "Your",
+          "startTime": 4.35,
+          "endTime": 5.79,
+          "startFrame": 130,
+          "endFrame": 173
+        },
+        {
+          "word": "brain",
+          "startTime": 4.95,
+          "endTime": 6.13,
+          "startFrame": 148,
+          "endFrame": 183
+        },
+        {
+          "word": "sends",
+          "startTime": 5.77,
+          "endTime": 6.48,
+          "startFrame": 173,
+          "endFrame": 194
+        },
+        {
+          "word": "micro",
+          "startTime": 5.79,
+          "endTime": 6.88,
+          "startFrame": 173,
+          "endFrame": 206
+        },
+        {
+          "word": "signals",
+          "startTime": 6.13,
+          "endTime": 7.2,
+          "startFrame": 183,
+          "endFrame": 216
+        },
+        {
+          "word": "when",
+          "startTime": 6.48,
+          "endTime": 7.36,
+          "startFrame": 194,
+          "endFrame": 220
+        },
+        {
+          "word": "you",
+          "startTime": 6.88,
+          "endTime": 7.44,
+          "startFrame": 206,
+          "endFrame": 223
+        },
+        {
+          "word": "stop",
+          "startTime": 7.2,
+          "endTime": 7.76,
+          "startFrame": 216,
+          "endFrame": 232
+        },
+        {
+          "word": "needing",
+          "startTime": 7.36,
+          "endTime": 8.18,
+          "startFrame": 220,
+          "endFrame": 245
+        },
+        {
+          "word": "external",
+          "startTime": 7.44,
+          "endTime": 8.66,
+          "startFrame": 223,
+          "endFrame": 259
+        },
+        {
+          "word": "validation.",
+          "startTime": 7.76,
+          "endTime": 10.08,
+          "startFrame": 232,
+          "endFrame": 302
+        }
+      ],
+      "captions": [
+        {
+          "text": "Psychology",
+          "startMs": 2670,
+          "endMs": 3150,
+          "timestampMs": 2910,
+          "confidence": null
+        },
+        {
+          "text": "calls",
+          "startMs": 2670,
+          "endMs": 3480,
+          "timestampMs": 3075,
+          "confidence": null
+        },
+        {
+          "text": "it",
+          "startMs": 2670,
+          "endMs": 3680,
+          "timestampMs": 3175,
+          "confidence": null
+        },
+        {
+          "text": "'unconscious",
+          "startMs": 3680,
+          "endMs": 4350,
+          "timestampMs": 4015,
+          "confidence": null
+        },
+        {
+          "text": "emotional",
+          "startMs": 3480,
+          "endMs": 4950,
+          "timestampMs": 4215,
+          "confidence": null
+        },
+        {
+          "text": "radar'.",
+          "startMs": 4950,
+          "endMs": 5770,
+          "timestampMs": 5360,
+          "confidence": null
+        },
+        {
+          "text": "Your",
+          "startMs": 4350,
+          "endMs": 5790,
+          "timestampMs": 5070,
+          "confidence": null
+        },
+        {
+          "text": "brain",
+          "startMs": 4950,
+          "endMs": 6130,
+          "timestampMs": 5540,
+          "confidence": null
+        },
+        {
+          "text": "sends",
+          "startMs": 5770,
+          "endMs": 6480,
+          "timestampMs": 6125,
+          "confidence": null
+        },
+        {
+          "text": "micro",
+          "startMs": 5790,
+          "endMs": 6880,
+          "timestampMs": 6335,
+          "confidence": null
+        },
+        {
+          "text": "signals",
+          "startMs": 6130,
+          "endMs": 7200,
+          "timestampMs": 6665,
+          "confidence": null
+        },
+        {
+          "text": "when",
+          "startMs": 6480,
+          "endMs": 7360,
+          "timestampMs": 6920,
+          "confidence": null
+        },
+        {
+          "text": "you",
+          "startMs": 6880,
+          "endMs": 7440,
+          "timestampMs": 7160,
           "confidence": null
         },
         {
           "text": "stop",
-          "startMs": 510,
-          "endMs": 760,
-          "timestampMs": 635,
+          "startMs": 7200,
+          "endMs": 7760,
+          "timestampMs": 7480,
           "confidence": null
         },
         {
-          "text": "staring",
-          "startMs": 760,
-          "endMs": 1100,
-          "timestampMs": 930,
+          "text": "needing",
+          "startMs": 7360,
+          "endMs": 8180,
+          "timestampMs": 7770,
           "confidence": null
         },
         {
-          "text": "at",
-          "startMs": 1100,
-          "endMs": 1240,
-          "timestampMs": 1170,
+          "text": "external",
+          "startMs": 7440,
+          "endMs": 8660,
+          "timestampMs": 8050,
           "confidence": null
         },
         {
-          "text": "the",
-          "startMs": 1240,
-          "endMs": 1360,
-          "timestampMs": 1300,
-          "confidence": null
-        },
-        {
-          "text": "empty",
-          "startMs": 1360,
-          "endMs": 1630,
-          "timestampMs": 1495,
-          "confidence": null
-        },
-        {
-          "text": "corner",
-          "startMs": 1630,
-          "endMs": 1990,
-          "timestampMs": 1810,
-          "confidence": null
-        },
-        {
-          "text": ".",
-          "startMs": 1990,
-          "endMs": 2000,
-          "timestampMs": 1995,
+          "text": "validation.",
+          "startMs": 7760,
+          "endMs": 10080,
+          "timestampMs": 8920,
           "confidence": null
         }
       ]
     },
     {
-      "text": "Every night at exactly 3:33 AM. Growling at nothing.",
-      "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/segment_0.wav",
-      "duration": 4.24,
-      "startTime": 2,
-      "endTime": 6.24,
-      "wordTimings": [
-        {
-          "word": "Every",
-          "startTime": 2.21,
-          "endTime": 2.32,
-          "startFrame": 66,
-          "endFrame": 69
-        },
-        {
-          "word": "night",
-          "startTime": 2.32,
-          "endTime": 2.64,
-          "startFrame": 69,
-          "endFrame": 79
-        },
-        {
-          "word": "at",
-          "startTime": 2.64,
-          "endTime": 2.77,
-          "startFrame": 79,
-          "endFrame": 83
-        },
-        {
-          "word": "exactly",
-          "startTime": 2.77,
-          "endTime": 3.25,
-          "startFrame": 83,
-          "endFrame": 97
-        },
-        {
-          "word": "3",
-          "startTime": 3.25,
-          "endTime": 3.44,
-          "startFrame": 97,
-          "endFrame": 103
-        },
-        {
-          "word": ",",
-          "startTime": 3.44,
-          "endTime": 3.53,
-          "startFrame": 103,
-          "endFrame": 105
-        },
-        {
-          "word": "000",
-          "startTime": 3.53,
-          "endTime": 4.12,
-          "startFrame": 105,
-          "endFrame": 123
-        },
-        {
-          "word": "-",
-          "startTime": 4.12,
-          "endTime": 4.17,
-          "startFrame": 123,
-          "endFrame": 125
-        },
-        {
-          "word": "3",
-          "startTime": 4.17,
-          "endTime": 4.36,
-          "startFrame": 125,
-          "endFrame": 130
-        },
-        {
-          "word": ",",
-          "startTime": 4.36,
-          "endTime": 4.5,
-          "startFrame": 130,
-          "endFrame": 135
-        },
-        {
-          "word": "000",
-          "startTime": 4.5,
-          "endTime": 5.05,
-          "startFrame": 135,
-          "endFrame": 151
-        },
-        {
-          "word": "AM",
-          "startTime": 5.05,
-          "endTime": 5.29,
-          "startFrame": 151,
-          "endFrame": 158
-        },
-        {
-          "word": ",",
-          "startTime": 5.29,
-          "endTime": 5.33,
-          "startFrame": 158,
-          "endFrame": 159
-        },
-        {
-          "word": "grow",
-          "startTime": 5.33,
-          "endTime": 5.52,
-          "startFrame": 159,
-          "endFrame": 165
-        },
-        {
-          "word": "ling",
-          "startTime": 5.52,
-          "endTime": 5.71,
-          "startFrame": 165,
-          "endFrame": 171
-        },
-        {
-          "word": "at",
-          "startTime": 5.71,
-          "endTime": 5.8,
-          "startFrame": 171,
-          "endFrame": 174
-        },
-        {
-          "word": "nothing",
-          "startTime": 5.8,
-          "endTime": 6.23,
-          "startFrame": 174,
-          "endFrame": 186
-        },
-        {
-          "word": ".",
-          "startTime": 6.23,
-          "endTime": 6.4,
-          "startFrame": 186,
-          "endFrame": 192
-        }
-      ],
-      "captions": [
-        {
-          "text": "Every",
-          "startMs": 2210,
-          "endMs": 2320,
-          "timestampMs": 2265,
-          "confidence": null
-        },
-        {
-          "text": "night",
-          "startMs": 2320,
-          "endMs": 2640,
-          "timestampMs": 2480,
-          "confidence": null
-        },
-        {
-          "text": "at",
-          "startMs": 2640,
-          "endMs": 2770,
-          "timestampMs": 2705,
-          "confidence": null
-        },
-        {
-          "text": "exactly",
-          "startMs": 2770,
-          "endMs": 3250,
-          "timestampMs": 3010,
-          "confidence": null
-        },
-        {
-          "text": "3",
-          "startMs": 3250,
-          "endMs": 3440,
-          "timestampMs": 3345,
-          "confidence": null
-        },
-        {
-          "text": ",",
-          "startMs": 3440,
-          "endMs": 3530,
-          "timestampMs": 3485,
-          "confidence": null
-        },
-        {
-          "text": "000",
-          "startMs": 3530,
-          "endMs": 4120,
-          "timestampMs": 3825,
-          "confidence": null
-        },
-        {
-          "text": "-",
-          "startMs": 4120,
-          "endMs": 4170,
-          "timestampMs": 4145,
-          "confidence": null
-        },
-        {
-          "text": "3",
-          "startMs": 4170,
-          "endMs": 4360,
-          "timestampMs": 4265,
-          "confidence": null
-        },
-        {
-          "text": ",",
-          "startMs": 4360,
-          "endMs": 4500,
-          "timestampMs": 4430,
-          "confidence": null
-        },
-        {
-          "text": "000",
-          "startMs": 4500,
-          "endMs": 5050,
-          "timestampMs": 4775,
-          "confidence": null
-        },
-        {
-          "text": "AM",
-          "startMs": 5050,
-          "endMs": 5290,
-          "timestampMs": 5170,
-          "confidence": null
-        },
-        {
-          "text": ",",
-          "startMs": 5290,
-          "endMs": 5330,
-          "timestampMs": 5310,
-          "confidence": null
-        },
-        {
-          "text": "grow",
-          "startMs": 5330,
-          "endMs": 5520,
-          "timestampMs": 5425,
-          "confidence": null
-        },
-        {
-          "text": "ling",
-          "startMs": 5520,
-          "endMs": 5710,
-          "timestampMs": 5615,
-          "confidence": null
-        },
-        {
-          "text": "at",
-          "startMs": 5710,
-          "endMs": 5800,
-          "timestampMs": 5755,
-          "confidence": null
-        },
-        {
-          "text": "nothing",
-          "startMs": 5800,
-          "endMs": 6230,
-          "timestampMs": 6015,
-          "confidence": null
-        },
-        {
-          "text": ".",
-          "startMs": 6230,
-          "endMs": 6400,
-          "timestampMs": 6315,
-          "confidence": null
-        }
-      ]
-    },
-    {
-      "text": "I set up a camera to see what happens. The footage showed my dog staring.",
+      "text": "Your posture changes, your voice becomes firmer, you post less on social media. These signals activate the loss system in your ex's brain.",
       "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/segment_1.wav",
-      "duration": 3.72,
-      "startTime": 6.24,
-      "endTime": 9.96,
+      "duration": 7.12,
+      "startTime": 9.4,
+      "endTime": 16.52,
       "wordTimings": [
         {
-          "word": "I",
-          "startTime": 6.3,
-          "endTime": 6.31,
-          "startFrame": 189,
-          "endFrame": 189
-        },
-        {
-          "word": "set",
-          "startTime": 6.31,
-          "endTime": 6.49,
-          "startFrame": 189,
-          "endFrame": 194
-        },
-        {
-          "word": "up",
-          "startTime": 6.49,
-          "endTime": 6.67,
-          "startFrame": 194,
-          "endFrame": 200
-        },
-        {
-          "word": "a",
-          "startTime": 6.67,
-          "endTime": 6.68,
-          "startFrame": 200,
-          "endFrame": 200
-        },
-        {
-          "word": "camera",
-          "startTime": 6.68,
-          "endTime": 7.07,
-          "startFrame": 200,
-          "endFrame": 212
-        },
-        {
-          "word": "to",
-          "startTime": 7.07,
-          "endTime": 7.2,
-          "startFrame": 212,
-          "endFrame": 216
-        },
-        {
-          "word": "see",
-          "startTime": 7.2,
-          "endTime": 7.39,
-          "startFrame": 216,
-          "endFrame": 221
-        },
-        {
-          "word": "what",
-          "startTime": 7.39,
-          "endTime": 7.69,
-          "startFrame": 221,
-          "endFrame": 230
-        },
-        {
-          "word": "happens",
-          "startTime": 7.69,
-          "endTime": 8.36,
-          "startFrame": 230,
-          "endFrame": 250
-        },
-        {
-          "word": ".",
-          "startTime": 8.36,
-          "endTime": 8.36,
-          "startFrame": 250,
-          "endFrame": 250
-        },
-        {
-          "word": "The",
-          "startTime": 8.36,
-          "endTime": 8.53,
-          "startFrame": 250,
-          "endFrame": 255
-        },
-        {
-          "word": "footage",
-          "startTime": 8.53,
-          "endTime": 8.93,
-          "startFrame": 255,
-          "endFrame": 267
-        },
-        {
-          "word": "showed",
-          "startTime": 8.93,
-          "endTime": 9.28,
-          "startFrame": 267,
-          "endFrame": 278
-        },
-        {
-          "word": "my",
-          "startTime": 9.28,
-          "endTime": 9.4,
-          "startFrame": 278,
-          "endFrame": 282
-        },
-        {
-          "word": "dog",
-          "startTime": 9.4,
-          "endTime": 9.56,
-          "startFrame": 282,
+          "word": "Your",
+          "startTime": 9.52,
+          "endTime": 9.55,
+          "startFrame": 285,
           "endFrame": 286
         },
         {
-          "word": "staring",
-          "startTime": 9.56,
-          "endTime": 10,
-          "startFrame": 286,
-          "endFrame": 300
+          "word": "posture",
+          "startTime": 9.7,
+          "endTime": 9.9,
+          "startFrame": 291,
+          "endFrame": 297
         },
         {
-          "word": ".",
-          "startTime": 10,
-          "endTime": 10.16,
-          "startFrame": 300,
-          "endFrame": 304
-        }
-      ],
-      "captions": [
-        {
-          "text": "I",
-          "startMs": 6300,
-          "endMs": 6310,
-          "timestampMs": 6305,
-          "confidence": null
+          "word": "changes,",
+          "startTime": 9.7,
+          "endTime": 10.68,
+          "startFrame": 291,
+          "endFrame": 320
         },
         {
-          "text": "set",
-          "startMs": 6310,
-          "endMs": 6490,
-          "timestampMs": 6400,
-          "confidence": null
+          "word": "your",
+          "startTime": 9.7,
+          "endTime": 10.1,
+          "startFrame": 291,
+          "endFrame": 303
         },
         {
-          "text": "up",
-          "startMs": 6490,
-          "endMs": 6670,
-          "timestampMs": 6580,
-          "confidence": null
+          "word": "voice",
+          "startTime": 10.1,
+          "endTime": 11.12,
+          "startFrame": 303,
+          "endFrame": 333
         },
         {
-          "text": "a",
-          "startMs": 6670,
-          "endMs": 6680,
-          "timestampMs": 6675,
-          "confidence": null
-        },
-        {
-          "text": "camera",
-          "startMs": 6680,
-          "endMs": 7070,
-          "timestampMs": 6875,
-          "confidence": null
-        },
-        {
-          "text": "to",
-          "startMs": 7070,
-          "endMs": 7200,
-          "timestampMs": 7135,
-          "confidence": null
-        },
-        {
-          "text": "see",
-          "startMs": 7200,
-          "endMs": 7390,
-          "timestampMs": 7295,
-          "confidence": null
-        },
-        {
-          "text": "what",
-          "startMs": 7390,
-          "endMs": 7690,
-          "timestampMs": 7540,
-          "confidence": null
-        },
-        {
-          "text": "happens",
-          "startMs": 7690,
-          "endMs": 8360,
-          "timestampMs": 8025,
-          "confidence": null
-        },
-        {
-          "text": ".",
-          "startMs": 8360,
-          "endMs": 8360,
-          "timestampMs": 8360,
-          "confidence": null
-        },
-        {
-          "text": "The",
-          "startMs": 8360,
-          "endMs": 8530,
-          "timestampMs": 8445,
-          "confidence": null
-        },
-        {
-          "text": "footage",
-          "startMs": 8530,
-          "endMs": 8930,
-          "timestampMs": 8730,
-          "confidence": null
-        },
-        {
-          "text": "showed",
-          "startMs": 8930,
-          "endMs": 9280,
-          "timestampMs": 9105,
-          "confidence": null
-        },
-        {
-          "text": "my",
-          "startMs": 9280,
-          "endMs": 9400,
-          "timestampMs": 9340,
-          "confidence": null
-        },
-        {
-          "text": "dog",
-          "startMs": 9400,
-          "endMs": 9560,
-          "timestampMs": 9480,
-          "confidence": null
-        },
-        {
-          "text": "staring",
-          "startMs": 9560,
-          "endMs": 10000,
-          "timestampMs": 9780,
-          "confidence": null
-        },
-        {
-          "text": ".",
-          "startMs": 10000,
-          "endMs": 10160,
-          "timestampMs": 10080,
-          "confidence": null
-        }
-      ]
-    },
-    {
-      "text": "But in the corner, there was a shadow. It wasn't cast by anything.",
-      "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/segment_2.wav",
-      "duration": 3.84,
-      "startTime": 9.96,
-      "endTime": 13.8,
-      "wordTimings": [
-        {
-          "word": "But",
-          "startTime": 10.08,
-          "endTime": 10.15,
-          "startFrame": 302,
-          "endFrame": 304
-        },
-        {
-          "word": "in",
-          "startTime": 10.15,
-          "endTime": 10.34,
-          "startFrame": 304,
-          "endFrame": 310
-        },
-        {
-          "word": "the",
-          "startTime": 10.34,
-          "endTime": 10.46,
-          "startFrame": 310,
-          "endFrame": 313
-        },
-        {
-          "word": "corner",
-          "startTime": 10.46,
-          "endTime": 10.84,
-          "startFrame": 313,
-          "endFrame": 325
-        },
-        {
-          "word": ",",
-          "startTime": 10.84,
-          "endTime": 10.96,
-          "startFrame": 325,
-          "endFrame": 328
-        },
-        {
-          "word": "there",
-          "startTime": 10.96,
-          "endTime": 11.27,
-          "startFrame": 328,
-          "endFrame": 338
-        },
-        {
-          "word": "was",
-          "startTime": 11.27,
+          "word": "becomes",
+          "startTime": 10.68,
           "endTime": 11.46,
-          "startFrame": 338,
+          "startFrame": 320,
           "endFrame": 343
         },
         {
-          "word": "a",
-          "startTime": 11.46,
-          "endTime": 11.52,
-          "startFrame": 343,
-          "endFrame": 345
+          "word": "firmer,",
+          "startTime": 10.81,
+          "endTime": 11.93,
+          "startFrame": 324,
+          "endFrame": 357
         },
         {
-          "word": "shadow",
-          "startTime": 11.52,
-          "endTime": 12.12,
-          "startFrame": 345,
+          "word": "you",
+          "startTime": 11.12,
+          "endTime": 12.1,
+          "startFrame": 333,
           "endFrame": 363
         },
         {
-          "word": ".",
-          "startTime": 12.12,
-          "endTime": 12.25,
+          "word": "post",
+          "startTime": 11.46,
+          "endTime": 12.34,
+          "startFrame": 343,
+          "endFrame": 370
+        },
+        {
+          "word": "less",
+          "startTime": 11.93,
+          "endTime": 12.58,
+          "startFrame": 357,
+          "endFrame": 377
+        },
+        {
+          "word": "on",
+          "startTime": 12.1,
+          "endTime": 12.7,
           "startFrame": 363,
-          "endFrame": 367
+          "endFrame": 381
         },
         {
-          "word": "It",
-          "startTime": 12.25,
-          "endTime": 12.28,
-          "startFrame": 367,
-          "endFrame": 368
-        },
-        {
-          "word": "wasn",
-          "startTime": 12.28,
-          "endTime": 12.53,
-          "startFrame": 368,
-          "endFrame": 375
-        },
-        {
-          "word": "'t",
-          "startTime": 12.53,
-          "endTime": 12.69,
-          "startFrame": 375,
-          "endFrame": 380
-        },
-        {
-          "word": "cast",
-          "startTime": 12.69,
-          "endTime": 12.94,
-          "startFrame": 380,
-          "endFrame": 388
-        },
-        {
-          "word": "by",
-          "startTime": 12.94,
-          "endTime": 13.05,
-          "startFrame": 388,
+          "word": "social",
+          "startTime": 12.34,
+          "endTime": 13.06,
+          "startFrame": 370,
           "endFrame": 391
         },
         {
-          "word": "anything",
-          "startTime": 13.05,
-          "endTime": 13.6,
-          "startFrame": 391,
-          "endFrame": 408
+          "word": "media.",
+          "startTime": 12.58,
+          "endTime": 13.48,
+          "startFrame": 377,
+          "endFrame": 404
         },
         {
-          "word": ".",
-          "startTime": 13.6,
-          "endTime": 13.64,
-          "startFrame": 408,
-          "endFrame": 409
+          "word": "These",
+          "startTime": 12.7,
+          "endTime": 13.79,
+          "startFrame": 381,
+          "endFrame": 413
+        },
+        {
+          "word": "signals",
+          "startTime": 13.06,
+          "endTime": 14.23,
+          "startFrame": 391,
+          "endFrame": 426
+        },
+        {
+          "word": "activate",
+          "startTime": 13.48,
+          "endTime": 14.76,
+          "startFrame": 404,
+          "endFrame": 442
+        },
+        {
+          "word": "the",
+          "startTime": 13.48,
+          "endTime": 13.79,
+          "startFrame": 404,
+          "endFrame": 413
+        },
+        {
+          "word": "system",
+          "startTime": 14.76,
+          "endTime": 15.46,
+          "startFrame": 442,
+          "endFrame": 463
+        },
+        {
+          "word": "in",
+          "startTime": 14.91,
+          "endTime": 15.58,
+          "startFrame": 447,
+          "endFrame": 467
+        },
+        {
+          "word": "your",
+          "startTime": 15.09,
+          "endTime": 15.83,
+          "startFrame": 452,
+          "endFrame": 474
+        },
+        {
+          "word": "ex's",
+          "startTime": 15.58,
+          "endTime": 16.07,
+          "startFrame": 467,
+          "endFrame": 482
+        },
+        {
+          "word": "brain.",
+          "startTime": 15.83,
+          "endTime": 16.68,
+          "startFrame": 474,
+          "endFrame": 500
         }
       ],
       "captions": [
         {
-          "text": "But",
-          "startMs": 10080,
-          "endMs": 10150,
-          "timestampMs": 10115,
+          "text": "Your",
+          "startMs": 9520,
+          "endMs": 9550,
+          "timestampMs": 9535,
           "confidence": null
         },
         {
-          "text": "in",
-          "startMs": 10150,
-          "endMs": 10340,
-          "timestampMs": 10245,
+          "text": "posture",
+          "startMs": 9700,
+          "endMs": 9900,
+          "timestampMs": 9800,
+          "confidence": null
+        },
+        {
+          "text": "changes,",
+          "startMs": 9700,
+          "endMs": 10680,
+          "timestampMs": 10190,
+          "confidence": null
+        },
+        {
+          "text": "your",
+          "startMs": 9700,
+          "endMs": 10100,
+          "timestampMs": 9900,
+          "confidence": null
+        },
+        {
+          "text": "voice",
+          "startMs": 10100,
+          "endMs": 11120,
+          "timestampMs": 10610,
+          "confidence": null
+        },
+        {
+          "text": "becomes",
+          "startMs": 10680,
+          "endMs": 11460,
+          "timestampMs": 11070,
+          "confidence": null
+        },
+        {
+          "text": "firmer,",
+          "startMs": 10810,
+          "endMs": 11930,
+          "timestampMs": 11370,
+          "confidence": null
+        },
+        {
+          "text": "you",
+          "startMs": 11120,
+          "endMs": 12100,
+          "timestampMs": 11610,
+          "confidence": null
+        },
+        {
+          "text": "post",
+          "startMs": 11460,
+          "endMs": 12340,
+          "timestampMs": 11900,
+          "confidence": 1
+        },
+        {
+          "text": "less",
+          "startMs": 11930,
+          "endMs": 12580,
+          "timestampMs": 12255,
+          "confidence": null
+        },
+        {
+          "text": "on",
+          "startMs": 12100,
+          "endMs": 12700,
+          "timestampMs": 12400,
+          "confidence": null
+        },
+        {
+          "text": "social",
+          "startMs": 12340,
+          "endMs": 13060,
+          "timestampMs": 12700,
+          "confidence": null
+        },
+        {
+          "text": "media.",
+          "startMs": 12580,
+          "endMs": 13480,
+          "timestampMs": 13030,
+          "confidence": null
+        },
+        {
+          "text": "These",
+          "startMs": 12700,
+          "endMs": 13790,
+          "timestampMs": 13245,
+          "confidence": null
+        },
+        {
+          "text": "signals",
+          "startMs": 13060,
+          "endMs": 14230,
+          "timestampMs": 13645,
+          "confidence": null
+        },
+        {
+          "text": "activate",
+          "startMs": 13480,
+          "endMs": 14760,
+          "timestampMs": 14120,
           "confidence": null
         },
         {
           "text": "the",
-          "startMs": 10340,
-          "endMs": 10460,
-          "timestampMs": 10400,
+          "startMs": 13480,
+          "endMs": 13790,
+          "timestampMs": 13635,
           "confidence": null
         },
         {
-          "text": "corner",
-          "startMs": 10460,
-          "endMs": 10840,
-          "timestampMs": 10650,
+          "text": "system",
+          "startMs": 14760,
+          "endMs": 15460,
+          "timestampMs": 15110,
           "confidence": null
         },
         {
-          "text": ",",
-          "startMs": 10840,
-          "endMs": 10960,
-          "timestampMs": 10900,
+          "text": "in",
+          "startMs": 14910,
+          "endMs": 15580,
+          "timestampMs": 15245,
           "confidence": null
         },
         {
-          "text": "there",
-          "startMs": 10960,
-          "endMs": 11270,
-          "timestampMs": 11115,
+          "text": "your",
+          "startMs": 15090,
+          "endMs": 15830,
+          "timestampMs": 15460,
           "confidence": null
         },
         {
-          "text": "was",
-          "startMs": 11270,
-          "endMs": 11460,
-          "timestampMs": 11365,
+          "text": "ex's",
+          "startMs": 15580,
+          "endMs": 16070,
+          "timestampMs": 15825,
           "confidence": null
         },
         {
-          "text": "a",
-          "startMs": 11460,
-          "endMs": 11520,
-          "timestampMs": 11490,
-          "confidence": null
-        },
-        {
-          "text": "shadow",
-          "startMs": 11520,
-          "endMs": 12120,
-          "timestampMs": 11820,
-          "confidence": null
-        },
-        {
-          "text": ".",
-          "startMs": 12120,
-          "endMs": 12250,
-          "timestampMs": 12185,
-          "confidence": null
-        },
-        {
-          "text": "It",
-          "startMs": 12250,
-          "endMs": 12280,
-          "timestampMs": 12265,
-          "confidence": null
-        },
-        {
-          "text": "wasn",
-          "startMs": 12280,
-          "endMs": 12530,
-          "timestampMs": 12405,
-          "confidence": null
-        },
-        {
-          "text": "'t",
-          "startMs": 12530,
-          "endMs": 12690,
-          "timestampMs": 12610,
-          "confidence": null
-        },
-        {
-          "text": "cast",
-          "startMs": 12690,
-          "endMs": 12940,
-          "timestampMs": 12815,
-          "confidence": null
-        },
-        {
-          "text": "by",
-          "startMs": 12940,
-          "endMs": 13050,
-          "timestampMs": 12995,
-          "confidence": null
-        },
-        {
-          "text": "anything",
-          "startMs": 13050,
-          "endMs": 13600,
-          "timestampMs": 13325,
-          "confidence": null
-        },
-        {
-          "text": ".",
-          "startMs": 13600,
-          "endMs": 13640,
-          "timestampMs": 13620,
+          "text": "brain.",
+          "startMs": 15830,
+          "endMs": 16680,
+          "timestampMs": 16255,
           "confidence": null
         }
       ]
     },
     {
-      "text": "The shadow moved independently. It got closer to my dog each night.",
-      "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/segment_3.wav",
-      "duration": 3.36,
-      "startTime": 13.8,
-      "endTime": 17.16,
+      "text": "The same one that ignores what's available and chases what's unattainable. It's not magic, it's pure neuroscience.",
+      "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/segment_2.wav",
+      "duration": 5.36,
+      "startTime": 16.52,
+      "endTime": 21.88,
       "wordTimings": [
         {
           "word": "The",
-          "startTime": 13.91,
-          "endTime": 13.96,
-          "startFrame": 417,
-          "endFrame": 418
-        },
-        {
-          "word": "shadow",
-          "startTime": 13.96,
-          "endTime": 14.29,
-          "startFrame": 418,
-          "endFrame": 428
-        },
-        {
-          "word": "move",
-          "startTime": 14.29,
-          "endTime": 14.49,
-          "startFrame": 428,
-          "endFrame": 434
-        },
-        {
-          "word": "independently",
-          "startTime": 14.49,
-          "endTime": 15.22,
-          "startFrame": 434,
-          "endFrame": 456
-        },
-        {
-          "word": ".",
-          "startTime": 15.22,
-          "endTime": 15.51,
-          "startFrame": 456,
-          "endFrame": 465
-        },
-        {
-          "word": "It",
-          "startTime": 15.51,
-          "endTime": 15.52,
-          "startFrame": 465,
-          "endFrame": 465
-        },
-        {
-          "word": "got",
-          "startTime": 15.52,
-          "endTime": 15.7,
-          "startFrame": 465,
-          "endFrame": 471
-        },
-        {
-          "word": "closer",
-          "startTime": 15.7,
-          "endTime": 16.09,
-          "startFrame": 471,
-          "endFrame": 482
-        },
-        {
-          "word": "to",
-          "startTime": 16.09,
-          "endTime": 16.19,
-          "startFrame": 482,
-          "endFrame": 485
-        },
-        {
-          "word": "my",
-          "startTime": 16.19,
-          "endTime": 16.32,
-          "startFrame": 485,
-          "endFrame": 489
-        },
-        {
-          "word": "dog",
-          "startTime": 16.32,
-          "endTime": 16.49,
-          "startFrame": 489,
-          "endFrame": 494
-        },
-        {
-          "word": "each",
-          "startTime": 16.49,
+          "startTime": 16.66,
           "endTime": 16.73,
-          "startFrame": 494,
+          "startFrame": 499,
           "endFrame": 501
         },
         {
-          "word": "night",
-          "startTime": 16.73,
-          "endTime": 17.15,
-          "startFrame": 501,
-          "endFrame": 514
+          "word": "same",
+          "startTime": 16.66,
+          "endTime": 16.88,
+          "startFrame": 499,
+          "endFrame": 506
         },
         {
-          "word": ".",
-          "startTime": 17.15,
-          "endTime": 17.16,
-          "startFrame": 514,
-          "endFrame": 514
+          "word": "one",
+          "startTime": 16.66,
+          "endTime": 16.99,
+          "startFrame": 499,
+          "endFrame": 509
+        },
+        {
+          "word": "that",
+          "startTime": 16.73,
+          "endTime": 17.18,
+          "startFrame": 501,
+          "endFrame": 515
+        },
+        {
+          "word": "ignores",
+          "startTime": 16.88,
+          "endTime": 17.51,
+          "startFrame": 506,
+          "endFrame": 525
+        },
+        {
+          "word": "what's",
+          "startTime": 17.18,
+          "endTime": 17.8,
+          "startFrame": 515,
+          "endFrame": 534
+        },
+        {
+          "word": "available",
+          "startTime": 17.51,
+          "endTime": 18.28,
+          "startFrame": 525,
+          "endFrame": 548
+        },
+        {
+          "word": "and",
+          "startTime": 17.71,
+          "endTime": 18.52,
+          "startFrame": 531,
+          "endFrame": 555
+        },
+        {
+          "word": "chases",
+          "startTime": 17.8,
+          "endTime": 18.73,
+          "startFrame": 534,
+          "endFrame": 561
+        },
+        {
+          "word": "what's",
+          "startTime": 18.52,
+          "endTime": 18.94,
+          "startFrame": 555,
+          "endFrame": 568
+        },
+        {
+          "word": "unattainable.",
+          "startTime": 18.87,
+          "endTime": 19.52,
+          "startFrame": 566,
+          "endFrame": 585
+        },
+        {
+          "word": "It's",
+          "startTime": 18.87,
+          "endTime": 18.94,
+          "startFrame": 566,
+          "endFrame": 568
+        },
+        {
+          "word": "not",
+          "startTime": 19.52,
+          "endTime": 19.91,
+          "startFrame": 585,
+          "endFrame": 597
+        },
+        {
+          "word": "magic,",
+          "startTime": 19.72,
+          "endTime": 20.31,
+          "startFrame": 591,
+          "endFrame": 609
+        },
+        {
+          "word": "it's",
+          "startTime": 19.72,
+          "endTime": 19.74,
+          "startFrame": 591,
+          "endFrame": 592
+        },
+        {
+          "word": "pure",
+          "startTime": 20.31,
+          "endTime": 20.8,
+          "startFrame": 609,
+          "endFrame": 624
+        },
+        {
+          "word": "neuroscience.",
+          "startTime": 20.43,
+          "endTime": 21.52,
+          "startFrame": 612,
+          "endFrame": 645
         }
       ],
       "captions": [
         {
           "text": "The",
-          "startMs": 13910,
-          "endMs": 13960,
-          "timestampMs": 13935,
+          "startMs": 16660,
+          "endMs": 16730,
+          "timestampMs": 16695,
           "confidence": null
         },
         {
-          "text": "shadow",
-          "startMs": 13960,
-          "endMs": 14290,
-          "timestampMs": 14125,
+          "text": "same",
+          "startMs": 16660,
+          "endMs": 16880,
+          "timestampMs": 16770,
           "confidence": null
         },
         {
-          "text": "move",
-          "startMs": 14290,
-          "endMs": 14490,
-          "timestampMs": 14390,
+          "text": "one",
+          "startMs": 16660,
+          "endMs": 16990,
+          "timestampMs": 16825,
           "confidence": null
         },
         {
-          "text": "independently",
-          "startMs": 14490,
-          "endMs": 15220,
-          "timestampMs": 14855,
+          "text": "that",
+          "startMs": 16730,
+          "endMs": 17180,
+          "timestampMs": 16955,
           "confidence": null
         },
         {
-          "text": ".",
-          "startMs": 15220,
-          "endMs": 15510,
-          "timestampMs": 15365,
+          "text": "ignores",
+          "startMs": 16880,
+          "endMs": 17510,
+          "timestampMs": 17195,
           "confidence": null
         },
         {
-          "text": "It",
-          "startMs": 15510,
-          "endMs": 15520,
-          "timestampMs": 15515,
+          "text": "what's",
+          "startMs": 17180,
+          "endMs": 17800,
+          "timestampMs": 17490,
+          "confidence": 1
+        },
+        {
+          "text": "available",
+          "startMs": 17510,
+          "endMs": 18280,
+          "timestampMs": 17895,
           "confidence": null
         },
         {
-          "text": "got",
-          "startMs": 15520,
-          "endMs": 15700,
-          "timestampMs": 15610,
+          "text": "and",
+          "startMs": 17710,
+          "endMs": 18520,
+          "timestampMs": 18115,
           "confidence": null
         },
         {
-          "text": "closer",
-          "startMs": 15700,
-          "endMs": 16090,
-          "timestampMs": 15895,
+          "text": "chases",
+          "startMs": 17800,
+          "endMs": 18730,
+          "timestampMs": 18265,
+          "confidence": null
+        },
+        {
+          "text": "what's",
+          "startMs": 18520,
+          "endMs": 18940,
+          "timestampMs": 18730,
+          "confidence": 1
+        },
+        {
+          "text": "unattainable.",
+          "startMs": 18870,
+          "endMs": 19520,
+          "timestampMs": 19195,
+          "confidence": null
+        },
+        {
+          "text": "It's",
+          "startMs": 18870,
+          "endMs": 18940,
+          "timestampMs": 18905,
+          "confidence": null
+        },
+        {
+          "text": "not",
+          "startMs": 19520,
+          "endMs": 19910,
+          "timestampMs": 19715,
+          "confidence": null
+        },
+        {
+          "text": "magic,",
+          "startMs": 19720,
+          "endMs": 20310,
+          "timestampMs": 20015,
+          "confidence": null
+        },
+        {
+          "text": "it's",
+          "startMs": 19720,
+          "endMs": 19740,
+          "timestampMs": 19730,
+          "confidence": null
+        },
+        {
+          "text": "pure",
+          "startMs": 20310,
+          "endMs": 20800,
+          "timestampMs": 20555,
+          "confidence": null
+        },
+        {
+          "text": "neuroscience.",
+          "startMs": 20430,
+          "endMs": 21520,
+          "timestampMs": 20975,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "text": "Your real indifference activates their prefrontal cortex. Has this happened to you?",
+      "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/segment_3.wav",
+      "duration": 4.04,
+      "startTime": 21.88,
+      "endTime": 25.919999999999998,
+      "wordTimings": [
+        {
+          "word": "Your",
+          "startTime": 21.97,
+          "endTime": 22.1,
+          "startFrame": 659,
+          "endFrame": 663
+        },
+        {
+          "word": "real",
+          "startTime": 21.97,
+          "endTime": 22.32,
+          "startFrame": 659,
+          "endFrame": 669
+        },
+        {
+          "word": "indifference",
+          "startTime": 22.1,
+          "endTime": 22.99,
+          "startFrame": 663,
+          "endFrame": 689
+        },
+        {
+          "word": "activates",
+          "startTime": 22.32,
+          "endTime": 23.5,
+          "startFrame": 669,
+          "endFrame": 705
+        },
+        {
+          "word": "their",
+          "startTime": 22.6,
+          "endTime": 23.79,
+          "startFrame": 678,
+          "endFrame": 713
+        },
+        {
+          "word": "prefrontal",
+          "startTime": 22.99,
+          "endTime": 24.23,
+          "startFrame": 689,
+          "endFrame": 726
+        },
+        {
+          "word": "cortex.",
+          "startTime": 23.79,
+          "endTime": 24.76,
+          "startFrame": 713,
+          "endFrame": 742
+        },
+        {
+          "word": "Has",
+          "startTime": 24.23,
+          "endTime": 24.92,
+          "startFrame": 726,
+          "endFrame": 747
+        },
+        {
+          "word": "this",
+          "startTime": 24.34,
+          "endTime": 25.13,
+          "startFrame": 730,
+          "endFrame": 753
+        },
+        {
+          "word": "happened",
+          "startTime": 24.76,
+          "endTime": 25.61,
+          "startFrame": 742,
+          "endFrame": 768
+        },
+        {
+          "word": "to",
+          "startTime": 24.92,
+          "endTime": 25.66,
+          "startFrame": 747,
+          "endFrame": 769
+        },
+        {
+          "word": "you?",
+          "startTime": 25.13,
+          "endTime": 26.02,
+          "startFrame": 753,
+          "endFrame": 780
+        }
+      ],
+      "captions": [
+        {
+          "text": "Your",
+          "startMs": 21970,
+          "endMs": 22100,
+          "timestampMs": 22035,
+          "confidence": null
+        },
+        {
+          "text": "real",
+          "startMs": 21970,
+          "endMs": 22320,
+          "timestampMs": 22145,
+          "confidence": null
+        },
+        {
+          "text": "indifference",
+          "startMs": 22100,
+          "endMs": 22990,
+          "timestampMs": 22545,
+          "confidence": null
+        },
+        {
+          "text": "activates",
+          "startMs": 22320,
+          "endMs": 23500,
+          "timestampMs": 22910,
+          "confidence": 1
+        },
+        {
+          "text": "their",
+          "startMs": 22600,
+          "endMs": 23790,
+          "timestampMs": 23195,
+          "confidence": null
+        },
+        {
+          "text": "prefrontal",
+          "startMs": 22990,
+          "endMs": 24230,
+          "timestampMs": 23610,
+          "confidence": null
+        },
+        {
+          "text": "cortex.",
+          "startMs": 23790,
+          "endMs": 24760,
+          "timestampMs": 24275,
+          "confidence": 1
+        },
+        {
+          "text": "Has",
+          "startMs": 24230,
+          "endMs": 24920,
+          "timestampMs": 24575,
+          "confidence": null
+        },
+        {
+          "text": "this",
+          "startMs": 24340,
+          "endMs": 25130,
+          "timestampMs": 24735,
+          "confidence": null
+        },
+        {
+          "text": "happened",
+          "startMs": 24760,
+          "endMs": 25610,
+          "timestampMs": 25185,
           "confidence": null
         },
         {
           "text": "to",
-          "startMs": 16090,
-          "endMs": 16190,
-          "timestampMs": 16140,
+          "startMs": 24920,
+          "endMs": 25660,
+          "timestampMs": 25290,
           "confidence": null
         },
         {
-          "text": "my",
-          "startMs": 16190,
-          "endMs": 16320,
-          "timestampMs": 16255,
-          "confidence": null
-        },
-        {
-          "text": "dog",
-          "startMs": 16320,
-          "endMs": 16490,
-          "timestampMs": 16405,
-          "confidence": null
-        },
-        {
-          "text": "each",
-          "startMs": 16490,
-          "endMs": 16730,
-          "timestampMs": 16610,
-          "confidence": null
-        },
-        {
-          "text": "night",
-          "startMs": 16730,
-          "endMs": 17150,
-          "timestampMs": 16940,
-          "confidence": null
-        },
-        {
-          "text": ".",
-          "startMs": 17150,
-          "endMs": 17160,
-          "timestampMs": 17155,
+          "text": "you?",
+          "startMs": 25130,
+          "endMs": 26020,
+          "timestampMs": 25575,
           "confidence": null
         }
       ]
     },
     {
-      "text": "Last night, the shadow touched him. My dog hasn't moved since.",
+      "text": "Comment below.",
       "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/segment_4.wav",
-      "duration": 3.84,
-      "startTime": 17.16,
-      "endTime": 21,
-      "wordTimings": [
-        {
-          "word": "Last",
-          "startTime": 17.37,
-          "endTime": 17.4,
-          "startFrame": 521,
-          "endFrame": 522
-        },
-        {
-          "word": "night",
-          "startTime": 17.4,
-          "endTime": 17.7,
-          "startFrame": 522,
-          "endFrame": 531
-        },
-        {
-          "word": ",",
-          "startTime": 17.7,
-          "endTime": 17.82,
-          "startFrame": 531,
-          "endFrame": 534
-        },
-        {
-          "word": "the",
-          "startTime": 17.82,
-          "endTime": 18.12,
-          "startFrame": 534,
-          "endFrame": 543
-        },
-        {
-          "word": "shadow",
-          "startTime": 18.12,
-          "endTime": 18.36,
-          "startFrame": 543,
-          "endFrame": 550
-        },
-        {
-          "word": "touched",
-          "startTime": 18.36,
-          "endTime": 18.78,
-          "startFrame": 550,
-          "endFrame": 563
-        },
-        {
-          "word": "him",
-          "startTime": 18.78,
-          "endTime": 18.96,
-          "startFrame": 563,
-          "endFrame": 568
-        },
-        {
-          "word": ".",
-          "startTime": 18.96,
-          "endTime": 19.32,
-          "startFrame": 568,
-          "endFrame": 579
-        },
-        {
-          "word": "My",
-          "startTime": 19.32,
-          "endTime": 19.41,
-          "startFrame": 579,
-          "endFrame": 582
-        },
-        {
-          "word": "dog",
-          "startTime": 19.41,
-          "endTime": 19.56,
-          "startFrame": 582,
-          "endFrame": 586
-        },
-        {
-          "word": "hasn",
-          "startTime": 19.56,
-          "endTime": 19.88,
-          "startFrame": 586,
-          "endFrame": 596
-        },
-        {
-          "word": "'t",
-          "startTime": 19.88,
-          "endTime": 20.03,
-          "startFrame": 596,
-          "endFrame": 600
-        },
-        {
-          "word": "moved",
-          "startTime": 20.03,
-          "endTime": 20.42,
-          "startFrame": 600,
-          "endFrame": 612
-        },
-        {
-          "word": "since",
-          "startTime": 20.42,
-          "endTime": 20.99,
-          "startFrame": 612,
-          "endFrame": 629
-        },
-        {
-          "word": ".",
-          "startTime": 20.99,
-          "endTime": 21.16,
-          "startFrame": 629,
-          "endFrame": 634
-        }
-      ],
-      "captions": [
-        {
-          "text": "Last",
-          "startMs": 17370,
-          "endMs": 17400,
-          "timestampMs": 17385,
-          "confidence": null
-        },
-        {
-          "text": "night",
-          "startMs": 17400,
-          "endMs": 17700,
-          "timestampMs": 17550,
-          "confidence": null
-        },
-        {
-          "text": ",",
-          "startMs": 17700,
-          "endMs": 17820,
-          "timestampMs": 17760,
-          "confidence": null
-        },
-        {
-          "text": "the",
-          "startMs": 17820,
-          "endMs": 18120,
-          "timestampMs": 17970,
-          "confidence": null
-        },
-        {
-          "text": "shadow",
-          "startMs": 18120,
-          "endMs": 18360,
-          "timestampMs": 18240,
-          "confidence": null
-        },
-        {
-          "text": "touched",
-          "startMs": 18360,
-          "endMs": 18780,
-          "timestampMs": 18570,
-          "confidence": null
-        },
-        {
-          "text": "him",
-          "startMs": 18780,
-          "endMs": 18960,
-          "timestampMs": 18870,
-          "confidence": null
-        },
-        {
-          "text": ".",
-          "startMs": 18960,
-          "endMs": 19320,
-          "timestampMs": 19140,
-          "confidence": null
-        },
-        {
-          "text": "My",
-          "startMs": 19320,
-          "endMs": 19410,
-          "timestampMs": 19365,
-          "confidence": null
-        },
-        {
-          "text": "dog",
-          "startMs": 19410,
-          "endMs": 19560,
-          "timestampMs": 19485,
-          "confidence": null
-        },
-        {
-          "text": "hasn",
-          "startMs": 19560,
-          "endMs": 19880,
-          "timestampMs": 19720,
-          "confidence": null
-        },
-        {
-          "text": "'t",
-          "startMs": 19880,
-          "endMs": 20030,
-          "timestampMs": 19955,
-          "confidence": null
-        },
-        {
-          "text": "moved",
-          "startMs": 20030,
-          "endMs": 20420,
-          "timestampMs": 20225,
-          "confidence": null
-        },
-        {
-          "text": "since",
-          "startMs": 20420,
-          "endMs": 20990,
-          "timestampMs": 20705,
-          "confidence": null
-        },
-        {
-          "text": ".",
-          "startMs": 20990,
-          "endMs": 21160,
-          "timestampMs": 21075,
-          "confidence": null
-        }
-      ]
-    },
-    {
-      "text": "He's breathing but won't wake up. The vet found nothing wrong.",
-      "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/segment_5.wav",
-      "duration": 3.08,
-      "startTime": 21,
-      "endTime": 24.08,
-      "wordTimings": [
-        {
-          "word": "He",
-          "startTime": 21.1,
-          "endTime": 21.19,
-          "startFrame": 633,
-          "endFrame": 635
-        },
-        {
-          "word": "'s",
-          "startTime": 21.19,
-          "endTime": 21.2,
-          "startFrame": 635,
-          "endFrame": 636
-        },
-        {
-          "word": "breathing",
-          "startTime": 21.2,
-          "endTime": 21.67,
-          "startFrame": 636,
-          "endFrame": 650
-        },
-        {
-          "word": "but",
-          "startTime": 21.67,
-          "endTime": 21.84,
-          "startFrame": 650,
-          "endFrame": 655
-        },
-        {
-          "word": "won",
-          "startTime": 21.84,
-          "endTime": 22.01,
-          "startFrame": 655,
-          "endFrame": 660
-        },
-        {
-          "word": "'t",
-          "startTime": 22.01,
-          "endTime": 22.09,
-          "startFrame": 660,
-          "endFrame": 662
-        },
-        {
-          "word": "wake",
-          "startTime": 22.09,
-          "endTime": 22.29,
-          "startFrame": 662,
-          "endFrame": 668
-        },
-        {
-          "word": "up",
-          "startTime": 22.29,
-          "endTime": 22.48,
-          "startFrame": 668,
-          "endFrame": 674
-        },
-        {
-          "word": ".",
-          "startTime": 22.48,
-          "endTime": 22.69,
-          "startFrame": 674,
-          "endFrame": 680
-        },
-        {
-          "word": "The",
-          "startTime": 22.69,
-          "endTime": 22.74,
-          "startFrame": 680,
-          "endFrame": 682
-        },
-        {
-          "word": "vet",
-          "startTime": 22.74,
-          "endTime": 22.88,
-          "startFrame": 682,
-          "endFrame": 686
-        },
-        {
-          "word": "found",
-          "startTime": 22.88,
-          "endTime": 23.12,
-          "startFrame": 686,
-          "endFrame": 693
-        },
-        {
-          "word": "nothing",
-          "startTime": 23.12,
-          "endTime": 23.46,
-          "startFrame": 693,
-          "endFrame": 703
-        },
-        {
-          "word": "wrong",
-          "startTime": 23.46,
-          "endTime": 23.69,
-          "startFrame": 703,
-          "endFrame": 710
-        },
-        {
-          "word": ".",
-          "startTime": 23.69,
-          "endTime": 23.88,
-          "startFrame": 710,
-          "endFrame": 716
-        }
-      ],
-      "captions": [
-        {
-          "text": "He",
-          "startMs": 21100,
-          "endMs": 21190,
-          "timestampMs": 21145,
-          "confidence": null
-        },
-        {
-          "text": "'s",
-          "startMs": 21190,
-          "endMs": 21200,
-          "timestampMs": 21195,
-          "confidence": null
-        },
-        {
-          "text": "breathing",
-          "startMs": 21200,
-          "endMs": 21670,
-          "timestampMs": 21435,
-          "confidence": null
-        },
-        {
-          "text": "but",
-          "startMs": 21670,
-          "endMs": 21840,
-          "timestampMs": 21755,
-          "confidence": null
-        },
-        {
-          "text": "won",
-          "startMs": 21840,
-          "endMs": 22010,
-          "timestampMs": 21925,
-          "confidence": null
-        },
-        {
-          "text": "'t",
-          "startMs": 22010,
-          "endMs": 22090,
-          "timestampMs": 22050,
-          "confidence": null
-        },
-        {
-          "text": "wake",
-          "startMs": 22090,
-          "endMs": 22290,
-          "timestampMs": 22190,
-          "confidence": null
-        },
-        {
-          "text": "up",
-          "startMs": 22290,
-          "endMs": 22480,
-          "timestampMs": 22385,
-          "confidence": null
-        },
-        {
-          "text": ".",
-          "startMs": 22480,
-          "endMs": 22690,
-          "timestampMs": 22585,
-          "confidence": null
-        },
-        {
-          "text": "The",
-          "startMs": 22690,
-          "endMs": 22740,
-          "timestampMs": 22715,
-          "confidence": null
-        },
-        {
-          "text": "vet",
-          "startMs": 22740,
-          "endMs": 22880,
-          "timestampMs": 22810,
-          "confidence": null
-        },
-        {
-          "text": "found",
-          "startMs": 22880,
-          "endMs": 23120,
-          "timestampMs": 23000,
-          "confidence": null
-        },
-        {
-          "text": "nothing",
-          "startMs": 23120,
-          "endMs": 23460,
-          "timestampMs": 23290,
-          "confidence": null
-        },
-        {
-          "text": "wrong",
-          "startMs": 23460,
-          "endMs": 23690,
-          "timestampMs": 23575,
-          "confidence": null
-        },
-        {
-          "text": ".",
-          "startMs": 23690,
-          "endMs": 23880,
-          "timestampMs": 23785,
-          "confidence": null
-        }
-      ]
-    },
-    {
-      "text": "Tonight I saw the shadow in my bedroom corner. It's 3:32 AM now.",
-      "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/segment_6.wav",
-      "duration": 4.52,
-      "startTime": 24.08,
-      "endTime": 28.599999999999998,
-      "wordTimings": [
-        {
-          "word": "Tonight",
-          "startTime": 24.17,
-          "endTime": 24.51,
-          "startFrame": 725,
-          "endFrame": 735
-        },
-        {
-          "word": "I",
-          "startTime": 24.51,
-          "endTime": 24.61,
-          "startFrame": 735,
-          "endFrame": 738
-        },
-        {
-          "word": "saw",
-          "startTime": 24.61,
-          "endTime": 24.75,
-          "startFrame": 738,
-          "endFrame": 742
-        },
-        {
-          "word": "the",
-          "startTime": 24.75,
-          "endTime": 24.93,
-          "startFrame": 742,
-          "endFrame": 747
-        },
-        {
-          "word": "shadow",
-          "startTime": 24.93,
-          "endTime": 25.3,
-          "startFrame": 747,
-          "endFrame": 759
-        },
-        {
-          "word": "in",
-          "startTime": 25.3,
-          "endTime": 25.42,
-          "startFrame": 759,
-          "endFrame": 762
-        },
-        {
-          "word": "my",
-          "startTime": 25.42,
-          "endTime": 25.54,
-          "startFrame": 762,
-          "endFrame": 766
-        },
-        {
-          "word": "bedroom",
-          "startTime": 25.54,
-          "endTime": 25.97,
-          "startFrame": 766,
-          "endFrame": 779
-        },
-        {
-          "word": "corner",
-          "startTime": 25.97,
-          "endTime": 26.52,
-          "startFrame": 779,
-          "endFrame": 795
-        },
-        {
-          "word": ".",
-          "startTime": 26.52,
-          "endTime": 26.64,
-          "startFrame": 795,
-          "endFrame": 799
-        },
-        {
-          "word": "It",
-          "startTime": 26.64,
-          "endTime": 26.79,
-          "startFrame": 799,
-          "endFrame": 803
-        },
-        {
-          "word": "'s",
-          "startTime": 26.79,
-          "endTime": 27,
-          "startFrame": 803,
-          "endFrame": 810
-        },
-        {
-          "word": "3",
-          "startTime": 27,
-          "endTime": 27.18,
-          "startFrame": 810,
-          "endFrame": 815
-        },
-        {
-          "word": ",",
-          "startTime": 27.18,
-          "endTime": 27.33,
-          "startFrame": 815,
-          "endFrame": 819
-        },
-        {
-          "word": "03",
-          "startTime": 27.33,
-          "endTime": 27.8,
-          "startFrame": 819,
-          "endFrame": 834
-        },
-        {
-          "word": "2",
-          "startTime": 27.8,
-          "endTime": 28.03,
-          "startFrame": 834,
-          "endFrame": 840
-        },
-        {
-          "word": "am",
-          "startTime": 28.03,
-          "endTime": 28.19,
-          "startFrame": 840,
-          "endFrame": 845
-        },
-        {
-          "word": "now",
-          "startTime": 28.19,
-          "endTime": 28.48,
-          "startFrame": 845,
-          "endFrame": 854
-        },
-        {
-          "word": ".",
-          "startTime": 28.48,
-          "endTime": 28.56,
-          "startFrame": 854,
-          "endFrame": 856
-        }
-      ],
-      "captions": [
-        {
-          "text": "Tonight",
-          "startMs": 24170,
-          "endMs": 24510,
-          "timestampMs": 24340,
-          "confidence": null
-        },
-        {
-          "text": "I",
-          "startMs": 24510,
-          "endMs": 24610,
-          "timestampMs": 24560,
-          "confidence": null
-        },
-        {
-          "text": "saw",
-          "startMs": 24610,
-          "endMs": 24750,
-          "timestampMs": 24680,
-          "confidence": null
-        },
-        {
-          "text": "the",
-          "startMs": 24750,
-          "endMs": 24930,
-          "timestampMs": 24840,
-          "confidence": null
-        },
-        {
-          "text": "shadow",
-          "startMs": 24930,
-          "endMs": 25300,
-          "timestampMs": 25115,
-          "confidence": null
-        },
-        {
-          "text": "in",
-          "startMs": 25300,
-          "endMs": 25420,
-          "timestampMs": 25360,
-          "confidence": null
-        },
-        {
-          "text": "my",
-          "startMs": 25420,
-          "endMs": 25540,
-          "timestampMs": 25480,
-          "confidence": null
-        },
-        {
-          "text": "bedroom",
-          "startMs": 25540,
-          "endMs": 25970,
-          "timestampMs": 25755,
-          "confidence": null
-        },
-        {
-          "text": "corner",
-          "startMs": 25970,
-          "endMs": 26520,
-          "timestampMs": 26245,
-          "confidence": null
-        },
-        {
-          "text": ".",
-          "startMs": 26520,
-          "endMs": 26640,
-          "timestampMs": 26580,
-          "confidence": null
-        },
-        {
-          "text": "It",
-          "startMs": 26640,
-          "endMs": 26790,
-          "timestampMs": 26715,
-          "confidence": null
-        },
-        {
-          "text": "'s",
-          "startMs": 26790,
-          "endMs": 27000,
-          "timestampMs": 26895,
-          "confidence": null
-        },
-        {
-          "text": "3",
-          "startMs": 27000,
-          "endMs": 27180,
-          "timestampMs": 27090,
-          "confidence": null
-        },
-        {
-          "text": ",",
-          "startMs": 27180,
-          "endMs": 27330,
-          "timestampMs": 27255,
-          "confidence": null
-        },
-        {
-          "text": "03",
-          "startMs": 27330,
-          "endMs": 27800,
-          "timestampMs": 27565,
-          "confidence": null
-        },
-        {
-          "text": "2",
-          "startMs": 27800,
-          "endMs": 28030,
-          "timestampMs": 27915,
-          "confidence": null
-        },
-        {
-          "text": "am",
-          "startMs": 28030,
-          "endMs": 28190,
-          "timestampMs": 28110,
-          "confidence": null
-        },
-        {
-          "text": "now",
-          "startMs": 28190,
-          "endMs": 28480,
-          "timestampMs": 28335,
-          "confidence": null
-        },
-        {
-          "text": ".",
-          "startMs": 28480,
-          "endMs": 28560,
-          "timestampMs": 28520,
-          "confidence": null
-        }
-      ]
-    },
-    {
-      "text": "Comment if you've experienced something similar",
-      "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/cta.wav",
-      "duration": 2.32,
-      "startTime": 28.599999999999998,
-      "endTime": 30.919999999999998,
+      "duration": 1,
+      "startTime": 25.919999999999998,
+      "endTime": 26.919999999999998,
       "wordTimings": [
         {
           "word": "Comment",
-          "startTime": 28.739999999999995,
-          "endTime": 28.929999999999996,
-          "startFrame": 862,
-          "endFrame": 867
+          "startTime": 26.059999999999995,
+          "endTime": 26.399999999999995,
+          "startFrame": 781,
+          "endFrame": 791
         },
         {
-          "word": "if",
-          "startTime": 28.929999999999996,
-          "endTime": 29.029999999999998,
-          "startFrame": 867,
-          "endFrame": 870
-        },
-        {
-          "word": "you",
-          "startTime": 29.029999999999998,
-          "endTime": 29.159999999999997,
-          "startFrame": 870,
-          "endFrame": 874
-        },
-        {
-          "word": "'ve",
-          "startTime": 29.159999999999997,
-          "endTime": 29.299999999999997,
-          "startFrame": 874,
-          "endFrame": 878
-        },
-        {
-          "word": "experienced",
-          "startTime": 29.299999999999997,
-          "endTime": 29.879999999999995,
-          "startFrame": 878,
-          "endFrame": 896
-        },
-        {
-          "word": "something",
-          "startTime": 29.879999999999995,
-          "endTime": 30.239999999999995,
-          "startFrame": 896,
-          "endFrame": 907
-        },
-        {
-          "word": "similar",
-          "startTime": 30.239999999999995,
-          "endTime": 30.599999999999998,
-          "startFrame": 907,
-          "endFrame": 917
-        },
-        {
-          "word": ".",
-          "startTime": 30.599999999999998,
-          "endTime": 30.899999999999995,
-          "startFrame": 917,
-          "endFrame": 926
+          "word": "below.",
+          "startTime": 26.059999999999995,
+          "endTime": 26.919999999999995,
+          "startFrame": 781,
+          "endFrame": 807
         }
       ],
       "captions": [
         {
           "text": "Comment",
-          "startMs": 28739.999999999996,
-          "endMs": 28929.999999999996,
-          "timestampMs": 28834.999999999996,
+          "startMs": 26059.999999999996,
+          "endMs": 26399.999999999996,
+          "timestampMs": 26229.999999999996,
           "confidence": null
         },
         {
-          "text": "if",
-          "startMs": 28929.999999999996,
-          "endMs": 29029.999999999996,
-          "timestampMs": 28979.999999999996,
+          "text": "below.",
+          "startMs": 26059.999999999996,
+          "endMs": 26919.999999999996,
+          "timestampMs": 26489.999999999996,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "text": "Follow for more psychology insights",
+      "audioFile": "/Users/rjayerbe/Web Development Local/yt-auto/output/audio/cta.wav",
+      "duration": 2.04,
+      "startTime": 26.919999999999998,
+      "endTime": 28.959999999999997,
+      "wordTimings": [
+        {
+          "word": "Follow",
+          "startTime": 27.019999999999996,
+          "endTime": 27.269999999999996,
+          "startFrame": 810,
+          "endFrame": 818
+        },
+        {
+          "word": "for",
+          "startTime": 27.019999999999996,
+          "endTime": 27.439999999999998,
+          "startFrame": 810,
+          "endFrame": 823
+        },
+        {
+          "word": "more",
+          "startTime": 27.019999999999996,
+          "endTime": 27.669999999999995,
+          "startFrame": 810,
+          "endFrame": 830
+        },
+        {
+          "word": "psychology",
+          "startTime": 27.269999999999996,
+          "endTime": 28.259999999999998,
+          "startFrame": 818,
+          "endFrame": 847
+        },
+        {
+          "word": "insights",
+          "startTime": 27.439999999999998,
+          "endTime": 28.759999999999998,
+          "startFrame": 823,
+          "endFrame": 862
+        }
+      ],
+      "captions": [
+        {
+          "text": "Follow",
+          "startMs": 27019.999999999996,
+          "endMs": 27269.999999999996,
+          "timestampMs": 27144.999999999996,
           "confidence": null
         },
         {
-          "text": "you",
-          "startMs": 29029.999999999996,
-          "endMs": 29159.999999999996,
-          "timestampMs": 29094.999999999996,
+          "text": "for",
+          "startMs": 27019.999999999996,
+          "endMs": 27439.999999999996,
+          "timestampMs": 27229.999999999996,
           "confidence": null
         },
         {
-          "text": "'ve",
-          "startMs": 29159.999999999996,
-          "endMs": 29299.999999999996,
-          "timestampMs": 29229.999999999996,
+          "text": "more",
+          "startMs": 27019.999999999996,
+          "endMs": 27669.999999999996,
+          "timestampMs": 27344.999999999996,
           "confidence": null
         },
         {
-          "text": "experienced",
-          "startMs": 29299.999999999996,
-          "endMs": 29879.999999999996,
-          "timestampMs": 29589.999999999996,
+          "text": "psychology",
+          "startMs": 27269.999999999996,
+          "endMs": 28259.999999999996,
+          "timestampMs": 27764.999999999996,
           "confidence": null
         },
         {
-          "text": "something",
-          "startMs": 29879.999999999996,
-          "endMs": 30239.999999999996,
-          "timestampMs": 30059.999999999996,
-          "confidence": null
-        },
-        {
-          "text": "similar",
-          "startMs": 30239.999999999996,
-          "endMs": 30599.999999999996,
-          "timestampMs": 30419.999999999996,
-          "confidence": null
-        },
-        {
-          "text": ".",
-          "startMs": 30599.999999999996,
-          "endMs": 30899.999999999996,
-          "timestampMs": 30749.999999999996,
+          "text": "insights",
+          "startMs": 27439.999999999996,
+          "endMs": 28759.999999999996,
+          "timestampMs": 28099.999999999996,
           "confidence": null
         }
       ]
     }
   ],
-  "totalDuration": 30.919999999999998,
-  "videoStyle": 3,
+  "totalDuration": 28.959999999999997,
+  "videoStyle": 1,
   "brollVideos": [
-    "broll/horror_1754979181750_0_0_vertical.mp4",
-    "broll/horror_1754979181822_0_1_vertical.mp4",
-    "broll/horror_1754979181780_1_0_vertical.mp4",
-    "broll/horror_1754979181760_1_1_vertical.mp4",
-    "broll/horror_1754979181799_2_0_vertical.mp4",
-    "broll/horror_1754979181791_2_1_vertical.mp4",
-    "broll/horror_1754979181784_3_0_vertical.mp4",
-    "broll/horror_1754979181813_3_1_vertical.mp4",
-    "broll/horror_1754979181779_4_0_vertical.mp4",
-    "broll/horror_1754979181796_4_1_vertical.mp4",
-    "broll/horror_1754979181798_5_0_vertical.mp4"
+    "broll/scientific_1754982685216_0_0_vertical.mp4",
+    "broll/scientific_1754982685238_0_1_vertical.mp4",
+    "broll/scientific_1754982685236_1_0_vertical.mp4",
+    "broll/scientific_1754982685199_1_1_vertical.mp4",
+    "broll/scientific_1754982685194_2_0_vertical.mp4",
+    "broll/scientific_1754982685295_2_1_vertical.mp4",
+    "broll/scientific_1754982685231_3_0_vertical.mp4",
+    "broll/scientific_1754982685188_3_1_vertical.mp4",
+    "broll/scientific_1754982685205_4_0_vertical.mp4",
+    "broll/scientific_1754982685233_4_1_vertical.mp4",
+    "broll/scientific_1754982685189_5_0_vertical.mp4"
   ]
 }

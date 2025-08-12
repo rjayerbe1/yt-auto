@@ -375,9 +375,9 @@ export class SyncedVideoGenerator extends EventEmitter {
         let captions: Caption[] = [];
         
         try {
-          // Transcribe to get accurate timestamps
-          logger.info(`🎙️ Getting word timestamps for segment ${i+1}...`);
-          const transcribedCaptions = await whisperTranscriber.getTimestampsForText(
+          // Transcribe to get accurate timestamps with original text alignment
+          logger.info(`🎙️ Getting word timestamps for segment ${i+1} (using original text)...`);
+          const transcribedCaptions = await whisperTranscriber.transcribeWithOriginalText(
             result.output,
             textSegment.text
           );

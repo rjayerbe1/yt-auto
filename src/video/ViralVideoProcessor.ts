@@ -149,19 +149,20 @@ export class ViralVideoProcessor extends EventEmitter {
    * Prepara el contenido viral dividiendo el script en segmentos
    */
   private async prepareViralContent(viralScript: ViralScript): Promise<ProcessedVideo> {
-    // Map style names to numbers
+    // Always use style 1 (Clean Modern Purple/Gold) for best B-roll contrast
+    // This style has semi-transparent purple gradient with gold active text
     const styleMap: Record<string, number> = {
-      'modern_gradient': 2,
-      'minimalist': 4,
-      'neon_cyberpunk': 3,
-      'dynamic': 6,
-      'dark_horror': 3,
-      'glitch_tech': 6,
-      'hospital_horror': 3,
-      'professional': 4
+      'modern_gradient': 1,
+      'minimalist': 1,
+      'neon_cyberpunk': 1,
+      'dynamic': 1,
+      'dark_horror': 1,
+      'glitch_tech': 1,
+      'hospital_horror': 1,
+      'professional': 1
     };
     
-    const videoStyle = styleMap[viralScript.style] || 3;
+    const videoStyle = styleMap[viralScript.style] || 1; // Always default to style 1
     
     const segments: AudioSegment[] = [];
     let segmentIndex = 0;
@@ -292,15 +293,16 @@ export class ViralVideoProcessor extends EventEmitter {
   private async transcribeSegments(content: ProcessedVideo): Promise<void> {
     for (const segment of content.segments) {
       try {
-        const transcription = await whisperTranscriber.transcribeWithTimestamps(
+        // Use the new method that aligns original text with Whisper timestamps
+        const transcription = await whisperTranscriber.transcribeWithOriginalText(
           segment.audioFile,
-          30 // FPS
+          segment.text  // Use original text for proper word boundaries
         );
         
-        if (transcription && transcription.captions) {
-          segment.captions = transcription.captions;
+        if (transcription && transcription.length > 0) {
+          segment.captions = transcription;
           // Convert captions to word timings if needed
-          segment.wordTimings = transcription.captions.map((caption: any) => ({
+          segment.wordTimings = transcription.map((caption: any) => ({
             word: caption.text,
             startTime: caption.startMs / 1000,
             endTime: caption.endMs / 1000,
