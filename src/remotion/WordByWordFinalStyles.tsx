@@ -145,14 +145,49 @@ export const WordByWordVideo: React.FC<WordByWordVideoProps> = ({
     const cycleStart = cycleNumber * 6;
     const positionInCycle = lastVisibleIndex - cycleStart;
     
+    // Track if we're inside quotes (for special terms)
+    let insideQuotes = false;
+    
+    // Check if any word before cycleStart has an opening quote
+    for (let i = 0; i < cycleStart && i < allWords.length; i++) {
+      const word = allWords[i].word;
+      // Only consider it a quote start if it's at the beginning and longer than 2 chars
+      // This avoids contractions like "it's" but catches "'unconscious"
+      if ((word.startsWith("'") && word.length > 2 && !word.includes("'t") && !word.includes("'s") && 
+           !word.includes("'re") && !word.includes("'ve") && !word.includes("'ll") && !word.includes("'d")) || 
+          word.startsWith('"')) {
+        insideQuotes = true;
+      }
+      if ((word.endsWith("'") && !word.includes("n't") && word.length > 2) || 
+          word.endsWith('"') || word.endsWith("'.") || word.endsWith('".')) {
+        insideQuotes = false;
+      }
+    }
+    
     // Get words for current cycle (only up to current word)
     const visibleWords = [];
     for (let i = cycleStart; i <= cycleStart + positionInCycle && i < allWords.length; i++) {
+      const word = allWords[i].word;
+      
+      // Check if this word starts quotes (but not contractions)
+      if ((word.startsWith("'") && word.length > 2 && !word.includes("'t") && !word.includes("'s") && 
+           !word.includes("'re") && !word.includes("'ve") && !word.includes("'ll") && !word.includes("'d")) || 
+          word.startsWith('"')) {
+        insideQuotes = true;
+      }
+      
       visibleWords.push({
         word: allWords[i].word,
         isActive: i === lastVisibleIndex,
         index: i - cycleStart, // Position within the cycle (0-5)
+        isSpecialTerm: insideQuotes, // Mark if inside quotes
       });
+      
+      // Check if this word ends quotes (but not contractions like "won't")
+      if ((word.endsWith("'") && !word.includes("n't") && word.length > 2) || 
+          word.endsWith('"') || word.endsWith("'.") || word.endsWith('".')) {
+        insideQuotes = false;
+      }
     }
     
     return visibleWords;
@@ -376,12 +411,16 @@ export const WordByWordVideo: React.FC<WordByWordVideoProps> = ({
             else if (wordLength > 12) adjustedSize = baseSize * 0.7;
             else if (wordLength > 10) adjustedSize = baseSize * 0.85;
             
+            // Use the isSpecialTerm flag from the word object
+            const isSpecialTerm = word.isSpecialTerm || false;
+            
             return (
               <div
                 key={`${word.word}-${word.index}`}
                 style={{
                   fontSize: `${adjustedSize}px`,
                   fontWeight: style.fontWeight,
+                  fontStyle: isSpecialTerm ? 'italic' : 'normal',
                   color: word.isActive ? style.activeColor : style.inactiveColor,
                   opacity: 1,
                   transition: 'color 0.2s ease',
@@ -418,12 +457,16 @@ export const WordByWordVideo: React.FC<WordByWordVideoProps> = ({
             else if (wordLength > 12) adjustedSize = baseSize * 0.7;
             else if (wordLength > 10) adjustedSize = baseSize * 0.85;
             
+            // Use the isSpecialTerm flag from the word object
+            const isSpecialTerm = word.isSpecialTerm || false;
+            
             return (
               <div
                 key={`${word.word}-${word.index}`}
                 style={{
                   fontSize: `${adjustedSize}px`,
                   fontWeight: style.fontWeight,
+                  fontStyle: isSpecialTerm ? 'italic' : 'normal',
                   color: word.isActive ? style.activeColor : style.inactiveColor,
                   opacity: 1,
                   transition: 'color 0.2s ease',
